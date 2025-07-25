@@ -14,8 +14,14 @@ const headVareints = {
 };
 const Services = ({ isMain = true }: { isMain?: boolean }) => {
   return (
-    <section id="expertice" className="bg-gray-100">
-      <div className="container py-16  max-w-screen-xl mx-auto  m-auto px-6 text-gray-500 ">
+    <section
+      id="expertice"
+      style={{
+        background:
+          "radial-gradient(91.29% 57.02% at 50% 50%, #0C3535 0%, #453115 100%)",
+      }}
+    >
+      <div className="container py-16  max-w-screen-xl mx-auto  m-auto px-6 text-white">
         <MotiionDiv
           variants={headVareints}
           initial="hidden"
@@ -28,11 +34,11 @@ const Services = ({ isMain = true }: { isMain?: boolean }) => {
           viewport={{ once: true }}
         >
           {isMain ? (
-            <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl">
+            <h2 className="mb-4 text-center text-2xl font-bold md:mb-8 lg:text-3xl">
               Your Perfect Business Solution
             </h2>
           ) : (
-            <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl">
+            <h2 className="mb-4 text-center text-2xl font-bold md:mb-8 lg:text-3xl">
               Our Other services
             </h2>
           )}
@@ -51,15 +57,15 @@ const Services = ({ isMain = true }: { isMain?: boolean }) => {
                   ease: "easeInOut",
                   duration: 0.25,
                 }}
+             
                 viewport={{ once: true }}
-                className="border border-gray-100 h-full  hover:scale-[1.02] transition-all duration-300 rounded-3xl bg-white px-8 pt-12 shadow-2xl shadow-gray-600/10
-lg:px-8 sm:px-12"
+                className="backdrop-blur-[80px] bg-[#ffffff33] border border-[#F3F4F6] h-full  hover:scale-[1.02] transition-all duration-300 rounded-3xl px-8 pt-12 pb-5 lg:px-8 sm:px-12"
               >
                 <div className="mb-12 space-y-4">
-                  <h3 className="text-2xl font-semibold text-gray-800">
+                  <h3 className="text-2xl font-semibold">
                     {service.title}
                   </h3>
-                  <p className="mb-6 text-gray-600 leading-7">
+                  <p className="mb-6 leading-7">
                     {service.descritpion}
                   </p>
                 </div>
@@ -71,6 +77,7 @@ lg:px-8 sm:px-12"
                   height={600}
                   className="ml-auto w-2/3"
                 />
+                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
               </MotiionDiv>
             </Link>
           ))}
@@ -81,3 +88,8 @@ lg:px-8 sm:px-12"
 };
 
 export default Services;
+
+
+// box-shadow: 0px 4px 4px 0px #00000040;
+
+// backdrop-filter: blur(83.80000305175781px)

@@ -21,7 +21,7 @@ export default function Home() {
       <Hero />
       <HeroLight />
       <About />
-      <Projects />
+      {/* <Projects /> */}
 
       <Services />
       <Banner />

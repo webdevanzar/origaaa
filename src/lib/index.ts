@@ -3,7 +3,8 @@ import { Content } from "next/font/google";
 export const services = [
   {
     title: "Web Development",
-    image: "/seo.svg",
+    image: "/services/service1.png",
+    // image: "/seo.svg",
     content:
       "We craft custom, responsive websites that not only look stunning but also deliver exceptional user experiences across all devices. Our expert team combines cutting-edge technology with strategic design to ensure your site stands out from the competition, effectively showcases your brand, and drives conversions",
     subData: [
@@ -29,7 +30,8 @@ export const services = [
   },
   {
     title: "Mobile App Development",
-    image: "/mobile-app.jpg",
+    // image: "/mobile-app.jpg",
+    image: "/services/service2.png",
     content:
       "In the fast-paced digital world, having a robust mobile app is essential for staying ahead. Origa Networks excels at creating innovative and user-centric mobile applications that enhance your brand’s reach and engagement. Our experienced developers harness the latest technologies to build seamless, high-performance apps for iOS and Android, ensuring your business is always within your customers’ fingertips.",
     subData: [
@@ -55,7 +57,8 @@ export const services = [
   },
   {
     title: "AMC",
-    image: "/amc.svg",
+    // image: "/amc.svg",
+    image: "/services/service3.png",
     content:
       "We provide comprehensive website maintenance, swiftly addressing technical issues, resolving bugs, and conducting thorough cross-device testing. Our proactive approach ensures your site remains flawless and functional, enhancing user experience and maintaining your professional online presence.",
 
@@ -65,7 +68,8 @@ export const services = [
 
   {
     title: "Ecommerce Development",
-    image: "/ecommerce.svg",
+    // image: "/ecommerce.svg",
+    image: "/services/service4.png",
     content:
       "Winning in the digital marketplace requires a powerful and user-friendly e-commerce platform. Origa Networks offers top-tier e-commerce development services, creating secure, scalable, and feature-rich online stores. From seamless payment gateways to intuitive product navigation, we ensure your e-commerce site delivers an exceptional shopping experience that converts visitors into loyal customers.",
     subData: [
@@ -91,7 +95,8 @@ export const services = [
   },
   {
     title: "ERP Development",
-    image: "/erp.jpg",
+    // image: "/erp.jpg",
+    image: "/services/service5.png",
     content:
       "Streamline your business operations and enhance productivity with our bespoke ERP development services. Origa Networks designs and implements comprehensive ERP solutions tailored to your specific needs. Our systems integrate various business processes, providing real-time data and insights that empower you to make informed decisions and drive growth.",
     subData: [
@@ -117,7 +122,8 @@ export const services = [
   },
   {
     title: "Digital Marketing and Branding",
-    image: "/digital.svg",
+    // image: "/digital.svg",
+    image: "/services/service6.png",
     content:
       "In the ever-evolving digital landscape, effective marketing is the key to staying ahead. Origa Networks provides comprehensive digital marketing services, including social media management, content marketing, PPC advertising, and email campaigns. Our strategic approach ensures your brand message reaches the right audience, enhancing your online presence and driving business growth.",
     subData: [

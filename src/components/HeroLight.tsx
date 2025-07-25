@@ -30,7 +30,21 @@ export const HeroLight = () => {
     {
       id: "4",
       image: "/herolight/image1.jpg",
-      title: "App Development",
+      title: "AMC",
+      p1: "User-Centric",
+      p2: "Secure",
+    },
+    {
+      id: "5",
+      image: "/herolight/image2.jpg",
+      title: "ERP Development",
+      p1: "User-Centric",
+      p2: "Secure",
+    },
+    {
+      id: "6",
+      image: "/herolight/image3.jpg",
+      title: "Digital Marketing",
       p1: "User-Centric",
       p2: "Secure",
     },
@@ -41,13 +55,13 @@ export const HeroLight = () => {
 
   const settings = {
     initialSlide: 1,
-    autoplay: true,
-    autoplaySpeed: 100,
+    // autoplay: true,
+    // autoplaySpeed: 100,
     // pauseOnHover: true,
-    Infinity: true,
+    // Infinity: true,
     centerMode: true,
     infinite: true,
-    speed: 2500,
+    speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
@@ -56,10 +70,6 @@ export const HeroLight = () => {
       console.log("Changing to slide index:", next);
       setActiveSlide(next);
     },
-    // afterChange: (current: number) => {
-    //   console.log("Reached slide index:", current);
-    //   setActiveSlide(current);
-    // },
     responsive: [
       {
         breakpoint: 1024,
@@ -76,7 +86,7 @@ export const HeroLight = () => {
     ],
   };
   return (
-    <section className="pt-20 w-full  xl:w-10/12 mx-auto h-screen">
+    <section className="pt-20 w-full  xl:w-10/12 mx-auto md:h-screen">
       <div className="w-full">
         <Slider ref={sliderRef} {...settings} className="z-10">
           {projects.map((item, index) => (
@@ -84,7 +94,7 @@ export const HeroLight = () => {
               key={item.id}
               className={`relative w-[500px] ${
                 index === activeSlide
-                  ? "h-[500px]"
+                  ? "h-[450px] md:h-[500px]"
                   : "h-[380px] md:h-[330px] 2xl:h-[380px] mt-[120px]"
               } rounded-[20px] shadow-md outline-none flex flex-col items-center justify-center cursor-pointer transition-all duration-500`}
             >

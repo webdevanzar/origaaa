@@ -73,7 +73,7 @@ export const Projects = () => {
   console.log(projects);
 
   return (
-    <div className="relative py-5 xl:py-10 mix-blend-hue">
+    <div className="relative py-5 xl:py-10 mt-20 mix-blend-hue">
       {/* Aurora Background */}
       <div className="absolute inset-0 -z-10 bg-gray-800">
         <Aurora

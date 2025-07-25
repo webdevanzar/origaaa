@@ -15,12 +15,18 @@ const About = () => {
   return (
     <section
       id="about"
-      className="text-black lg:mb-[22%]  overflow-hidden xl:mb-[10%] 2xl:mb-0"
+      style={{
+        background:
+          "radial-gradient(50% 104.51% at 50% 50%, #0C3535 0%, #453115 100%)",
+      }}
     >
-   
-      <div className="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
-          <div className="relative z-10 lg:py-16">
+      <div className="text-white w-11/12 mx-auto pb-20">
+        <h5 className="my-4 text-base md:text-lg text-center">Who We Are</h5>
+        <h2 className="text-2xl capitalize  sm:leading-[42px] font-semibold sm:text-3xl text-center">
+          Origa Networks: Simplifying Digital Success, Amplifying Your Business
+        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 pt-8 md:pt-16">
+          <div className="flex items-center justify-center">
             <MotiionDiv
               variants={aboutVarients}
               initial="hidden"
@@ -34,15 +40,15 @@ const About = () => {
                 duration: 0.25,
               }}
               viewport={{ once: true }}
-              className="relative h-64 sm:h-80 lg:h-full"
+              className="relative"
             >
               <Image
                 width={1200}
-                height={1200}
-                quality={100}
+                height={1000}
+                // quality={100}
                 alt="about image"
-                src="/about.jpg"
-                className="absolute inset-0 h-full w-full object-cover rounded-r-lg"
+                src="/about/about.jpg"
+                className="h-full w-full object-cover rounded-xl"
               />
             </MotiionDiv>
           </div>
@@ -60,20 +66,12 @@ const About = () => {
               duration: 0.25,
             }}
             viewport={{ once: true }}
-            className="relative flex items-center bg-gray-100"
+            className=" flex items-center"
           >
-            <span className="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100"></span>
+            {/* <span className="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100"></span> */}
 
-            <div className="p-8 sm:p-16 lg:p-24">
-              <h5 className="my-4 text-base md:text-lg text-gray-600 ">
-                About Us
-              </h5>
-              <h2 className="text-2xl capitalize  sm:leading-[42px] font-semibold sm:text-3xl">
-                Origa Networks: Simplifying Digital Success, Amplifying Your
-                Business
-              </h2>
-
-              <p className="mt-4 text-gray-600 leading-7">
+            <div className="">
+              <p className="mt-4 leading-7">
                 We make your digital success simple. With expert solutions just
                 for your needs, we craft impactful websites, data-driven
                 marketing strategies, and seamless IT solutions to help you
@@ -82,12 +80,12 @@ const About = () => {
                 approach, we ensure every aspect of your online presence is
                 designed for growth.
               </p>
-              <p className="mt-4 text-gray-600 leading-7">
+              <p className="mt-4 leading-7">
                 We listen. We strategize. We build. Our team of skilled
                 professionals is dedicated to delivering results that matter.
                 From understanding your unique goals to executing solutions that
                 drive impact, we make the digital journey effortless and
-                effective..
+                effective
               </p>
               <a
                 href="#contact"
