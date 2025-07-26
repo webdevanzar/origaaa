@@ -107,16 +107,22 @@ export const OurProcess = () => {
         },
       },
     ],
-
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 py-20 px-4 relative overflow-hidden">
+    //  bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900
+    <div
+      style={{
+        background:
+          "radial-gradient(50% 104.51% at 50% 50%, #0C3535 0%, #453115 100%)",
+      }}
+      className="min-h-screen py-20 px-4 relative overflow-hidden"
+    >
       {/* Background decorations */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl"></div>
-        <div className="absolute top-40 right-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl"></div>
-        <div className="absolute bottom-20 left-40 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute top-20 left-20 w-45 h-45 md:w-72 md:h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute top-40 right-20 w-45 h-45 md:w-72 md:h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute bottom-20 left-40 w-45 h-45 md:w-72 md:h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl"></div>
       </div>
 
       <div className="container mx-auto max-w-7xl relative z-10">

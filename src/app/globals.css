@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -24,7 +22,17 @@ body {
 .slick-slide > div {
   /* margin: 0px 15px 20px 15px; */
   padding-bottom: 25px;
-  padding: 0px 15px 20px 15px;
+  padding: 15px 15px 20px 15px;
+}
+
+.bubblebg {
+  background: linear-gradient(
+    229.18deg,
+    #93703a 20.2%,
+    #5b542b 44.44%,
+    #136750 68.96%,
+    #125053 85.21%
+  );
 }
 
 @layer utilities {

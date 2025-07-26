@@ -16,10 +16,10 @@ const Services = ({ isMain = true }: { isMain?: boolean }) => {
   return (
     <section
       id="expertice"
-      style={{
-        background:
-          "radial-gradient(91.29% 57.02% at 50% 50%, #0C3535 0%, #453115 100%)",
-      }}
+      // style={{
+      //   background:
+      //     "radial-gradient(91.29% 57.02% at 50% 50%, #0C3535 0%, #453115 100%)",
+      // }}
     >
       <div className="container py-16  max-w-screen-xl mx-auto  m-auto px-6 text-white">
         <MotiionDiv
@@ -57,17 +57,12 @@ const Services = ({ isMain = true }: { isMain?: boolean }) => {
                   ease: "easeInOut",
                   duration: 0.25,
                 }}
-             
                 viewport={{ once: true }}
                 className="backdrop-blur-[80px] bg-[#ffffff33] border border-[#F3F4F6] h-full  hover:scale-[1.02] transition-all duration-300 rounded-3xl px-8 pt-12 pb-5 lg:px-8 sm:px-12"
               >
                 <div className="mb-12 space-y-4">
-                  <h3 className="text-2xl font-semibold">
-                    {service.title}
-                  </h3>
-                  <p className="mb-6 leading-7">
-                    {service.descritpion}
-                  </p>
+                  <h3 className="text-2xl font-semibold">{service.title}</h3>
+                  <p className="mb-6 leading-7">{service.descritpion}</p>
                 </div>
 
                 <Image
@@ -77,7 +72,14 @@ const Services = ({ isMain = true }: { isMain?: boolean }) => {
                   height={600}
                   className="ml-auto w-2/3"
                 />
-                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
+                <div
+                  style={{ background: service.color }}
+                  className={`absolute ${
+                    index === 1 || index === 4
+                      ? "top-0 right-0"
+                      : "bottom-0 left-0"
+                  } w-20 h-20 md:w-32 md:h-32 rounded-full mix-blend-multiply filter blur-3xl opacity-70`}
+                ></div>
               </MotiionDiv>
             </Link>
           ))}
@@ -88,8 +90,3 @@ const Services = ({ isMain = true }: { isMain?: boolean }) => {
 };
 
 export default Services;
-
-
-// box-shadow: 0px 4px 4px 0px #00000040;
-
-// backdrop-filter: blur(83.80000305175781px)

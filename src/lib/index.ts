@@ -1,9 +1,11 @@
+import { color } from "framer-motion";
 import { Content } from "next/font/google";
 
 export const services = [
   {
     title: "Web Development",
     image: "/services/service1.png",
+    color: "#CFF527",
     // image: "/seo.svg",
     content:
       "We craft custom, responsive websites that not only look stunning but also deliver exceptional user experiences across all devices. Our expert team combines cutting-edge technology with strategic design to ensure your site stands out from the competition, effectively showcases your brand, and drives conversions",
@@ -30,6 +32,7 @@ export const services = [
   },
   {
     title: "Mobile App Development",
+    color: "#16F233",
     // image: "/mobile-app.jpg",
     image: "/services/service2.png",
     content:
@@ -57,6 +60,7 @@ export const services = [
   },
   {
     title: "AMC",
+    color: "#E02828",
     // image: "/amc.svg",
     image: "/services/service3.png",
     content:
@@ -68,6 +72,7 @@ export const services = [
 
   {
     title: "Ecommerce Development",
+    color: "#AC1AD9",
     // image: "/ecommerce.svg",
     image: "/services/service4.png",
     content:
@@ -95,6 +100,7 @@ export const services = [
   },
   {
     title: "ERP Development",
+    color: "#1A40D9",
     // image: "/erp.jpg",
     image: "/services/service5.png",
     content:
@@ -122,6 +128,7 @@ export const services = [
   },
   {
     title: "Digital Marketing and Branding",
+    color: "#05FFEA",
     // image: "/digital.svg",
     image: "/services/service6.png",
     content:

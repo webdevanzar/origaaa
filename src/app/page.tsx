@@ -20,10 +20,16 @@ export default function Home() {
     <div className="overflow-x-hidden">
       <Hero />
       <HeroLight />
-      <About />
+      <div
+        style={{
+          background:
+            "radial-gradient(50% 104.51% at 50% 50%, #0C3535 0%, #453115 100%)",
+        }}
+      >
+        <About />
+        <Services />
+      </div>
       {/* <Projects /> */}
-
-      <Services />
       <Banner />
       <Industries />
       <OurProcess />

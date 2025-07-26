@@ -86,7 +86,7 @@ export const HeroLight = () => {
     ],
   };
   return (
-    <section className="pt-20 w-full  xl:w-10/12 mx-auto md:h-screen">
+    <section className="pt-20 w-full relative  xl:w-12/12 mx-auto">
       <div className="w-full">
         <Slider ref={sliderRef} {...settings} className="z-10">
           {projects.map((item, index) => (
@@ -134,6 +134,13 @@ export const HeroLight = () => {
           ))}
         </Slider>
       </div>
+      {/* <div className="absolute bottom-0 left-0 w-full h-32 z-0 pointer-events-none"> */}
+        {/* Horizontal base color gradient */}
+        {/* <div className="w-full h-full bg-gradient-to-r from-[#453115] via-[#0C3535] to-[#453115] mix-blend-multiply absolute inset-0" /> */}
+
+        {/* Top fade to white */}
+        {/* <div className="w-full h-full bg-gradient-to-t from-transparent to-white backdrop-blur-2xl absolute inset-0" /> */}
+      {/* </div> */}
     </section>
   );
 };
