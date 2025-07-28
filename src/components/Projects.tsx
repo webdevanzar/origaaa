@@ -6,8 +6,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import storyblokClient from "@/utils/storyblock";
-import { GoArrowRight } from "react-icons/go";
-import { TfiHandDrag } from "react-icons/tfi";
+import { CustomCursor } from "./shared/CustomeCursor";
 
 type ProjectType = {
   id: string;
@@ -20,8 +19,6 @@ export const Projects = () => {
   const [projects, setProjects] = useState<ProjectType[]>([]);
 
   const [activeSlide, setActiveSlide] = React.useState(0);
-  const [dragDirection, setDragDirection] = useState<"left" | "right">("left");
-  console.log("Drag Direction:", dragDirection);
   const sliderRef = useRef<Slider>(null);
 
   const settings = {
@@ -33,10 +30,6 @@ export const Projects = () => {
     arrows: false,
     centerPadding: "0",
     beforeChange: (_: number, next: number) => setActiveSlide(next),
-    onSwipe: (dir: "left" | "right") => {
-      setDragDirection(dir);
-    },
-
     responsive: [
       {
         breakpoint: 1024,
@@ -52,15 +45,6 @@ export const Projects = () => {
       },
     ],
   };
-  // useEffect(() => {
-  //   if (dragDirection) {
-  //     const timer = setTimeout(() => {
-  //       setDragDirection(null);
-  //     }, 1000); // delay to let user *see* the direction (adjust as needed)
-
-  //     return () => clearTimeout(timer);
-  //   }
-  // }, [dragDirection]);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -89,56 +73,8 @@ export const Projects = () => {
     return index === active || index === (active - 1 + total) % total;
   };
 
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
-  const [isMouseDown, setIsMouseDown] = useState(false);
+  const [cursorVisible, setCursorVisible] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = container.getBoundingClientRect();
-      setCursorPosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
-    };
-
-    const handleMouseEnter = () => {
-      setIsHovering(true);
-      document.body.style.cursor = "none"; // Hide default cursor
-    };
-
-    const handleMouseLeave = () => {
-      setIsHovering(false);
-      document.body.style.cursor = ""; // Restore default cursor
-    };
-
-    const handleMouseDown = () => {
-      setIsMouseDown(true);
-    };
-
-    const handleMouseUp = () => {
-      setIsMouseDown(false);
-    };
-
-    container.addEventListener("mousemove", handleMouseMove);
-    container.addEventListener("mouseenter", handleMouseEnter);
-    container.addEventListener("mouseleave", handleMouseLeave);
-    container.addEventListener("mousedown", handleMouseDown);
-    container.addEventListener("mouseup", handleMouseUp);
-
-    return () => {
-      container.removeEventListener("mousemove", handleMouseMove);
-      container.removeEventListener("mouseenter", handleMouseEnter);
-      container.removeEventListener("mouseleave", handleMouseLeave);
-      container.removeEventListener("mousedown", handleMouseDown);
-      container.removeEventListener("mouseup", handleMouseUp);
-      document.body.style.cursor = ""; // Cleanup
-    };
-  }, []);
 
   return (
     <div className="radial-bg relative">
@@ -169,33 +105,14 @@ export const Projects = () => {
         </div>
 
         {/* slider */}
-        <div className="project-slide w-full" ref={containerRef}>
+        <div
+          className="project-slide w-full"
+          ref={containerRef}
+          onMouseEnter={() => setCursorVisible(true)}
+          onMouseLeave={() => setCursorVisible(false)}
+        >
           {/* Custom Cursor - only visible when hovering the component */}
-          <div
-            style={{
-              left: `${cursorPosition.x}px`,
-              top: `${cursorPosition.y}px`,
-              transform: "translate(-50%, -50%)",
-            }}
-            className={`hidden fixed z-50 md:flex p-4 lg:p-7 border-[1px] justify-center items-center rounded-full backdrop-blur-lg shadow-lg pointer-events-none transition-transform duration-500 ease-in-out
-            ${isHovering ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
-          >
-            {isMouseDown ? (
-              <TfiHandDrag
-                size={48}
-                className={`text-white ${
-                  dragDirection === "right" ? "-rotate-90" : "rotate-90"
-                }`}
-              />
-            ) : (
-              <GoArrowRight
-                size={48}
-                className={`text-white ${
-                  dragDirection === "right" ? "rotate-180" : "rotate-0"
-                }`}
-              />
-            )}
-          </div>
+          <CustomCursor parentRef={containerRef} show={cursorVisible} />
           <Slider ref={sliderRef} {...settings} className="z-10">
             {projects.map((item, index) => {
               const total = projects.length;

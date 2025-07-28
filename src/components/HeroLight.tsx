@@ -1,8 +1,9 @@
 "use client";
 import Image from "next/image";
 import Slider from "react-slick";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
+import { CustomCursor } from "./shared/CustomeCursor";
 
 export const HeroLight = () => {
   const projects = [
@@ -50,6 +51,8 @@ export const HeroLight = () => {
     },
   ];
   const [activeSlide, setActiveSlide] = React.useState(1);
+  const [cursorVisible, setCursorVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<Slider>(null);
   console.log("activeSlide", activeSlide);
 
@@ -87,15 +90,21 @@ export const HeroLight = () => {
   };
   return (
     <section className="pt-20 w-full relative  xl:w-12/12 mx-auto">
-      <div className="w-full">
+      <div
+        className="w-full"
+        ref={containerRef}
+        onMouseEnter={() => setCursorVisible(true)}
+        onMouseLeave={() => setCursorVisible(false)}
+      >
+        <CustomCursor show={cursorVisible} parentRef={containerRef} />
         <Slider ref={sliderRef} {...settings} className="z-10">
           {projects.map((item, index) => (
             <div
               key={item.id}
               className={`relative w-[500px] ${
                 index === activeSlide
-                  ? "h-[450px] md:h-[500px]"
-                  : "h-[380px] md:h-[330px] 2xl:h-[380px] mt-[120px]"
+                  ? "h-[450px] xl:h-[500px]"
+                  : "h-[380px]  xl:h-[380px] mt-[70px] xl:mt-[120px]"
               } rounded-[20px] shadow-md outline-none flex flex-col items-center justify-center cursor-pointer transition-all duration-500`}
             >
               <Image
@@ -134,13 +143,6 @@ export const HeroLight = () => {
           ))}
         </Slider>
       </div>
-      {/* <div className="absolute bottom-0 left-0 w-full h-32 z-0 pointer-events-none"> */}
-        {/* Horizontal base color gradient */}
-        {/* <div className="w-full h-full bg-gradient-to-r from-[#453115] via-[#0C3535] to-[#453115] mix-blend-multiply absolute inset-0" /> */}
-
-        {/* Top fade to white */}
-        {/* <div className="w-full h-full bg-gradient-to-t from-transparent to-white backdrop-blur-2xl absolute inset-0" /> */}
-      {/* </div> */}
     </section>
   );
 };
