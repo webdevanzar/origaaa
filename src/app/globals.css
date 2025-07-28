@@ -20,9 +20,16 @@ body {
 }
 
 .slick-slide > div {
-  /* margin: 0px 15px 20px 15px; */
   padding-bottom: 25px;
   padding: 15px 15px 20px 15px;
+}
+
+.project-slide .slick-slide {
+  padding-bottom: 25px;
+}
+
+.radial-bg {
+  background: radial-gradient(50% 104.51% at 50% 50%, #0c3535 0%, #453115 100%);
 }
 
 .bubblebg {

@@ -133,7 +133,7 @@ const Contact = () => {
         <h1 className="text-center text-[30px] md:text-[50px] lg:text-[100px] xl:text-[170px] font-semibold">
           Contact Us
         </h1>
-        <p className="text-[18px] md:text-[25px] xl:text-[37px] text-center">
+        <p className="text-[18px] md:text-[25px] xl:text-[37px] text-center px-5">
           Got a question about web, design, or marketing? Let’s talk!
         </p>
       </div>
@@ -204,7 +204,13 @@ const Contact = () => {
           onSubmit={sendEmail}
         >
           <div className="flex gap-x-10 w-full">
-            <div className="flex flex-col gap-y-2 w-full">
+            <motion.div
+              className="flex flex-col gap-y-2 w-full"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               <label htmlFor="firstname" className="font-medium text-base">
                 First Name
               </label>
@@ -215,8 +221,14 @@ const Contact = () => {
                 type="text"
                 className="bg-transparent  font-thin outline-none border-b-[1px] p-1 w-full"
               />
-            </div>
-            <div className="flex flex-col gap-y-2 w-full">
+            </motion.div>
+            <motion.div
+              className="flex flex-col gap-y-2 w-full"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               <label htmlFor="lastname" className="font-medium text-base">
                 Last Name
               </label>
@@ -226,11 +238,17 @@ const Contact = () => {
                 type="text"
                 className="bg-transparent font-thin outline-none border-b-[1px] p-1 w-full"
               />
-            </div>
+            </motion.div>
           </div>
 
           <div className="flex gap-x-10 w-full">
-            <div className="flex flex-col gap-y-2 w-full">
+            <motion.div
+              className="flex flex-col gap-y-2 w-full"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               <label htmlFor="email" className="font-medium text-base">
                 Email
               </label>
@@ -241,8 +259,14 @@ const Contact = () => {
                 type="email"
                 className="bg-transparent font-thin outline-none border-b-[1px] p-1 w-full"
               />
-            </div>
-            <div className="flex flex-col gap-y-2 w-full">
+            </motion.div>
+            <motion.div
+              className="flex flex-col gap-y-2 w-full"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               <label htmlFor="number" className="font-medium text-base">
                 Phone Number
               </label>
@@ -253,10 +277,15 @@ const Contact = () => {
                 type="number"
                 className="bg-transparent font-thin outline-none border-b-[1px] p-1 w-full"
               />
-            </div>
+            </motion.div>
           </div>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <h4 className="font-semibold text-base">Select Subject?</h4>
             <div className="pt-5 flex flex-col md:flex-row gap-x-8">
               <div className="flex flex-col xl:flex-row gap-y-2 gap-x-8">
@@ -309,9 +338,14 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <label htmlFor="message" className="font-medium text-base">
               Message
             </label>
@@ -323,7 +357,7 @@ const Contact = () => {
               placeholder="Write your message here..."
               className="bg-transparent font-thin outline-none border-b-[1px] p-1 w-full resize-none"
             />
-          </div>
+          </motion.div>
 
           <div className="flex items-center justify-center md:justify-end md:pr-10">
             <button

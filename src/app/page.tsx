@@ -12,7 +12,6 @@ import { OurProcess } from "@/components/OurProcess";
 import { Projects } from "@/components/Projects";
 import Services from "@/components/Services";
 import Stat from "@/components/Stat";
-import Aurora from "@/components/ui/Aurora";
 import Whatsapp from "@/components/Whatsapp";
 
 export default function Home() {
@@ -20,17 +19,12 @@ export default function Home() {
     <div className="overflow-x-hidden">
       <Hero />
       <HeroLight />
-      <div
-        style={{
-          background:
-            "radial-gradient(50% 104.51% at 50% 50%, #0C3535 0%, #453115 100%)",
-        }}
-      >
+      <div className="radial-bg">
         <About />
         <Services />
       </div>
-      {/* <Projects /> */}
       <Banner />
+      <Projects />
       <Industries />
       <OurProcess />
       {/* <Features /> our process */}
