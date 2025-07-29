@@ -12,6 +12,7 @@ import { OurProcess } from "@/components/OurProcess";
 import { Projects } from "@/components/Projects";
 import Services from "@/components/Services";
 import Stat from "@/components/Stat";
+import Testimonial from "@/components/Testimonial";
 import Whatsapp from "@/components/Whatsapp";
 
 export default function Home() {
@@ -19,10 +20,10 @@ export default function Home() {
     <div className="overflow-x-hidden">
       <Hero />
       <HeroLight />
-      <div className="radial-bg">
-        <About />
-        <Services />
-      </div>
+      {/* <div className="radial-bg"> */}
+      <About />
+      {/* <Services /> */}
+      {/* </div> */}
       <Banner />
       <Projects />
       <Industries />
@@ -30,8 +31,10 @@ export default function Home() {
       {/* <Features /> our process */}
       {/* <Stat /> */}
       <ClientLogo />
+
+      {/* Additional children can go here */}
       <Blogs />
-      {/* <Testimonial /> */}
+      <Testimonial />
       <Contact />
       <Whatsapp />
     </div>

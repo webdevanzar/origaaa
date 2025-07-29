@@ -39,6 +39,117 @@
   );
 }
 
+.liquid-glass-bg {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0);
+  border-radius: 9999px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.6px);
+  -webkit-backdrop-filter: blur(9.6px);
+}
+
+.slick-slide > div {
+  padding-top: 80px;
+}
+
+/* Custom dots styling */
+.custom-dots .slick-dots {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex !important;
+  /* justify-content: flex-start; */
+  width: auto;
+  padding-left: 20px;
+  margin: 0;
+  list-style: none;
+  z-index: 20;
+}
+
+.custom-dots .slick-dots li {
+  margin: 0 4px;
+}
+
+.custom-dots .slick-dots li button {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: #ccc;
+  text-indent: -9999px;
+  transition: all 0.3s ease;
+}
+
+.custom-dots .slick-dots li.slick-active button {
+  background-color: #fff;
+  transform: scale(1.2);
+}
+
+/* @media (max-width: 1536px) {
+  .custom-dots .slick-dots {
+    left: 180px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .custom-dots .slick-dots {
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .custom-dots .slick-dots li {
+    margin: 0 4px;
+  }
+} */
+
+.frosted-glass {
+  /* Base glass styling */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  border-radius: 1em;
+  position: relative;
+  color: transparent;
+  
+  /* Border effects */
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+  
+  &::before {
+    border: 1px solid white;
+    mask-image: linear-gradient(135deg, white, rgba(255, 255, 255, 0) 50%);
+  }
+  
+  &::after {
+    border: 1px solid hsl(223, 90%, 50%); /* Using --primary500 color */
+    mask-image: linear-gradient(135deg, rgba(255, 255, 255, 0) 50%, white);
+  }
+
+  /* RTL support */
+  [dir="rtl"] & {
+    background: linear-gradient(-90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+    
+    &::before {
+      mask-image: linear-gradient(-135deg, white, rgba(255, 255, 255, 0) 50%);
+    }
+    
+    &::after {
+      mask-image: linear-gradient(-135deg, rgba(255, 255, 255, 0) 50%, white);
+    }
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

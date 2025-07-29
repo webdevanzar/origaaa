@@ -130,7 +130,7 @@ const Contact = () => {
 
       {/* actual content */}
       <div className="">
-        <h1 className="text-center text-[30px] md:text-[50px] lg:text-[100px] xl:text-[170px] font-semibold">
+        <h1 className="text-center text-[30px] md:text-[50px] lg:text-[80px] xl:text-[150px] font-semibold">
           Contact Us
         </h1>
         <p className="text-[18px] md:text-[25px] xl:text-[37px] text-center px-5">

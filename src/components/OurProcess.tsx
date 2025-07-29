@@ -139,6 +139,7 @@ export const OurProcess = () => {
         <div className="relative">
           <Slider {...settings}>
             {processSteps.map((step, index) => (
+              
               <ProcessCard key={index} {...step} />
             ))}
           </Slider>

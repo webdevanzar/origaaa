@@ -89,7 +89,11 @@ export const HeroLight = () => {
     ],
   };
   return (
-    <section className="pt-20 w-full relative  xl:w-12/12 mx-auto">
+    <section className=" w-full relative  xl:w-12/12 mx-auto">
+
+      <div className="radial-bg w-[47.2vw] h-[55.5vh] rounded-full blur-[150px] opacity-50 absolute right-1/2 bottom-1/4 translate-x-1/2 translate-y-1/2 ">
+        {/* shade */}
+      </div>
       <div
         className="w-full"
         ref={containerRef}

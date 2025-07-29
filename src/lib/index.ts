@@ -161,6 +161,10 @@ export const services = [
 ];
 
 export const navabar = [
+    {
+    title: "Home",
+    direction: "/#Home",
+  },
   {
     title: "About",
     direction: "/#about",
@@ -176,6 +180,10 @@ export const navabar = [
   {
     title: "Works",
     direction: "/#works",
+  },
+    {
+    title: "Career",
+    direction: "/#Career",
   },
 ];
 
