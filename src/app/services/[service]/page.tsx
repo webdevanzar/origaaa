@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import Services from "@/components/Services";
+import Services from "@/components/WhatweDo";
 import { Metadata } from "next";
 import { services } from "@/lib";
 import Image from "next/image";

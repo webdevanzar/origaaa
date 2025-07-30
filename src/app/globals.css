@@ -29,6 +29,10 @@
   background: radial-gradient(50% 104.51% at 50% 50%, #0c3535 0%, #453115 100%);
 }
 
+.radial-bg-secondary {
+  background: linear-gradient(107.74deg, #ab8c40 2.79%, #269785 96.76%);
+}
+
 .bubblebg {
   background: linear-gradient(
     229.18deg,
@@ -111,11 +115,15 @@
   /* Base glass styling */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.05)
+  );
   border-radius: 1em;
   position: relative;
   color: transparent;
-  
+
   /* Border effects */
   &::before,
   &::after {
@@ -125,12 +133,12 @@
     border-radius: inherit;
     pointer-events: none;
   }
-  
+
   &::before {
     border: 1px solid white;
     mask-image: linear-gradient(135deg, white, rgba(255, 255, 255, 0) 50%);
   }
-  
+
   &::after {
     border: 1px solid hsl(223, 90%, 50%); /* Using --primary500 color */
     mask-image: linear-gradient(135deg, rgba(255, 255, 255, 0) 50%, white);
@@ -138,12 +146,16 @@
 
   /* RTL support */
   [dir="rtl"] & {
-    background: linear-gradient(-90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
-    
+    background: linear-gradient(
+      -90deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.05)
+    );
+
     &::before {
       mask-image: linear-gradient(-135deg, white, rgba(255, 255, 255, 0) 50%);
     }
-    
+
     &::after {
       mask-image: linear-gradient(-135deg, rgba(255, 255, 255, 0) 50%, white);
     }

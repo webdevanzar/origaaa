@@ -10,7 +10,7 @@ import { HeroLight } from "@/components/HeroLight";
 import Industries from "@/components/Industries";
 import { OurProcess } from "@/components/OurProcess";
 import { Projects } from "@/components/Projects";
-import Services from "@/components/Services";
+import WhatweDo from "@/components/WhatweDo";
 import Stat from "@/components/Stat";
 import Testimonial from "@/components/Testimonial";
 import Whatsapp from "@/components/Whatsapp";
@@ -22,9 +22,9 @@ export default function Home() {
       <HeroLight />
       {/* <div className="radial-bg"> */}
       <About />
-      {/* <Services /> */}
+      <WhatweDo/>
       {/* </div> */}
-      <Banner />
+      {/* <Banner /> */}
       <Projects />
       <Industries />
       <OurProcess />

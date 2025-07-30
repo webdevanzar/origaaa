@@ -4,6 +4,7 @@ import { Content } from "next/font/google";
 export const services = [
   {
     title: "Web Development",
+    title2: "Building Fast, Responsive Websites for Your Brand",
     image: "/services/service1.png",
     color: "#CFF527",
     // image: "/seo.svg",
@@ -31,7 +32,8 @@ export const services = [
       "Transform your digital presence with stunning designs, turning your dreams into successful realities and building a strong online presence.",
   },
   {
-    title: "Mobile App Development",
+    title: "App Development",
+    title2: "Building Fast, Responsive Websites for Your Brand",
     color: "#16F233",
     // image: "/mobile-app.jpg",
     image: "/services/service2.png",
@@ -59,47 +61,8 @@ export const services = [
       "Seamlessly and efficiently elevate your business with our mobile app solutions, promising extensive growth and enhanced performance.",
   },
   {
-    title: "AMC",
-    color: "#E02828",
-    // image: "/amc.svg",
-    image: "/services/service3.png",
-    content:
-      "We provide comprehensive website maintenance, swiftly addressing technical issues, resolving bugs, and conducting thorough cross-device testing. Our proactive approach ensures your site remains flawless and functional, enhancing user experience and maintaining your professional online presence.",
-
-    descritpion:
-      "Our AMC service provides proactive and reactive support for your web applications, mobile apps, ERP solutions, and other IT products. Our experts ensure your systems run smoothly, maintaining optimal performance and avoiding downtime.",
-  },
-
-  {
-    title: "Ecommerce Development",
-    color: "#AC1AD9",
-    // image: "/ecommerce.svg",
-    image: "/services/service4.png",
-    content:
-      "Winning in the digital marketplace requires a powerful and user-friendly e-commerce platform. Origa Networks offers top-tier e-commerce development services, creating secure, scalable, and feature-rich online stores. From seamless payment gateways to intuitive product navigation, we ensure your e-commerce site delivers an exceptional shopping experience that converts visitors into loyal customers.",
-    subData: [
-      {
-        title: "Shopify",
-        desc: " Building and customizing online stores with Shopify, providing scalable and secure solutions.",
-      },
-      {
-        title: "BigCommerce",
-        desc: "Developing robust ecommerce platforms using BigCommerce, ensuring flexibility and performance.",
-      },
-      {
-        title: "WordPress/WooCommerce",
-        desc: "Creating dynamic and user-friendly ecommerce websites with WordPress and WooCommerce.",
-      },
-      {
-        title: "Adobe Commerce",
-        desc: "Leveraging Adobe Commerce (Magento) for powerful and customizable ecommerce solutions.",
-      },
-    ],
-    descritpion:
-      "Boosting brands' digital exposure effortlessly is our specialty, ensuring seamless growth and enhanced visibility in the digital landscape.",
-  },
-  {
     title: "ERP Development",
+    title2: "Building Fast, Responsive Websites for Your Brand",
     color: "#1A40D9",
     // image: "/erp.jpg",
     image: "/services/service5.png",
@@ -127,7 +90,8 @@ export const services = [
       "Expert guidance throughout the ERP development process, including planning, analysis, implementation, and ongoing support to ensure smooth operations.",
   },
   {
-    title: "Digital Marketing and Branding",
+    title: "Digital Marketing",
+    title2: "Building Fast, Responsive Websites for Your Brand",
     color: "#05FFEA",
     // image: "/digital.svg",
     image: "/services/service6.png",
@@ -158,10 +122,22 @@ export const services = [
     descritpion:
       "Our experienced Branding and Digital Marketing services will help you increase the visibility and reach of your brand. We help your business stand out in the digital marketplace with strategic marketing and interesting content.",
   },
+  {
+    title: "AMC",
+    title2: "Building Fast, Responsive Websites for Your Brand",
+    color: "#E02828",
+    // image: "/amc.svg",
+    image: "/services/service3.png",
+    content:
+      "We provide comprehensive website maintenance, swiftly addressing technical issues, resolving bugs, and conducting thorough cross-device testing. Our proactive approach ensures your site remains flawless and functional, enhancing user experience and maintaining your professional online presence.",
+
+    descritpion:
+      "Our AMC service provides proactive and reactive support for your web applications, mobile apps, ERP solutions, and other IT products. Our experts ensure your systems run smoothly, maintaining optimal performance and avoiding downtime.",
+  },
 ];
 
 export const navabar = [
-    {
+  {
     title: "Home",
     direction: "/#Home",
   },
@@ -181,7 +157,7 @@ export const navabar = [
     title: "Works",
     direction: "/#works",
   },
-    {
+  {
     title: "Career",
     direction: "/#Career",
   },
