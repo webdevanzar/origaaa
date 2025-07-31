@@ -3,136 +3,129 @@ import { Content } from "next/font/google";
 
 export const services = [
   {
+    id:"1",
     title: "Web Development",
     title2: "Building Fast, Responsive Websites for Your Brand",
-    image: "/services/service1.png",
+    image1: "/wedo/image1.png",
+    image2: "/wedo/image2.png",
+    image3: "/wedo/image3.png",
     color: "#CFF527",
-    // image: "/seo.svg",
     content:
-      "We craft custom, responsive websites that not only look stunning but also deliver exceptional user experiences across all devices. Our expert team combines cutting-edge technology with strategic design to ensure your site stands out from the competition, effectively showcases your brand, and drives conversions",
+      "At Origa Networks, we build fast, responsive websites that look great on any device and offer seamless user experiences. Our solutions reflect your brand, are SEO-friendly, and designed to grow with your business.",
     subData: [
       {
-        title: "Custom Web Development",
-        desc: " Tailored solutions to meet your unique business needs.",
+        title: "AMAN ENTERPRISES",
       },
       {
-        title: "CMS Development",
-        desc: " Building websites on popular CMS platforms like WordPress, Drupal, and Joomla.",
+        title: "VALLUVAD MATRIMONIAL",
       },
       {
-        title: "E-commerce Development",
-        desc: "Creating robust online stores with platforms like Shopify, BigCommerce, and WooCommerce.",
+        title: "OUT FYND",
       },
       {
-        title: "Website Maintenance",
-        desc: "Keeping your website up-to-date and secure.",
+        title: "PEARL LAGOON",
       },
     ],
-    descritpion:
-      "Transform your digital presence with stunning designs, turning your dreams into successful realities and building a strong online presence.",
   },
   {
+    id:"2",
     title: "App Development",
-    title2: "Building Fast, Responsive Websites for Your Brand",
-    color: "#16F233",
-    // image: "/mobile-app.jpg",
-    image: "/services/service2.png",
+    title2: "Building Fast, Responsive App for Your Brand",
+    image1: "/wedo/image1.png",
+    image2: "/wedo/image2.png",
+    image3: "/wedo/image3.png",
+    color: "#CFF527",
     content:
-      "In the fast-paced digital world, having a robust mobile app is essential for staying ahead. Origa Networks excels at creating innovative and user-centric mobile applications that enhance your brand’s reach and engagement. Our experienced developers harness the latest technologies to build seamless, high-performance apps for iOS and Android, ensuring your business is always within your customers’ fingertips.",
+      "At Origa Networks, we build fast, responsive websites that look great on any device and offer seamless user experiences. Our solutions reflect your brand, are SEO-friendly, and designed to grow with your business.",
     subData: [
       {
-        title: "iOS Development",
-        desc: " Creating high-performance, feature-packed iOS apps.",
+        title: "AMAN ENTERPRISES",
       },
       {
-        title: "Android Development",
-        desc: " Building robust and scalable Android applications.",
+        title: "VALLUVAD MATRIMONIAL",
       },
       {
-        title: "Cross-Platform Development",
-        desc: " Delivering apps that work seamlessly across both iOS and Android platforms.",
+        title: "OUT FYND",
       },
       {
-        title: "App Maintenance & Support",
-        desc: "Ensuring your app remains updated and functional.",
+        title: "PEARL LAGOON",
       },
     ],
-    descritpion:
-      "Seamlessly and efficiently elevate your business with our mobile app solutions, promising extensive growth and enhanced performance.",
   },
   {
+    id:"3",
     title: "ERP Development",
-    title2: "Building Fast, Responsive Websites for Your Brand",
-    color: "#1A40D9",
-    // image: "/erp.jpg",
-    image: "/services/service5.png",
+    title2: "Building Fast, Responsive ERP for Your Brand",
+    image1: "/wedo/image1.png",
+    image2: "/wedo/image2.png",
+    image3: "/wedo/image3.png",
     content:
-      "Streamline your business operations and enhance productivity with our bespoke ERP development services. Origa Networks designs and implements comprehensive ERP solutions tailored to your specific needs. Our systems integrate various business processes, providing real-time data and insights that empower you to make informed decisions and drive growth.",
+      "At Origa Networks, we build fast, responsive websites that look great on any device and offer seamless user experiences. Our solutions reflect your brand, are SEO-friendly, and designed to grow with your business.",
+    color: "#16F233",
     subData: [
       {
-        title: "Custom ERP Solutions",
-        desc: "Tailored to fit your unique business requirements.",
+        title: "AMAN ENTERPRISES",
       },
       {
-        title: "Inventory Management",
-        desc: "Streamlining your inventory tracking and control.",
+        title: "VALLUVAD MATRIMONIAL",
       },
       {
-        title: "Human Resources Management",
-        desc: " Automating HR processes and improving employee management.",
+        title: "OUT FYND",
       },
       {
-        title: "Financial Management",
-        desc: "Enhancing financial planning and reporting.",
+        title: "PEARL LAGOON",
       },
     ],
-    descritpion:
-      "Expert guidance throughout the ERP development process, including planning, analysis, implementation, and ongoing support to ensure smooth operations.",
   },
   {
+    id:"4",
     title: "Digital Marketing",
-    title2: "Building Fast, Responsive Websites for Your Brand",
-    color: "#05FFEA",
-    // image: "/digital.svg",
-    image: "/services/service6.png",
+    title2: "Building Fast, Digital Marketing for Your Brand",
+    image1: "/wedo/image1.png",
+    image2: "/wedo/image2.png",
+    image3: "/wedo/image3.png",
     content:
-      "In the ever-evolving digital landscape, effective marketing is the key to staying ahead. Origa Networks provides comprehensive digital marketing services, including social media management, content marketing, PPC advertising, and email campaigns. Our strategic approach ensures your brand message reaches the right audience, enhancing your online presence and driving business growth.",
+      "At Origa Networks, we build fast, responsive websites that look great on any device and offer seamless user experiences. Our solutions reflect your brand, are SEO-friendly, and designed to grow with your business.",
+    color: "#05FFEA",
     subData: [
       {
-        title: "Meta",
-        desc: null,
+        title: "AMAN ENTERPRISES",
       },
       {
-        title: "Google",
-        desc: null,
+        title: "VALLUVAD MATRIMONIAL",
       },
       {
-        title: "Twitter",
-        desc: null,
+        title: "OUT FYND",
       },
       {
-        title: "Linked in ",
-        desc: null,
-      },
-      {
-        title: "telegram",
-        desc: null,
+        title: "PEARL LAGOON",
       },
     ],
-    descritpion:
-      "Our experienced Branding and Digital Marketing services will help you increase the visibility and reach of your brand. We help your business stand out in the digital marketplace with strategic marketing and interesting content.",
   },
   {
+    id:"5",
     title: "AMC",
-    title2: "Building Fast, Responsive Websites for Your Brand",
-    color: "#E02828",
-    // image: "/amc.svg",
-    image: "/services/service3.png",
+    title2: "Building Fast, Responsive AMC for Your Brand",
+    image1: "/wedo/image1.png",
+    image2: "/wedo/image2.png",
+    image3: "/wedo/image3.png",
     content:
-      "We provide comprehensive website maintenance, swiftly addressing technical issues, resolving bugs, and conducting thorough cross-device testing. Our proactive approach ensures your site remains flawless and functional, enhancing user experience and maintaining your professional online presence.",
-
-    descritpion:
-      "Our AMC service provides proactive and reactive support for your web applications, mobile apps, ERP solutions, and other IT products. Our experts ensure your systems run smoothly, maintaining optimal performance and avoiding downtime.",
+      "At Origa Networks, we build fast, responsive websites that look great on any device and offer seamless user experiences. Our solutions reflect your brand, are SEO-friendly, and designed to grow with your business.",
+    color: "#E02828",
+    subData: [
+      {
+        title: "AMAN ENTERPRISES",
+      },
+      {
+        title: "VALLUVAD MATRIMONIAL",
+      },
+      {
+        title: "OUT FYND",
+      },
+      {
+        title: "PEARL LAGOON",
+      },
+    ],
   },
 ];
 

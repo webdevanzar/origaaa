@@ -5,8 +5,6 @@ import { MotiionDiv } from "./shared/MotionDiv";
 import TypingEffect from "./shared/TypingEffect";
 
 const Hero = () => {
-
-
   return (
     <div className="relative bg-gray-100 overflow-y-hidden ">
       <Navbar />
@@ -20,13 +18,14 @@ const Hero = () => {
             className="absolute top-0 opacity-30 left-0 w-full h-full object-cover"
           >
             <source src="/herovideo2.mp4" type="video/mp4" />
-            {/* <div className="absolute bottm-0 left-0 z-50 h-[50px] border-none md:h-[150px]  bg-gradient-to-t from-black to-black"></div> */}
           </video>
-           {/* Black Gradient Overlay (Positioned Above Video) */}
-          <div className="absolute -bottom-20 left-0 w-full h-[150px] z-50 bg-gradient-to-b backdrop-blur-sm blur-[30px] from-black via-transparent to-transparent"></div>
         </div>
       </div>
-      {/* backdrop-blur-[75px] filter */}
+
+      {/* shade */}
+      <div className="absolute inset-x-0 -bottom-[50px] h-[100px] z-50 pointer-events-none overflow-hidden">
+        <div className="w-full scale-x-150 backdrop-blur-sm bg-gradient-to-t from-white via-white to-transparent h-full" />
+      </div>
     </div>
   );
 };
