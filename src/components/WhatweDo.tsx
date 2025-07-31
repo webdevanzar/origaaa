@@ -59,8 +59,8 @@ const WhatweDo = () => {
 
   return (
     <section className="py-10 radial-bg relative">
-      <div className="absolute -right-10 -top-20 -left-10 z-50 border-none h-[90px] blur-sm bg-gradient-to-t from-white to-white">
-        shade
+      <div className="absolute -right-10 -top-5 md:-top-20 -left-10 z-50 border-none h-[45px] md:h-[90px] blur-sm bg-gradient-to-t from-white to-white">
+        {/* shade */}
       </div>
 
       <h1 className="font-bold text-4xl lg:text-6xl text-center text-white pb-3 lg:pb-10 ">
@@ -129,7 +129,7 @@ const WhatweDo = () => {
                   key={index}
                   className="flex justify-start items-center gap-x-3"
                 >
-                  <MdOutlineKeyboardDoubleArrowRight size={20} />
+                  <MdOutlineKeyboardDoubleArrowRight size={20} className="text-[#28CDA0]"/>
                   {data.title}
                 </li>
               ))}
