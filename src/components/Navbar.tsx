@@ -92,7 +92,7 @@ const Navbar = () => {
               ease: "linear",
               repeat: Infinity,
             }}
-            className="text-[40px] md:text-[60px] lg:text-[80px] xl:text-[100px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
+            className=" text-[40px] md:text-[60px] lg:text-[80px] xl:text-[100px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
           >
             Innovative Web, App, and Marketing Solutions Tailored for Your
             Business Growth . Innovative Web, App, and Marketing Solutions

@@ -35,12 +35,7 @@ const Testimonials = [
   },
 ];
 
-const blobPositions = [
-  { x: 10, y: 10 }, // Top-left
-  { x: 90, y: 10 }, // Top-right
-  { x: 10, y: 90 }, // Bottom-left
-  { x: 90, y: 90 }, // Bottom-right
-];
+
 
 const Testimonial = () => {
   const settings = {
@@ -71,24 +66,14 @@ const Testimonial = () => {
   };
 
   return (
-    <AnimatedBlobBackground
-      uniqueId="my-blobs"
-      blobCount={4}
-      blobPositions={blobPositions}
-      animationDuration={2000} // Slower animation (3 seconds)
-      blurAmount={30} // More blur for smoother effect
-      minScale={2} // Minimum size
-      maxScale={4} // Maximum size
-      minOpacity={0.5}
-      maxOpacity={0.9}
-    >
-      <section className="relative py-20 text-white w-11/12 sm:w-full lg:w-11/12 xl:w-10/12 mx-auto">
-        <h2 className="text-4xl lg:text-6xl font-bold text-center pb-20">
+
+      <section className="relative py-10 lg:py-20 text-white w-11/12 sm:w-full lg:w-11/12 xl:w-10/12 mx-auto">
+        <h2 className="text-4xl lg:text-6xl font-bold text-center pb-5">
           Voices of Trust
         </h2>
         
         
-        <Slider {...settings} className="custom-dots z-10 cursor-pointer">
+        <Slider {...settings} className="testimonial-slide custom-dots z-10 cursor-pointer">
           {Testimonials.map((item) => (
             <div
               key={item.id}
@@ -132,7 +117,6 @@ const Testimonial = () => {
           ))}
         </Slider>
       </section>
-    </AnimatedBlobBackground>
   );
 };
 

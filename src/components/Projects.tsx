@@ -78,12 +78,12 @@ export const Projects = () => {
 
   return (
     <div className="radial-bg relative">
-      <div className="relative py-8 flex flex-col md:flex-row xl:py-20 w-[98%] m-auto">
-        <div className="md:absolute w-full  md:w-1/2 lg:w-1/3 left-0 flex flex-col gap-y-5 md:gap-y-10 p-5 z-20">
-          <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-white">
+      <div className="relative py-8 flex flex-col items-center md:flex-row xl:py-20 w-[98%] m-auto">
+        <div className="md:absolute w-full  md:w-1/2 lg:w-1/3 left-0 flex flex-col justify-center gap-y-5 md:gap-y-10 p-5 z-20">
+          <h2 className="text-4xl xl:text-5xl font-bold text-white">
             Projects
           </h2>
-          <p className="text-3xl md:text-4xl xl:text-5xl font-bold text-white">
+          <p className="strok-text1  text-4xl xl:text-5xl font-bold text-transparent font-passionone tracking-widest">
             Taking digital experiences to <br /> new heights
           </p>
 

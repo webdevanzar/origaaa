@@ -14,6 +14,14 @@ import WhatweDo from "@/components/WhatweDo";
 import Stat from "@/components/Stat";
 import Testimonial from "@/components/Testimonial";
 import Whatsapp from "@/components/Whatsapp";
+import AnimatedBlobBackground from "@/components/shared/AnimatedBlobBackground";
+
+const blobPositions = [
+  { x: 10, y: 10 }, // Top-left
+  { x: 90, y: 10 }, // Top-right
+  { x: 10, y: 90 }, // Bottom-left
+  { x: 90, y: 90 }, // Bottom-right
+];
 
 export default function Home() {
   return (
@@ -22,7 +30,7 @@ export default function Home() {
       <HeroLight />
       {/* <div className="radial-bg"> */}
       <About />
-      <WhatweDo/>
+      <WhatweDo />
       {/* </div> */}
       {/* <Banner /> */}
       <Projects />
@@ -30,11 +38,24 @@ export default function Home() {
       <OurProcess />
       {/* <Features /> our process */}
       {/* <Stat /> */}
-      <ClientLogo />
-
       {/* Additional children can go here */}
+
+      <AnimatedBlobBackground
+        uniqueId="my-blobs"
+        blobCount={25}
+        blobPositions={blobPositions}
+        animationDuration={2000} // Slower animation (3 seconds)
+        blurAmount={30} // More blur for smoother effect
+        minScale={2} // Minimum size
+        maxScale={4} // Maximum size
+        minOpacity={0.5}
+        maxOpacity={0.9}
+      >
+        <ClientLogo />
+        <Testimonial />
+      </AnimatedBlobBackground>
       <Blogs />
-      <Testimonial />
+         
       <Contact />
       <Whatsapp />
     </div>

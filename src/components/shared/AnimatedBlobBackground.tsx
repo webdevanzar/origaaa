@@ -33,7 +33,7 @@ const AnimatedBlobBackground: React.FC<AnimatedBlobBackgroundProps> = ({
   className = "",
   blobCount = 25,
   blobPositions,
-  colors = [" #453115", "#0C3535","#00FFA0","#0C3535" ],
+  colors = [ "#00FFA0", " #453115", "#0C3535","#00FFA0","#0C3535" ],
   animationDuration = 2000,
   blurAmount = 20,
   minScale = 1.25,

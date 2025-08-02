@@ -11,17 +11,17 @@ const Varients = {
 };
 const Blogs = () => {
   return (
-    <div className="bg-white py-6 sm:py-8 lg:py-12">
+    <div className="bg-white py-8 lg:py-12">
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
         <div className="mb-10 md:mb-20">
-          <h2 className="mb-4 text-center text-[20px] md:text-[40px] lg:text-[70px] xl:text-[120px] font-bold text-gray-800 md:mb-10 lg:text-3xl">
+          <h2 className="text-center text-[40px] lg:text-[70px] xl:text-[120px] font-bold text-gray-800 md:mb-10 lg:text-3xl">
             Blogs
           </h2>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-8">
           {blogs.map((blog, index) => (
-            <TiltCard  key={nanoid()} sensitivity={50} className="cursor-pointer">
+            <TiltCard  key={nanoid()} sensitivity={30} className="cursor-pointer">
               <MotiionDiv
                 variants={Varients}
                 initial="hidden"

@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Inter, Manrope, Passion_One } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import SonerProvider from "@/components/shared/SonnerProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 const manrope = Manrope({ subsets: ["latin"] });
+export const passionone = Passion_One({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+   variable: "--font-passionone", 
+});
 
 export const metadata: Metadata = {
   // metadataBase: new URL("https://www.zigzagdigitalsolutions.com"),
