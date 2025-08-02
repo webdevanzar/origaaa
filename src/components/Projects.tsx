@@ -81,79 +81,81 @@ export const Projects = () => {
 
   return (
     <div className="relative">
-      <div className="relative py-8 flex flex-col items-center md:flex-row xl:py-20 w-[98%] m-auto">
-        <div className="md:absolute w-full  md:w-1/2 lg:w-1/3 left-0 flex flex-col justify-center gap-y-5 md:gap-y-10 p-5 z-20">
-          <h2 className="text-4xl xl:text-5xl font-bold text-white">
-            Projects
-          </h2>
-          <p className="strok-text1  text-4xl xl:text-5xl font-bold text-transparent font-passionone tracking-widest">
-            Taking digital experiences to <br /> new heights
-          </p>
+      {projects.length !== 0 && (
+        <div className="relative py-8 flex flex-col items-center md:flex-row xl:py-20 w-[98%] m-auto">
+          <div className="md:absolute w-full  md:w-1/2 lg:w-1/3 left-0 flex flex-col justify-center gap-y-5 md:gap-y-10 p-5 z-20">
+            <h2 className="text-4xl xl:text-5xl font-bold text-white">
+              Projects
+            </h2>
+            <p className="strok-text1  text-4xl xl:text-5xl font-bold text-transparent font-passionone tracking-widest">
+              Taking digital experiences to <br /> new heights
+            </p>
 
-          {/* Custom Arrows */}
-          <div className="flex gap-5 mt-5">
-            <button
-              onClick={() => sliderRef.current?.slickPrev()}
-              className="w-12 h-12 rounded-md bg-transparent border-[1px] text-white flex items-center justify-center transition"
-            >
-              <FaArrowLeft />
-            </button>
-            <button
-              onClick={() => sliderRef.current?.slickNext()}
-              className="w-12 h-12 rounded-md bg-transparent border-[1px] text-white flex items-center justify-center transition"
-            >
-              <FaArrowRight />
-            </button>
+            {/* Custom Arrows */}
+            <div className="flex gap-5 mt-5">
+              <button
+                onClick={() => sliderRef.current?.slickPrev()}
+                className="w-12 h-12 rounded-md bg-transparent border-[1px] text-white flex items-center justify-center transition"
+              >
+                <FaArrowLeft />
+              </button>
+              <button
+                onClick={() => sliderRef.current?.slickNext()}
+                className="w-12 h-12 rounded-md bg-transparent border-[1px] text-white flex items-center justify-center transition"
+              >
+                <FaArrowRight />
+              </button>
+            </div>
+          </div>
+
+          {/* slider */}
+          <div
+            className="project-slide w-full"
+            ref={containerRef}
+            onMouseEnter={() => setCursorVisible(true)}
+            onMouseLeave={() => setCursorVisible(false)}
+          >
+            {/* Custom Cursor - only visible when hovering the component */}
+            <CustomCursor parentRef={containerRef} show={cursorVisible} />
+            <Slider ref={sliderRef} {...settings} className="z-10">
+              {projects.map((item, index) => {
+                const total = projects.length;
+                const inactive = isInactiveSlide(index, activeSlide, total);
+                return (
+                  <div
+                    key={item.id}
+                    className={`group transition-all duration-700 ease-in-out transform ${
+                      inactive
+                        ? "md:opacity-0 md:scale-75"
+                        : "opacity-100 scale-100"
+                    } relative w-[500px] h-[300px] md:h-[300px] 2xl:h-[350px] rounded-xl shadow-md outline-none flex flex-col items-center justify-center`}
+                  >
+                    <Image
+                      alt="projects"
+                      src={item.image}
+                      width={1000}
+                      height={1000}
+                      className={`absolute w-full h-full object-cover rounded-xl transition-opacity duration-700 ease-in-out group-hover:opacity-0`}
+                    />
+                    <Image
+                      alt="hover-projects"
+                      src={item.image2}
+                      width={1000}
+                      height={1000}
+                      className={`absolute w-full h-full object-cover opacity-0 rounded-xl group-hover:opacity-100 transition-opacity duration-700 ease-in-out `}
+                    />
+                    <Link href={item.link} target="_blank">
+                      <h2 className="absolute -bottom-10 xl:-bottom-12 text-2xl font-semibold xl:text-4xl pt-2 text-white">
+                        {item.title}
+                      </h2>
+                    </Link>
+                  </div>
+                );
+              })}
+            </Slider>
           </div>
         </div>
-
-        {/* slider */}
-        <div
-          className="project-slide w-full"
-          ref={containerRef}
-          onMouseEnter={() => setCursorVisible(true)}
-          onMouseLeave={() => setCursorVisible(false)}
-        >
-          {/* Custom Cursor - only visible when hovering the component */}
-          <CustomCursor parentRef={containerRef} show={cursorVisible} />
-          <Slider ref={sliderRef} {...settings} className="z-10">
-            {projects.map((item, index) => {
-              const total = projects.length;
-              const inactive = isInactiveSlide(index, activeSlide, total);
-              return (
-                <div
-                  key={item.id}
-                  className={`group transition-all duration-700 ease-in-out transform ${
-                    inactive
-                      ? "md:opacity-0 md:scale-75"
-                      : "opacity-100 scale-100"
-                  } relative w-[500px] h-[300px] md:h-[300px] 2xl:h-[350px] rounded-xl shadow-md outline-none flex flex-col items-center justify-center`}
-                >
-                  <Image
-                    alt="projects"
-                    src={item.image}
-                    width={1000}
-                    height={1000}
-                    className={`absolute w-full h-full object-cover rounded-xl transition-opacity duration-700 ease-in-out group-hover:opacity-0`}
-                  />
-                  <Image
-                    alt="hover-projects"
-                    src={item.image2}
-                    width={1000}
-                    height={1000}
-                    className={`absolute w-full h-full object-cover opacity-0 rounded-xl group-hover:opacity-100 transition-opacity duration-700 ease-in-out `}
-                  />
-                  <Link href={item.link} target="_blank">
-                    <h2 className="absolute -bottom-10 xl:-bottom-12 text-2xl font-semibold xl:text-4xl pt-2 text-white">
-                      {item.title}
-                    </h2>
-                  </Link>
-                </div>
-              );
-            })}
-          </Slider>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

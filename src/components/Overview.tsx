@@ -1,8 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import VectorSvg from "../../public/vector2.svg";
-import WhyChooseUsSvg from "../../public/whychoosus.svg";
+import Image from "next/image";
 
 const Overview = () => {
   const sectionRef = useRef(null);
@@ -14,7 +13,14 @@ const Overview = () => {
         className="max-w-6xl px-3 md:px-10 lg:px-5 relative z-10 w-full mx-auto py-0 md:py-16 flex flex-col items-center"
       >
         <div className="flex gap-x-3">
-          <WhyChooseUsSvg className="w-6 h-6 fill-[#24a776]" />
+          <Image
+            src="/whychoosus.svg"
+            alt="Why Choose Us"
+            width={20}
+            height={20}
+            className=" fill-[#24a776]"
+          />
+
           <span className="uppercase text-xs md:text-sm font-bold">
             Process Overview
           </span>
@@ -99,7 +105,14 @@ const Overview = () => {
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        <VectorSvg className="w-full h-full fill-[#24a776] opacity-30" />
+        <Image
+          src="/vector2.svg"
+          alt="vector"
+          width={1200}
+          height={1200}
+          className="w-full h-full opacity-30"
+        />
+
       </motion.div>
     </div>
   );

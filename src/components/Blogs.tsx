@@ -5,7 +5,6 @@ import React, { useRef } from "react";
 import { FaArrowRight, FaRegCalendarDays } from "react-icons/fa6";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
-import WhyChooseUsSvg from "../../public/whychoosus.svg";
 import { TiltCard } from "./shared/TiltCard";
 
 const Blogs = () => {
@@ -83,7 +82,13 @@ const Blogs = () => {
         animate={isInView ? "visible" : "hidden"}
         variants={headerVariants}
       >
-        <WhyChooseUsSvg className="w-6 h-6 fill-[#24a776]" />
+        <Image
+          src="/whychoosus.svg"
+          alt="Why Choose Us"
+          width={20}
+          height={20}
+          className="fill-[#24a776]"
+        />
         <span className="uppercase text-xs md:text-sm font-bold text-gray-800">
           BLOGS and UPDATES
         </span>
