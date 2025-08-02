@@ -110,12 +110,7 @@ export const OurProcess = () => {
   };
 
   return (
-    //  bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900
     <div
-      style={{
-        background:
-          "radial-gradient(50% 104.51% at 50% 50%, #0C3535 0%, #453115 100%)",
-      }}
       className="min-h-screen py-20 px-4 relative overflow-hidden"
     >
       {/* Background decorations */}

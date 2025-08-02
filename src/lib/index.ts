@@ -3,7 +3,7 @@ import { Content } from "next/font/google";
 
 export const services = [
   {
-    id:"1",
+    id: "1",
     title: "Web Development",
     title2: "Building Fast, Responsive Websites for Your Brand",
     image1: "/wedo/image1.png",
@@ -28,7 +28,7 @@ export const services = [
     ],
   },
   {
-    id:"2",
+    id: "2",
     title: "App Development",
     title2: "Building Fast, Responsive App for Your Brand",
     image1: "/wedo/image1.png",
@@ -53,7 +53,7 @@ export const services = [
     ],
   },
   {
-    id:"3",
+    id: "3",
     title: "ERP Development",
     title2: "Building Fast, Responsive ERP for Your Brand",
     image1: "/wedo/image1.png",
@@ -78,7 +78,7 @@ export const services = [
     ],
   },
   {
-    id:"4",
+    id: "4",
     title: "Digital Marketing",
     title2: "Building Fast, Digital Marketing for Your Brand",
     image1: "/wedo/image1.png",
@@ -103,7 +103,7 @@ export const services = [
     ],
   },
   {
-    id:"5",
+    id: "5",
     title: "AMC",
     title2: "Building Fast, Responsive AMC for Your Brand",
     image1: "/wedo/image1.png",
@@ -143,12 +143,12 @@ export const navabar = [
     direction: "/#expertice",
   },
   {
-    title: "Expertise",
-    direction: "/#industries",
-  },
-  {
     title: "Works",
     direction: "/#works",
+  },
+  {
+    title: "Blogs",
+    direction: "/#blogs",
   },
   {
     title: "Career",
@@ -193,20 +193,28 @@ export const industries = [
 
 export const blogs = [
   {
+    id: "1",
     image: "/blog.jpg",
+    date: "2025-04-15 10:48",
     title:
       "Understanding the Distinction Between Web Development and Web Design",
+    description:
+      "In the UAE, Sheikh Zayed of Dubai has announced new rules and regulations regarding eligibility for deposit amounts and accommodation. Candidates must ensure that they have no legal issues in their home country, and they will also be subject to additional legal requirements that are applicable.",
   },
   {
+    id: "2",
     image: "/blog1.jpg",
+    date: "2025-04-15 10:48",
     title: "Comprehensive Guide to Web Hosting: Types and Services Explained",
+    description:
+      "In the UAE, Sheikh Zayed of Dubai has announced new rules and regulations regarding eligibility for deposit amounts and accommodation. Candidates must ensure that they have no legal issues in their home country, and they will also be subject to additional legal requirements that are applicable.",
   },
   {
+    id: "3",
     image: "/blog2.jpg",
+    date: "2025-04-15 10:48",
     title: "Essential SEO Insights Every Entrepreneur Should Have",
-  },
-  {
-    image: "/blog3.jpg",
-    title: "The Key Differences Between Front-End and Back-End Web Development",
+    description:
+      "In the UAE, Sheikh Zayed of Dubai has announced new rules and regulations regarding eligibility for deposit amounts and accommodation. Candidates must ensure that they have no legal issues in their home country, and they will also be subject to additional legal requirements that are applicable.",
   },
 ];

@@ -7,7 +7,6 @@ import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import { HeroLight } from "@/components/HeroLight";
-import Industries from "@/components/Industries";
 import { OurProcess } from "@/components/OurProcess";
 import { Projects } from "@/components/Projects";
 import WhatweDo from "@/components/WhatweDo";
@@ -15,6 +14,7 @@ import Stat from "@/components/Stat";
 import Testimonial from "@/components/Testimonial";
 import Whatsapp from "@/components/Whatsapp";
 import AnimatedBlobBackground from "@/components/shared/AnimatedBlobBackground";
+import Overview from "@/components/Overview";
 
 const blobPositions = [
   { x: 10, y: 10 }, // Top-left
@@ -28,17 +28,10 @@ export default function Home() {
     <div className="overflow-x-hidden">
       <Hero />
       <HeroLight />
-      {/* <div className="radial-bg"> */}
       <About />
-      <WhatweDo />
-      {/* </div> */}
-      {/* <Banner /> */}
-      <Projects />
-      <Industries />
-      <OurProcess />
+
       {/* <Features /> our process */}
       {/* <Stat /> */}
-      {/* Additional children can go here */}
 
       <AnimatedBlobBackground
         uniqueId="my-blobs"
@@ -51,11 +44,15 @@ export default function Home() {
         minOpacity={0.5}
         maxOpacity={0.9}
       >
+        <WhatweDo />
+        <Projects />
+        <Overview />
+        <OurProcess />
         <ClientLogo />
         <Testimonial />
       </AnimatedBlobBackground>
       <Blogs />
-         
+
       <Contact />
       <Whatsapp />
     </div>
