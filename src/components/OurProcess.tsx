@@ -107,22 +107,23 @@ export const OurProcess = () => {
         },
       },
     ],
-
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 py-20 px-4 relative overflow-hidden">
+    <div
+      className="min-h-screen py-20 px-4 relative overflow-hidden"
+    >
       {/* Background decorations */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl"></div>
-        <div className="absolute top-40 right-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl"></div>
-        <div className="absolute bottom-20 left-40 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute top-20 left-20 w-45 h-45 md:w-72 md:h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute top-40 right-20 w-45 h-45 md:w-72 md:h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute bottom-20 left-40 w-45 h-45 md:w-72 md:h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl"></div>
       </div>
 
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Header */}
         <div className="mb-16">
-          <h2 className="text-5xl font-bold text-white mb-4">Our Process</h2>
+          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-4">Our Process</h2>
           <p className="text-white/70 text-lg">
             We follow a structured approach to deliver exceptional results for
             every project
@@ -133,6 +134,7 @@ export const OurProcess = () => {
         <div className="relative">
           <Slider {...settings}>
             {processSteps.map((step, index) => (
+              
               <ProcessCard key={index} {...step} />
             ))}
           </Slider>

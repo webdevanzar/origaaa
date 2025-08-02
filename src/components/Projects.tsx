@@ -5,14 +5,16 @@ import React, { useEffect, useRef, useState } from "react";
 
 import "slick-carousel/slick/slick.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import Aurora from "./ui/Aurora";
 import storyblokClient from "@/utils/storyblock";
+import { CustomCursor } from "./shared/CustomeCursor";
+import Link from "next/link";
 
 type ProjectType = {
   id: string;
   image: string;
   image2: string;
   title: string; //max 30 characters
+  link: string;
 };
 
 export const Projects = () => {
@@ -22,10 +24,10 @@ export const Projects = () => {
   const sliderRef = useRef<Slider>(null);
 
   const settings = {
-    centerMode: true,
+    // centerMode: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
     centerPadding: "0",
@@ -34,7 +36,7 @@ export const Projects = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
         },
       },
       {
@@ -45,7 +47,6 @@ export const Projects = () => {
       },
     ],
   };
-  console.log(projects);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -60,6 +61,7 @@ export const Projects = () => {
           image: item.image1.filename,
           image2: item.image2.filename,
           title: item.title,
+          link: item.link,
         }));
 
         setProjects(formatted);
@@ -70,73 +72,90 @@ export const Projects = () => {
 
     fetchProjects();
   }, []);
-  console.log(projects);
+  const isInactiveSlide = (index: number, active: number, total: number) => {
+    return index === active || index === (active - 1 + total) % total;
+  };
+
+  const [cursorVisible, setCursorVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="relative py-5 xl:py-10 mix-blend-hue">
-      {/* Aurora Background */}
-      <div className="absolute inset-0 -z-10 bg-gray-800">
-        <Aurora
-          colorStops={["#25ab79", "#9c7a3d"]}
-          blend={0.8}
-          amplitude={5.0}
-          speed={0.4}
-        />
-      </div>
-      <div className="relative py-8 flex flex-col md:flex-row xl:py-20 w-[98%] m-auto">
-        <div className="flex flex-col gap-y-5 md:gap-y-10 w-full md:w-1/2 lg:w-[35%] 2xl:w-1/3 p-5">
-          <h2 className="text-4xl xl:text-5xl font-bold text-white">
-            Projects
-          </h2>
-          <p className="text-4xl xl:text-5xl  font-bold text-blue-600">
-            Taking digital experiences to <br /> new heights
-          </p>
+    <div className="relative">
+      {projects.length !== 0 && (
+        <div className="relative py-8 flex flex-col items-center md:flex-row xl:py-20 w-[98%] m-auto">
+          <div className="md:absolute w-full  md:w-1/2 lg:w-1/3 left-0 flex flex-col justify-center gap-y-5 md:gap-y-10 p-5 z-20">
+            <h2 className="text-4xl xl:text-5xl font-bold text-white">
+              Projects
+            </h2>
+            <p className="strok-text1  text-4xl xl:text-5xl font-bold text-transparent font-passionone tracking-widest">
+              Taking digital experiences to <br /> new heights
+            </p>
 
-          {/* Custom Arrows */}
-          <div className="flex gap-5 mt-5">
-            <button
-              onClick={() => sliderRef.current?.slickPrev()}
-              className="w-12 h-12 rounded-md bg-transparent border-[1px] text-white flex items-center justify-center transition"
-            >
-              <FaArrowLeft />
-            </button>
-            <button
-              onClick={() => sliderRef.current?.slickNext()}
-              className="w-12 h-12 rounded-md bg-transparent border-[1px] text-white flex items-center justify-center transition"
-            >
-              <FaArrowRight />
-            </button>
+            {/* Custom Arrows */}
+            <div className="flex gap-5 mt-5">
+              <button
+                onClick={() => sliderRef.current?.slickPrev()}
+                className="w-12 h-12 rounded-md bg-transparent border-[1px] text-white flex items-center justify-center transition"
+              >
+                <FaArrowLeft />
+              </button>
+              <button
+                onClick={() => sliderRef.current?.slickNext()}
+                className="w-12 h-12 rounded-md bg-transparent border-[1px] text-white flex items-center justify-center transition"
+              >
+                <FaArrowRight />
+              </button>
+            </div>
+          </div>
+
+          {/* slider */}
+          <div
+            className="project-slide w-full"
+            ref={containerRef}
+            onMouseEnter={() => setCursorVisible(true)}
+            onMouseLeave={() => setCursorVisible(false)}
+          >
+            {/* Custom Cursor - only visible when hovering the component */}
+            <CustomCursor parentRef={containerRef} show={cursorVisible} />
+            <Slider ref={sliderRef} {...settings} className="z-10">
+              {projects.map((item, index) => {
+                const total = projects.length;
+                const inactive = isInactiveSlide(index, activeSlide, total);
+                return (
+                  <div
+                    key={item.id}
+                    className={`group transition-all duration-700 ease-in-out transform ${
+                      inactive
+                        ? "md:opacity-0 md:scale-75"
+                        : "opacity-100 scale-100"
+                    } relative w-[500px] h-[300px] md:h-[300px] 2xl:h-[350px] rounded-xl shadow-md outline-none flex flex-col items-center justify-center`}
+                  >
+                    <Image
+                      alt="projects"
+                      src={item.image}
+                      width={1000}
+                      height={1000}
+                      className={`absolute w-full h-full object-cover rounded-xl transition-opacity duration-700 ease-in-out group-hover:opacity-0`}
+                    />
+                    <Image
+                      alt="hover-projects"
+                      src={item.image2}
+                      width={1000}
+                      height={1000}
+                      className={`absolute w-full h-full object-cover opacity-0 rounded-xl group-hover:opacity-100 transition-opacity duration-700 ease-in-out `}
+                    />
+                    <Link href={item.link} target="_blank">
+                      <h2 className="absolute -bottom-10 xl:-bottom-12 text-2xl font-semibold xl:text-4xl pt-2 text-white">
+                        {item.title}
+                      </h2>
+                    </Link>
+                  </div>
+                );
+              })}
+            </Slider>
           </div>
         </div>
-        <div className="w-full md:w-1/2 lg:w-[65%] 2xl:w-2/3">
-          <Slider ref={sliderRef} {...settings} className="z-10">
-            {projects.map((item, index) => (
-              <div
-                key={item.id}
-                className={`group relative w-[500px] h-[350px] md:h-[300px] 2xl:h-[350px] rounded-xl shadow-md outline-none flex flex-col items-center justify-center cursor-pointer `}
-              >
-                <Image
-                  alt="projects"
-                  src={item.image}
-                  width={1000}
-                  height={1000}
-                  className={`absolute w-full h-full object-cover rounded-xl transition-opacity duration-700 ease-in-out group-hover:opacity-0`}
-                />
-                <Image
-                  alt="hover-projects"
-                  src={item.image2}
-                  width={1000}
-                  height={1000}
-                  className={`absolute w-full h-full object-cover opacity-0 rounded-xl group-hover:opacity-100 transition-opacity duration-700 ease-in-out `}
-                />
-                <h2 className="absolute -bottom-10 xl:-bottom-12 text-2xl font-semibold xl:text-4xl pt-2 text-white">
-                  {item.title}
-                </h2>
-              </div>
-            ))}
-          </Slider>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

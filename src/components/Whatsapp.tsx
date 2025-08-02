@@ -15,7 +15,7 @@ const Whatsapp = () => {
   return (
     <div
       onClick={redirectToWhatsApp}
-      className="fixed bottom-7 md:bottom-5 cursor-pointer w-12 h-12 md:w-16 md:h-16 bg-green-500 group z-50 rounded-full right-5 flex items-center justify-center shadow-xl"
+      className="animate-bounce fixed bottom-7 md:bottom-5 cursor-pointer w-12 h-12 md:w-16 md:h-16 bg-green-500 group z-50 rounded-full right-5 flex items-center justify-center shadow-xl"
     >
       <Image
         src={"whatsapp.svg"}

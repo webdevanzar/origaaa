@@ -1,9 +1,13 @@
+import { passionone } from "@/app/layout";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
+      fontFamily: {
+        passionone: "var(--font-passionone)",
+      },
       colors: {
         btn: "#25ab79",
         btnEnd: "#9c7a3d",
@@ -16,11 +20,16 @@ const config: Config = {
       },
       animation: {
         "infinite-scroll": "infinite-scroll 25s linear infinite",
+        "infinite-scroll-right": "infinite-scroll-right 25s linear infinite",
       },
       keyframes: {
         "infinite-scroll": {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-100%)" },
+        },
+        "infinite-scroll-right": {
+          from: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(0)" },
         },
       },
     },

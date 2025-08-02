@@ -1,7 +1,9 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import { MotiionDiv } from "./shared/MotionDiv";
-import Aurora from "./ui/Aurora";
+import { BiMessageRoundedDots } from "react-icons/bi";
+import { motion } from "framer-motion";
 
 const aboutVarients = {
   hidden: { opacity: 0, x: -200 },
@@ -11,41 +13,75 @@ const aboutVarientsright = {
   hidden: { opacity: 0, x: 200 },
   visible: { opacity: 1, x: 0 },
 };
+
+const statVarients = {
+  hidden: { scale: 0 },
+  visible: { scale: 1 },
+};
 const About = () => {
   return (
-    <section
-      id="about"
-      className="text-black lg:mb-[22%]  overflow-hidden xl:mb-[10%] 2xl:mb-0"
-    >
-   
-      <div className="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
-          <div className="relative z-10 lg:py-16">
-            <MotiionDiv
-              variants={aboutVarients}
+    <section id="about" className="relative py-10 md:py-20">
+      <div className="w-11/12 xl:w-10/12 mx-auto">
+        <div className="flex flex-col md:flex-row justify-between gap-y-7 md:gap-y-0 gap-x-5">
+          <MotiionDiv
+            variants={aboutVarients}
+            initial="hidden"
+            whileInView="visible"
+            transition={{
+              type: "spring",
+              damping: 10,
+              stiffness: 100,
+              delay: 0.15,
+              ease: "easeInOut",
+              duration: 0.25,
+            }}
+            viewport={{ once: true }}
+            className="relative flex w-full md:w-1/2 lg:w-3/5 items-center justify-center lg:p-16"
+          >
+            <Image
+              width={1000}
+              height={1000}
+              alt="about image"
+              src="/about/about.png"
+              className="h-auto w-full object-cover"
+            />
+
+            <motion.div
+              variants={statVarients}
               initial="hidden"
               whileInView="visible"
               transition={{
-                type: "spring",
-                damping: 10,
-                stiffness: 100,
-                delay: 0.15,
+                delay: 0.8,
                 ease: "easeInOut",
-                duration: 0.25,
+                duration: 0.75,
               }}
               viewport={{ once: true }}
-              className="relative h-64 sm:h-80 lg:h-full"
+              className="absolute top-10 lg:top-36 -right-5 lg:right-10 py-3 md:py-5 px-1 flex flex-col justify-center items-center rounded-xl shadow-xl bg-white"
             >
-              <Image
-                width={1200}
-                height={1200}
-                quality={100}
-                alt="about image"
-                src="/about.jpg"
-                className="absolute inset-0 h-full w-full object-cover rounded-r-lg"
-              />
-            </MotiionDiv>
-          </div>
+              <h3 className="text-xs text-center w-full">
+                Active Projects Worldwide
+              </h3>
+              <p className="text-[34px] font-bold text-center">50+</p>
+            </motion.div>
+
+            <motion.div
+              variants={statVarients}
+              initial="hidden"
+              whileInView="visible"
+              transition={{
+                delay: 0.8,
+                ease: "easeInOut",
+                duration: 0.75,
+              }}
+              viewport={{ once: true }}
+              className="absolute -bottom-5 lg:bottom-10 left-20 lg:left-44 py-3 md:py-5 px-1 flex flex-col justify-center items-center rounded-xl shadow-xl bg-white"
+            >
+              <h3 className="text-xs text-center w-full">
+                Clients Return for More
+              </h3>
+              <p className="text-[34px] font-bold text-center">70%</p>
+            </motion.div>
+          </MotiionDiv>
 
           <MotiionDiv
             variants={aboutVarientsright}
@@ -60,20 +96,20 @@ const About = () => {
               duration: 0.25,
             }}
             viewport={{ once: true }}
-            className="relative flex items-center bg-gray-100"
+            className="w-full md:w-1/2 lg:w-2/5 flex items-center"
           >
-            <span className="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100"></span>
+            {/* <span className="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100"></span> */}
 
-            <div className="p-8 sm:p-16 lg:p-24">
-              <h5 className="my-4 text-base md:text-lg text-gray-600 ">
+            <div className="text-black flex flex-col gap-y-4 xl:gap-y-7">
+              <h5 className="text-base md:text-[20px] text-gray-500">
                 About Us
               </h5>
-              <h2 className="text-2xl capitalize  sm:leading-[42px] font-semibold sm:text-3xl">
-                Origa Networks: Simplifying Digital Success, Amplifying Your
-                Business
+
+              <h2 className="text-xl xl:text-3xl pt-2 xl:pt-5">
+                Simplifying Digital Success. Empowering Business Growth.
               </h2>
 
-              <p className="mt-4 text-gray-600 leading-7">
+              <p className="text-sm xl:text-base lg:leading-7">
                 We make your digital success simple. With expert solutions just
                 for your needs, we craft impactful websites, data-driven
                 marketing strategies, and seamless IT solutions to help you
@@ -82,18 +118,20 @@ const About = () => {
                 approach, we ensure every aspect of your online presence is
                 designed for growth.
               </p>
-              <p className="mt-4 text-gray-600 leading-7">
+              <p className="text-sm xl:text-base lg:leading-7">
                 We listen. We strategize. We build. Our team of skilled
                 professionals is dedicated to delivering results that matter.
                 From understanding your unique goals to executing solutions that
                 drive impact, we make the digital journey effortless and
-                effective..
+                effective
               </p>
-              <a
-                href="#contact"
-                className="mt-8 inline-block rounded border  btn px-12 py-3 text-sm font-medium text-white  focus:outline-none focus:ring active:text-indigo-500"
-              >
-                Get in Touch
+              <a href="#contact">
+                <div className="p-[2px] mt-3 lg:mt-5 xl:mt-8 rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit">
+                  <button className="flex items-center gap-x-5 border-[5px] border-white rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-3 lg:px-6 py-2 lg:py-3 text-base md:text-xl font-semibold text-white">
+                    Get in Touch
+                    <BiMessageRoundedDots size={30} />
+                  </button>
+                </div>
               </a>
             </div>
           </MotiionDiv>

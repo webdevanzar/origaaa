@@ -1,168 +1,183 @@
+import { color } from "framer-motion";
 import { Content } from "next/font/google";
 
 export const services = [
   {
+    id: "1",
     title: "Web Development",
-    image: "/seo.svg",
+    title2: "Custom Web Development Services in Kerala | Origa Networks",
+    image1: "/wedo/image1.png",
+    image2: "/wedo/image2.png",
+    image3: "/wedo/image3.png",
+    color: "#CFF527",
     content:
-      "We craft custom, responsive websites that not only look stunning but also deliver exceptional user experiences across all devices. Our expert team combines cutting-edge technology with strategic design to ensure your site stands out from the competition, effectively showcases your brand, and drives conversions",
+      "Origa Networks delivers professional web development services across Kerala, including Kochi and Malappuram. We build fast, responsive, and SEO-optimized websites that align with your brand and business goals all at cost-effective pricing with reliable post-launch support.",
     subData: [
       {
-        title: "Custom Web Development",
-        desc: " Tailored solutions to meet your unique business needs.",
+        title: "Custom Website Design & Development",
       },
       {
-        title: "CMS Development",
-        desc: " Building websites on popular CMS platforms like WordPress, Drupal, and Joomla.",
+        title: "Landing Pages & Business Sites",
       },
       {
-        title: "E-commerce Development",
-        desc: "Creating robust online stores with platforms like Shopify, BigCommerce, and WooCommerce.",
+        title: "SEO Optimization",
       },
       {
-        title: "Website Maintenance",
-        desc: "Keeping your website up-to-date and secure.",
+        title: "CMS (WordPress, Headless CMS, etc.)",
       },
     ],
-    descritpion:
-      "Transform your digital presence with stunning designs, turning your dreams into successful realities and building a strong online presence.",
   },
   {
-    title: "Mobile App Development",
-    image: "/mobile-app.jpg",
+    id: "2",
+    title: "App Development",
+    title2: "Mobile App Development Company in Kerala | Android & iOS Apps",
+    image1: "/wedo/image1.png",
+    image2: "/wedo/image2.png",
+    image3: "/wedo/image3.png",
+    color: "#CFF527",
     content:
-      "In the fast-paced digital world, having a robust mobile app is essential for staying ahead. Origa Networks excels at creating innovative and user-centric mobile applications that enhance your brand’s reach and engagement. Our experienced developers harness the latest technologies to build seamless, high-performance apps for iOS and Android, ensuring your business is always within your customers’ fingertips.",
+      "We specialize in intuitive and scalable mobile apps for Android and iOS. From UI/UX to development and deployment, Origa Networks serves clients across Kerala with user-focused mobile solutions that enhance engagement and performance.",
     subData: [
       {
-        title: "iOS Development",
-        desc: " Creating high-performance, feature-packed iOS apps.",
+        title: "Native & Hybrid App Development",
       },
       {
-        title: "Android Development",
-        desc: " Building robust and scalable Android applications.",
+        title: "React Native / Flutter Apps",
       },
       {
-        title: "Cross-Platform Development",
-        desc: " Delivering apps that work seamlessly across both iOS and Android platforms.",
+        title: "API Integration & Backend",
       },
       {
-        title: "App Maintenance & Support",
-        desc: "Ensuring your app remains updated and functional.",
+        title: "Play Store & App Store Publishing",
       },
     ],
-    descritpion:
-      "Seamlessly and efficiently elevate your business with our mobile app solutions, promising extensive growth and enhanced performance.",
   },
   {
+    id: "3",
+    title: "Digital Marketing",
+    title2: "Digital Marketing Services in Kerala | SEO, Social Media & PPC",
+    image1: "/wedo/image1.png",
+    image2: "/wedo/image2.png",
+    image3: "/wedo/image3.png",
+    content:
+      "Origa Networks offers result-oriented digital marketing services tailored for Kerala businesses.From SEO and social media to paid campaigns, we build data-driven strategies that increase visibility, attract leads, and grow your business online.",
+    color: "#05FFEA",
+    subData: [
+      {
+        title: "Search Engine Optimization (SEO)",
+      },
+      {
+        title: "Meta Ads (Facebook & Instagram)",
+      },
+      {
+        title: "Google Ads (PPC)",
+      },
+      {
+        title: "Social Media Marketing",
+      },
+    ],
+  },
+  {
+    id: "4",
+    title: "Branding",
+    title2: "Branding & Logo Design Services in Kerala | Origa Networks",
+    image1: "/wedo/image1.png",
+    image2: "/wedo/image2.png",
+    image3: "/wedo/image3.png",
+    content:
+      "We help businesses across Kerala build powerful brands. From logo design to full visual identity systems, Origa Networks ensures your brand story is communicated clearly and creatively to connect with your audience",
+    color: "#16F233",
+    subData: [
+      {
+        title: "Brand Guidelines",
+      },
+      {
+        title: "Social Media Design Kits",
+      },
+      {
+        title: "Typography & Color Schemes",
+      },
+      {
+        title: "Marketing Collateral",
+      },
+    ],
+  },
+  {
+    id: "5",
+    title: "E-commerce Solutions",
+    title2: " E-commerce Development Company in Kerala | Origa Networks",
+    image1: "/wedo/image1.png",
+    image2: "/wedo/image2.png",
+    image3: "/wedo/image3.png",
+    content:
+      "Take your business online with our e-commerce development services, available across Kerala. Whether you’re starting fresh or scaling up, Origa Networks provides custom, secure, and conversion-focused e-commerce platforms that drive sales.",
+    color: "#E02828",
+    subData: [
+      {
+        title: "Shopify, WooCommerce, Custom Stack",
+      },
+      {
+        title: "Payment & Shipping Integration",
+      },
+      {
+        title: "Product Uploads & Inventory",
+      },
+      {
+        title: "Customer Dashboard & Admin Panel",
+      },
+    ],
+  },
+  {
+    id: "6",
     title: "AMC",
-    image: "/amc.svg",
+    title2: " Website AMC & Maintenance Services in Kerala | Origa Networks",
+    image1: "/wedo/image1.png",
+    image2: "/wedo/image2.png",
+    image3: "/wedo/image3.png",
     content:
-      "We provide comprehensive website maintenance, swiftly addressing technical issues, resolving bugs, and conducting thorough cross-device testing. Our proactive approach ensures your site remains flawless and functional, enhancing user experience and maintaining your professional online presence.",
-
-    descritpion:
-      "Our AMC service provides proactive and reactive support for your web applications, mobile apps, ERP solutions, and other IT products. Our experts ensure your systems run smoothly, maintaining optimal performance and avoiding downtime.",
-  },
-
-  {
-    title: "Ecommerce Development",
-    image: "/ecommerce.svg",
-    content:
-      "Winning in the digital marketplace requires a powerful and user-friendly e-commerce platform. Origa Networks offers top-tier e-commerce development services, creating secure, scalable, and feature-rich online stores. From seamless payment gateways to intuitive product navigation, we ensure your e-commerce site delivers an exceptional shopping experience that converts visitors into loyal customers.",
+      "Our AMC plans keep your websites and applications secure, updated, and performing at their best. With dedicated support available across Kochi, Malappuram, and other parts of Kerala, we ensure uninterrupted digital performance all year round.",
+    color: "#E02828",
     subData: [
       {
-        title: "Shopify",
-        desc: " Building and customizing online stores with Shopify, providing scalable and secure solutions.",
+        title: "Monthly backups & updates",
       },
       {
-        title: "BigCommerce",
-        desc: "Developing robust ecommerce platforms using BigCommerce, ensuring flexibility and performance.",
+        title: "Security checks & malware removal",
       },
       {
-        title: "WordPress/WooCommerce",
-        desc: "Creating dynamic and user-friendly ecommerce websites with WordPress and WooCommerce.",
+        title: "Uptime monitoring",
       },
       {
-        title: "Adobe Commerce",
-        desc: "Leveraging Adobe Commerce (Magento) for powerful and customizable ecommerce solutions.",
+        title: "Emergency tech support",
       },
     ],
-    descritpion:
-      "Boosting brands' digital exposure effortlessly is our specialty, ensuring seamless growth and enhanced visibility in the digital landscape.",
-  },
-  {
-    title: "ERP Development",
-    image: "/erp.jpg",
-    content:
-      "Streamline your business operations and enhance productivity with our bespoke ERP development services. Origa Networks designs and implements comprehensive ERP solutions tailored to your specific needs. Our systems integrate various business processes, providing real-time data and insights that empower you to make informed decisions and drive growth.",
-    subData: [
-      {
-        title: "Custom ERP Solutions",
-        desc: "Tailored to fit your unique business requirements.",
-      },
-      {
-        title: "Inventory Management",
-        desc: "Streamlining your inventory tracking and control.",
-      },
-      {
-        title: "Human Resources Management",
-        desc: " Automating HR processes and improving employee management.",
-      },
-      {
-        title: "Financial Management",
-        desc: "Enhancing financial planning and reporting.",
-      },
-    ],
-    descritpion:
-      "Expert guidance throughout the ERP development process, including planning, analysis, implementation, and ongoing support to ensure smooth operations.",
-  },
-  {
-    title: "Digital Marketing and Branding",
-    image: "/digital.svg",
-    content:
-      "In the ever-evolving digital landscape, effective marketing is the key to staying ahead. Origa Networks provides comprehensive digital marketing services, including social media management, content marketing, PPC advertising, and email campaigns. Our strategic approach ensures your brand message reaches the right audience, enhancing your online presence and driving business growth.",
-    subData: [
-      {
-        title: "Meta",
-        desc: null,
-      },
-      {
-        title: "Google",
-        desc: null,
-      },
-      {
-        title: "Twitter",
-        desc: null,
-      },
-      {
-        title: "Linked in ",
-        desc: null,
-      },
-      {
-        title: "telegram",
-        desc: null,
-      },
-    ],
-    descritpion:
-      "Our experienced Branding and Digital Marketing services will help you increase the visibility and reach of your brand. We help your business stand out in the digital marketplace with strategic marketing and interesting content.",
   },
 ];
 
 export const navabar = [
+  {
+    title: "Home",
+    direction: "/",
+  },
   {
     title: "About",
     direction: "/#about",
   },
   {
     title: "Service",
-    direction: "/#expertice",
-  },
-  {
-    title: "Expertise",
-    direction: "/#industries",
+    direction: "/#service",
   },
   {
     title: "Works",
     direction: "/#works",
+  },
+  {
+    title: "Blogs",
+    direction: "/#blogs",
+  },
+  {
+    title: "Career",
+    direction: "/#career",
   },
 ];
 
@@ -203,20 +218,28 @@ export const industries = [
 
 export const blogs = [
   {
+    id: "1",
     image: "/blog.jpg",
+    date: "2025-04-15 10:48",
     title:
       "Understanding the Distinction Between Web Development and Web Design",
+    description:
+      "In the UAE, Sheikh Zayed of Dubai has announced new rules and regulations regarding eligibility for deposit amounts and accommodation. Candidates must ensure that they have no legal issues in their home country, and they will also be subject to additional legal requirements that are applicable.",
   },
   {
+    id: "2",
     image: "/blog1.jpg",
+    date: "2025-04-15 10:48",
     title: "Comprehensive Guide to Web Hosting: Types and Services Explained",
+    description:
+      "In the UAE, Sheikh Zayed of Dubai has announced new rules and regulations regarding eligibility for deposit amounts and accommodation. Candidates must ensure that they have no legal issues in their home country, and they will also be subject to additional legal requirements that are applicable.",
   },
   {
+    id: "3",
     image: "/blog2.jpg",
+    date: "2025-04-15 10:48",
     title: "Essential SEO Insights Every Entrepreneur Should Have",
-  },
-  {
-    image: "/blog3.jpg",
-    title: "The Key Differences Between Front-End and Back-End Web Development",
+    description:
+      "In the UAE, Sheikh Zayed of Dubai has announced new rules and regulations regarding eligibility for deposit amounts and accommodation. Candidates must ensure that they have no legal issues in their home country, and they will also be subject to additional legal requirements that are applicable.",
   },
 ];

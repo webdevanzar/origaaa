@@ -2,12 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --font-passionone: "Passion One";
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,13 +16,173 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
-body {
+.strok-text1 {
+  -webkit-text-stroke: 1px white;
 }
 
+.glowinner{
+  box-shadow:inset 2px 2px 2px 2px black;
+}
+
+.strok-text2 {
+  -webkit-text-stroke: 3px #24a776;
+}
+
+
+
+@media (max-width: 768px) {
+  .strok-text2 {
+    -webkit-text-stroke: 1px #24a776;
+  }
+}
+
+
+
 .slick-slide > div {
-  margin: 0px 15px 20px 15px;
   padding-bottom: 25px;
+  padding: 15px 15px 20px 15px;
+}
+
+.project-slide .slick-slide {
+  padding-bottom: 25px;
+}
+
+.testimonial-slide .slick-slide {
+  padding-top: 80px;
+}
+
+.radial-bg {
+  background: radial-gradient(50% 104.51% at 50% 50%, #0c3535 0%, #453115 100%);
+}
+
+.radial-bg-secondary {
+  background: linear-gradient(107.74deg, #ab8c40 2.79%, #269785 96.76%);
+}
+
+.bubblebg {
+  background: linear-gradient(
+    229.18deg,
+    #93703a 20.2%,
+    #5b542b 44.44%,
+    #136750 68.96%,
+    #125053 85.21%
+  );
+}
+
+.liquid-glass-bg {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0);
+  border-radius: 9999px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.6px);
+  -webkit-backdrop-filter: blur(9.6px);
+}
+
+/* Custom dots styling */
+.custom-dots .slick-dots {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex !important;
+  /* justify-content: flex-start; */
+  width: auto;
+  padding-left: 20px;
+  margin: 0;
+  padding-bottom: 10px;
+  list-style: none;
+  z-index: 20;
+}
+
+.custom-dots .slick-dots li {
+  margin: 0 4px;
+}
+
+.custom-dots .slick-dots li button {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: #ccc;
+  text-indent: -9999px;
+  transition: all 0.3s ease;
+}
+
+.custom-dots .slick-dots li.slick-active button {
+  background-color: #fff;
+  transform: scale(1.2);
+}
+
+/* @media (max-width: 1536px) {
+  .custom-dots .slick-dots {
+    left: 180px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .custom-dots .slick-dots {
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .custom-dots .slick-dots li {
+    margin: 0 4px;
+  }
+} */
+
+.frosted-glass {
+  /* Base glass styling */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.05)
+  );
+  border-radius: 1em;
+  position: relative;
+  color: transparent;
+
+  /* Border effects */
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  &::before {
+    border: 1px solid white;
+    mask-image: linear-gradient(135deg, white, rgba(255, 255, 255, 0) 50%);
+  }
+
+  &::after {
+    border: 1px solid hsl(223, 90%, 50%); /* Using --primary500 color */
+    mask-image: linear-gradient(135deg, rgba(255, 255, 255, 0) 50%, white);
+  }
+
+  /* RTL support */
+  [dir="rtl"] & {
+    background: linear-gradient(
+      -90deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.05)
+    );
+
+    &::before {
+      mask-image: linear-gradient(-135deg, white, rgba(255, 255, 255, 0) 50%);
+    }
+
+    &::after {
+      mask-image: linear-gradient(-135deg, rgba(255, 255, 255, 0) 50%, white);
+    }
+  }
 }
 
 @layer utilities {
