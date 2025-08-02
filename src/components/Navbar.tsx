@@ -6,9 +6,11 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { BiMessageRoundedDots } from "react-icons/bi";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
+  const path = usePathname();
 
   return (
     <>
@@ -60,7 +62,9 @@ const Navbar = () => {
                   <li
                     key={nanoid()}
                     onClick={() => setShow(!show)}
-                    className="text-gray-300 hover:text-white cursor-pointer pt-5 md:pt-0"
+                    className={`${
+                      path === item.direction ? "text-white" : " text-gray-300"
+                    } hover:text-white cursor-pointer pt-5 md:pt-0`}
                   >
                     <Link href={item.direction}>{item.title}</Link>
                   </li>
@@ -81,14 +85,18 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className="z-20 w-10/12 text-white absolute flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div
+        className={`${
+          path !== "/" ? "hidden" : "flex"
+        } z-20 w-10/12 text-white absolute flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
+      >
         <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg backdrop-blur-md overflow-y-auto">
           <motion.p
             animate={{
               x: ["0%", "-100%"],
             }}
             transition={{
-              duration:300,
+              duration: 300,
               ease: "linear",
               repeat: Infinity,
             }}

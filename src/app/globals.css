@@ -28,6 +28,8 @@
   -webkit-text-stroke: 3px #24a776;
 }
 
+
+
 @media (max-width: 768px) {
   .strok-text2 {
     -webkit-text-stroke: 1px #24a776;

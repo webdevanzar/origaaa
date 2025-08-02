@@ -1,5 +1,3 @@
-import { navabar } from "@/lib";
-import { nanoid } from "nanoid";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -7,7 +5,7 @@ import {
   FaFacebookF,
   FaLinkedinIn,
   FaLocationDot,
-  FaTwitter,
+  FaThreads,
 } from "react-icons/fa6";
 
 const Explore = [
@@ -68,9 +66,9 @@ const Icons = [
     src: FaLinkedinIn,
   },
   {
-    id: "twitter",
-    link: "https://www.linkedin.com/company/origa-networks/",
-    src: FaTwitter,
+    id: "threads",
+    link: "https://www.threads.com/@origanetworks?invite=0",
+    src: FaThreads ,
   },
 ];
 

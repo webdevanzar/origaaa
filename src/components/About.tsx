@@ -1,7 +1,9 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import { MotiionDiv } from "./shared/MotionDiv";
 import { BiMessageRoundedDots } from "react-icons/bi";
+import { motion } from "framer-motion";
 
 const aboutVarients = {
   hidden: { opacity: 0, x: -200 },
@@ -10,6 +12,11 @@ const aboutVarients = {
 const aboutVarientsright = {
   hidden: { opacity: 0, x: 200 },
   visible: { opacity: 1, x: 0 },
+};
+
+const statVarients = {
+  hidden: { scale: 0 },
+  visible: { scale: 1 },
 };
 const About = () => {
   return (
@@ -38,6 +45,42 @@ const About = () => {
               src="/about/about.png"
               className="h-auto w-full object-cover"
             />
+
+            <motion.div
+              variants={statVarients}
+              initial="hidden"
+              whileInView="visible"
+              transition={{
+                delay: 0.8,
+                ease: "easeInOut",
+                duration: 0.75,
+              }}
+              viewport={{ once: true }}
+              className="absolute top-10 lg:top-36 -right-5 lg:right-10 py-3 md:py-5 px-1 flex flex-col justify-center items-center rounded-xl shadow-xl bg-white"
+            >
+              <h3 className="text-xs text-center w-full">
+                Active Projects Worldwide
+              </h3>
+              <p className="text-[34px] font-bold text-center">50+</p>
+            </motion.div>
+
+            <motion.div
+              variants={statVarients}
+              initial="hidden"
+              whileInView="visible"
+              transition={{
+                delay: 0.8,
+                ease: "easeInOut",
+                duration: 0.75,
+              }}
+              viewport={{ once: true }}
+              className="absolute -bottom-5 lg:bottom-10 left-20 lg:left-44 py-3 md:py-5 px-1 flex flex-col justify-center items-center rounded-xl shadow-xl bg-white"
+            >
+              <h3 className="text-xs text-center w-full">
+                Clients Return for More
+              </h3>
+              <p className="text-[34px] font-bold text-center">70%</p>
+            </motion.div>
           </MotiionDiv>
 
           <MotiionDiv

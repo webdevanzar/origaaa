@@ -7,12 +7,14 @@ import "slick-carousel/slick/slick.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import storyblokClient from "@/utils/storyblock";
 import { CustomCursor } from "./shared/CustomeCursor";
+import Link from "next/link";
 
 type ProjectType = {
   id: string;
   image: string;
   image2: string;
   title: string; //max 30 characters
+  link: string;
 };
 
 export const Projects = () => {
@@ -59,6 +61,7 @@ export const Projects = () => {
           image: item.image1.filename,
           image2: item.image2.filename,
           title: item.title,
+          link: item.link,
         }));
 
         setProjects(formatted);
@@ -140,9 +143,11 @@ export const Projects = () => {
                     height={1000}
                     className={`absolute w-full h-full object-cover opacity-0 rounded-xl group-hover:opacity-100 transition-opacity duration-700 ease-in-out `}
                   />
-                  <h2 className="absolute -bottom-10 xl:-bottom-12 text-2xl font-semibold xl:text-4xl pt-2 text-white">
-                    {item.title}
-                  </h2>
+                  <Link href={item.link} target="_blank">
+                    <h2 className="absolute -bottom-10 xl:-bottom-12 text-2xl font-semibold xl:text-4xl pt-2 text-white">
+                      {item.title}
+                    </h2>
+                  </Link>
                 </div>
               );
             })}

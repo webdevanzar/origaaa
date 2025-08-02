@@ -83,7 +83,7 @@ const WhatweDo = () => {
                 onClick={() => {
                   setCurrentIndex(index);
                 }}
-                className={`text-center shadow-sm  text-xl xl:text-2xl font-medium py-5 lg:px-5 xl:px-10 cursor-pointer rounded-tl-xl rounded-bl-xl ${
+                className={`text-center shadow-sm  text-xl xl:text-2xl font-medium py-4 lg:px-5 xl:px-7 cursor-pointer rounded-tl-xl rounded-bl-xl ${
                   activeService.id === service.id
                     ? "radial-bg-secondary text-white"
                     : "text-black"

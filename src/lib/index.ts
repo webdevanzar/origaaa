@@ -5,125 +5,150 @@ export const services = [
   {
     id: "1",
     title: "Web Development",
-    title2: "Building Fast, Responsive Websites for Your Brand",
+    title2: "Custom Web Development Services in Kerala | Origa Networks",
     image1: "/wedo/image1.png",
     image2: "/wedo/image2.png",
     image3: "/wedo/image3.png",
     color: "#CFF527",
     content:
-      "At Origa Networks, we build fast, responsive websites that look great on any device and offer seamless user experiences. Our solutions reflect your brand, are SEO-friendly, and designed to grow with your business.",
+      "Origa Networks delivers professional web development services across Kerala, including Kochi and Malappuram. We build fast, responsive, and SEO-optimized websites that align with your brand and business goals all at cost-effective pricing with reliable post-launch support.",
     subData: [
       {
-        title: "AMAN ENTERPRISES",
+        title: "Custom Website Design & Development",
       },
       {
-        title: "VALLUVAD MATRIMONIAL",
+        title: "Landing Pages & Business Sites",
       },
       {
-        title: "OUT FYND",
+        title: "SEO Optimization",
       },
       {
-        title: "PEARL LAGOON",
+        title: "CMS (WordPress, Headless CMS, etc.)",
       },
     ],
   },
   {
     id: "2",
     title: "App Development",
-    title2: "Building Fast, Responsive App for Your Brand",
+    title2: "Mobile App Development Company in Kerala | Android & iOS Apps",
     image1: "/wedo/image1.png",
     image2: "/wedo/image2.png",
     image3: "/wedo/image3.png",
     color: "#CFF527",
     content:
-      "At Origa Networks, we build fast, responsive websites that look great on any device and offer seamless user experiences. Our solutions reflect your brand, are SEO-friendly, and designed to grow with your business.",
+      "We specialize in intuitive and scalable mobile apps for Android and iOS. From UI/UX to development and deployment, Origa Networks serves clients across Kerala with user-focused mobile solutions that enhance engagement and performance.",
     subData: [
       {
-        title: "AMAN ENTERPRISES",
+        title: "Native & Hybrid App Development",
       },
       {
-        title: "VALLUVAD MATRIMONIAL",
+        title: "React Native / Flutter Apps",
       },
       {
-        title: "OUT FYND",
+        title: "API Integration & Backend",
       },
       {
-        title: "PEARL LAGOON",
+        title: "Play Store & App Store Publishing",
       },
     ],
   },
   {
     id: "3",
-    title: "ERP Development",
-    title2: "Building Fast, Responsive ERP for Your Brand",
+    title: "Digital Marketing",
+    title2: "Digital Marketing Services in Kerala | SEO, Social Media & PPC",
     image1: "/wedo/image1.png",
     image2: "/wedo/image2.png",
     image3: "/wedo/image3.png",
     content:
-      "At Origa Networks, we build fast, responsive websites that look great on any device and offer seamless user experiences. Our solutions reflect your brand, are SEO-friendly, and designed to grow with your business.",
-    color: "#16F233",
+      "Origa Networks offers result-oriented digital marketing services tailored for Kerala businesses.From SEO and social media to paid campaigns, we build data-driven strategies that increase visibility, attract leads, and grow your business online.",
+    color: "#05FFEA",
     subData: [
       {
-        title: "AMAN ENTERPRISES",
+        title: "Search Engine Optimization (SEO)",
       },
       {
-        title: "VALLUVAD MATRIMONIAL",
+        title: "Meta Ads (Facebook & Instagram)",
       },
       {
-        title: "OUT FYND",
+        title: "Google Ads (PPC)",
       },
       {
-        title: "PEARL LAGOON",
+        title: "Social Media Marketing",
       },
     ],
   },
   {
     id: "4",
-    title: "Digital Marketing",
-    title2: "Building Fast, Digital Marketing for Your Brand",
+    title: "Branding",
+    title2: "Branding & Logo Design Services in Kerala | Origa Networks",
     image1: "/wedo/image1.png",
     image2: "/wedo/image2.png",
     image3: "/wedo/image3.png",
     content:
-      "At Origa Networks, we build fast, responsive websites that look great on any device and offer seamless user experiences. Our solutions reflect your brand, are SEO-friendly, and designed to grow with your business.",
-    color: "#05FFEA",
+      "We help businesses across Kerala build powerful brands. From logo design to full visual identity systems, Origa Networks ensures your brand story is communicated clearly and creatively to connect with your audience",
+    color: "#16F233",
     subData: [
       {
-        title: "AMAN ENTERPRISES",
+        title: "Brand Guidelines",
       },
       {
-        title: "VALLUVAD MATRIMONIAL",
+        title: "Social Media Design Kits",
       },
       {
-        title: "OUT FYND",
+        title: "Typography & Color Schemes",
       },
       {
-        title: "PEARL LAGOON",
+        title: "Marketing Collateral",
       },
     ],
   },
   {
     id: "5",
-    title: "AMC",
-    title2: "Building Fast, Responsive AMC for Your Brand",
+    title: "E-commerce Solutions",
+    title2: " E-commerce Development Company in Kerala | Origa Networks",
     image1: "/wedo/image1.png",
     image2: "/wedo/image2.png",
     image3: "/wedo/image3.png",
     content:
-      "At Origa Networks, we build fast, responsive websites that look great on any device and offer seamless user experiences. Our solutions reflect your brand, are SEO-friendly, and designed to grow with your business.",
+      "Take your business online with our e-commerce development services, available across Kerala. Whether you’re starting fresh or scaling up, Origa Networks provides custom, secure, and conversion-focused e-commerce platforms that drive sales.",
     color: "#E02828",
     subData: [
       {
-        title: "AMAN ENTERPRISES",
+        title: "Shopify, WooCommerce, Custom Stack",
       },
       {
-        title: "VALLUVAD MATRIMONIAL",
+        title: "Payment & Shipping Integration",
       },
       {
-        title: "OUT FYND",
+        title: "Product Uploads & Inventory",
       },
       {
-        title: "PEARL LAGOON",
+        title: "Customer Dashboard & Admin Panel",
+      },
+    ],
+  },
+  {
+    id: "6",
+    title: "AMC",
+    title2: " Website AMC & Maintenance Services in Kerala | Origa Networks",
+    image1: "/wedo/image1.png",
+    image2: "/wedo/image2.png",
+    image3: "/wedo/image3.png",
+    content:
+      "Our AMC plans keep your websites and applications secure, updated, and performing at their best. With dedicated support available across Kochi, Malappuram, and other parts of Kerala, we ensure uninterrupted digital performance all year round.",
+    color: "#E02828",
+    subData: [
+      {
+        title: "Monthly backups & updates",
+      },
+      {
+        title: "Security checks & malware removal",
+      },
+      {
+        title: "Uptime monitoring",
+      },
+      {
+        title: "Emergency tech support",
       },
     ],
   },
@@ -132,7 +157,7 @@ export const services = [
 export const navabar = [
   {
     title: "Home",
-    direction: "/#Home",
+    direction: "/",
   },
   {
     title: "About",
@@ -140,7 +165,7 @@ export const navabar = [
   },
   {
     title: "Service",
-    direction: "/#expertice",
+    direction: "/#service",
   },
   {
     title: "Works",
@@ -152,7 +177,7 @@ export const navabar = [
   },
   {
     title: "Career",
-    direction: "/#Career",
+    direction: "/#career",
   },
 ];
 
