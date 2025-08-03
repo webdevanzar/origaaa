@@ -9,7 +9,7 @@ const manrope = Manrope({ subsets: ["latin"] });
 export const passionone = Passion_One({
   weight: ["400", "700"],
   subsets: ["latin"],
-   variable: "--font-passionone", 
+  variable: "--font-passionone",
 });
 
 export const metadata: Metadata = {
@@ -48,8 +48,8 @@ export default function RootLayout({
       <body className={manrope.className}>
         {children}
         <Footer />
+        <SonerProvider />
       </body>
-      <SonerProvider />
     </html>
   );
 }
