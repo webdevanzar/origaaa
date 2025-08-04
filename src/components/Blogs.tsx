@@ -83,7 +83,7 @@ const Blogs = () => {
         variants={headerVariants}
       >
         <Image
-          src="/whychoosus.svg"
+          src="/vectors/overview.svg"
           alt="Why Choose Us"
           width={20}
           height={20}

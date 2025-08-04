@@ -20,9 +20,9 @@
   -webkit-text-stroke: 1px white;
 }
 
-.glowinner{
+/* .glowinner{
   box-shadow:inset 2px 2px 2px 2px black;
-}
+} */
 
 .strok-text2 {
   -webkit-text-stroke: 3px #24a776;
@@ -59,7 +59,7 @@
   background: linear-gradient(107.74deg, #ab8c40 2.79%, #269785 96.76%);
 }
 
-.bubblebg {
+/* .bubblebg {
   background: linear-gradient(
     229.18deg,
     #93703a 20.2%,
@@ -67,16 +67,16 @@
     #136750 68.96%,
     #125053 85.21%
   );
-}
+} */
 
-.liquid-glass-bg {
-  /* From https://css.glass */
+/* .liquid-glass-bg {
+  From https://css.glass
   background: rgba(255, 255, 255, 0);
   border-radius: 9999px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(9.6px);
   -webkit-backdrop-filter: blur(9.6px);
-}
+} */
 
 /* Custom dots styling */
 .custom-dots .slick-dots {
@@ -185,14 +185,15 @@
   }
 }
 
-@layer utilities {
+/* @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
   .btn {
     @apply bg-gradient-to-r from-btn to-btnEnd hover:bg-gradient-to-l hover:from-btnEnd  hover:to-btn transition-all duration-700;
   }
-}
+} */
+ 
 html {
   scroll-behavior: smooth;
 }

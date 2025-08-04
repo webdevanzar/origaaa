@@ -1,5 +1,3 @@
-import { color } from "framer-motion";
-import { Content } from "next/font/google";
 
 export const services = [
   {
@@ -161,23 +159,23 @@ export const navabar = [
   },
   {
     title: "About",
-    direction: "/#about",
+    direction: "/about",
   },
   {
     title: "Service",
-    direction: "/#service",
+    direction: "/service",
   },
   {
     title: "Works",
-    direction: "/#works",
+    direction: "/works",
   },
   {
     title: "Blogs",
-    direction: "/#blogs",
+    direction: "/blogs",
   },
   {
     title: "Career",
-    direction: "/#career",
+    direction: "/career",
   },
 ];
 

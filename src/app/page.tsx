@@ -1,20 +1,17 @@
 import About from "@/components/About";
-import Banner from "@/components/Banner";
 import Blogs from "@/components/Blogs";
 import ClientLogo from "@/components/ClientLogo";
 import Contact from "@/components/Contact";
-import Features from "@/components/Features";
-import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import { HeroLight } from "@/components/HeroLight";
 import { OurProcess } from "@/components/OurProcess";
 import { Projects } from "@/components/Projects";
 import WhatweDo from "@/components/WhatweDo";
-import Stat from "@/components/Stat";
 import Testimonial from "@/components/Testimonial";
 import Whatsapp from "@/components/Whatsapp";
 import AnimatedBlobBackground from "@/components/shared/AnimatedBlobBackground";
 import Overview from "@/components/Overview";
+import ContactPopup from "@/components/ContactPopup";
 
 const blobPositions = [
   { x: 10, y: 10 }, // Top-left
@@ -26,12 +23,10 @@ const blobPositions = [
 export default function Home() {
   return (
     <div className="overflow-x-hidden">
+      <ContactPopup />
       <Hero />
       <HeroLight />
       <About />
-
-      {/* <Features /> our process */}
-      {/* <Stat /> */}
 
       <AnimatedBlobBackground
         uniqueId="my-blobs"

@@ -14,7 +14,7 @@ const Overview = () => {
       >
         <div className="flex gap-x-3">
           <Image
-            src="/whychoosus.svg"
+            src="/vectors/overview.svg"
             alt="Why Choose Us"
             width={20}
             height={20}
@@ -106,7 +106,7 @@ const Overview = () => {
         transition={{ duration: 1, delay: 0.5 }}
       >
         <Image
-          src="/vector2.svg"
+          src="/vectors/vector2.svg"
           alt="vector"
           width={1200}
           height={1200}

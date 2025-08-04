@@ -5,19 +5,19 @@ import GrowTogether from "./GrowTogether";
 
 const ClientLogo = () => {
   const logos = [
-    { src: "/delta.png", alt: "Delta Logo" },
-    { src: "/CapitalMarket.svg", alt: "Capital Market Logo" },
-    { src: "/zyrus.png", alt: "Zyrus Logo" },
-    { src: "/farwish.jpg", alt: "Farwish Logo" },
-    { src: "/flora.png", alt: "Flora Logo" },
-    { src: "/Valluvanad.png", alt: "Valluvanad Logo" },
-    { src: "/30india.jpg", alt: "Farwish Logo" },
-    { src: "/tot.png", alt: "Farwish Logo" },
-    { src: "/logos/amanlogo.png", alt: "Aman Enerprises Logo" },
-    { src: "/logos/outfyndlogo.svg", alt: "Outfynd Logo" },
-    { src: "/logos/virtuelogo.png", alt: "virtue Logo" },
-    { src: "/logos/malhar.jpg", alt: "malhar Logo" },
-    { src: "/logos/ozmialogo.svg", alt: "Ozmia Logo" },
+    { src: "/clientlogos/delta.png", alt: "Delta Logo" },
+    { src: "/clientlogos/CapitalMarket.svg", alt: "Capital Market Logo" },
+    { src: "/clientlogos/zyrus.png", alt: "Zyrus Logo" },
+    { src: "/clientlogos/farwish.jpg", alt: "Farwish Logo" },
+    { src: "/clientlogos/flora.png", alt: "Flora Logo" },
+    { src: "/clientlogos/Valluvanad.png", alt: "Valluvanad Logo" },      
+    { src: "/clientlogos/30india.jpg", alt: "Farwish Logo" },
+    { src: "/clientlogos/tot.png", alt: "Farwish Logo" },
+    { src: "/clientlogos/amanlogo.png", alt: "Aman Enerprises Logo" },
+    { src: "/clientlogos/outfyndlogo.svg", alt: "Outfynd Logo" },
+    { src: "/clientlogos/virtuelogo.png", alt: "virtue Logo" },
+    { src: "/clientlogos/malhar.jpg", alt: "malhar Logo" },
+    { src: "/clientlogos/ozmialogo.svg", alt: "Ozmia Logo" },
   ];
 
   return (
