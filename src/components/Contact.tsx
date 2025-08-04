@@ -46,13 +46,13 @@ const Contact = () => {
           setLoading(false);
           console.log("SUCCESS!");
           toast.success("Email sent");
-           form.current?.reset();
+          form.current?.reset();
         },
         (error) => {
           setLoading(false);
           console.log("FAILED...", error.text);
           toast.warning("Failed to send");
-           form.current?.reset();
+          form.current?.reset();
         }
       );
   };
