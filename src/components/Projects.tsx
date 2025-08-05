@@ -142,7 +142,7 @@ export const Projects = () => {
                       src={item.image2}
                       width={1000}
                       height={1000}
-                      className={`absolute w-full h-full object-cover opacity-0 rounded-xl group-hover:opacity-100 transition-opacity duration-700 ease-in-out `}
+                      className={`absolute w-full h-full object-contain bg-white opacity-0 rounded-xl group-hover:opacity-100 transition-opacity duration-700 ease-in-out `}
                     />
                     <Link href={item.link} target="_blank">
                       <h2 className="absolute -bottom-10 xl:-bottom-12 text-2xl font-semibold xl:text-4xl pt-2 text-white">

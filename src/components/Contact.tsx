@@ -57,7 +57,7 @@ const Contact = () => {
       );
   };
   return (
-    <section className="relative pb-20 md:pb-40 pt-10 text-white bg-black mx-auto z-0">
+    <section id="contact" className="relative pb-20 md:pb-40 pt-10 text-white bg-black mx-auto z-0">
       {/* bubbles */}
       <motion.div
         initial={{ opacity: 1 }}

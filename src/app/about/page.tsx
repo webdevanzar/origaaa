@@ -16,14 +16,15 @@ const blobPositions = [
 
 const AboutPage = () => {
   return (
-    <section>
+    <section className="overflow-x-hidden">
       <div className="w-full h-[30vh] md:h-[45vh] relative">
         <Image
           src={"/hero3.jpg"}
           alt="image"
           fill
-          className="-z-10 object-cover bg-center rounded-b-xl"
+          className="-z-10 object-cover bg-cover rounded-b-xl"
         />
+         <div className="absolute inset-0 bg-black/40 rounded-b-xl z-0" />
         <Navbar />
       </div>
       <About />

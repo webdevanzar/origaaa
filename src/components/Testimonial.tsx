@@ -87,7 +87,7 @@ const Testimonial = () => {
                 className="rounded-full w object-cover absolute -top-[75px] left-10"
               />
               <Image
-                src="/quotes.png"
+                src="/vectors/quotes.png"
                 alt="testimonial"
                 width={185}
                 height={155}
