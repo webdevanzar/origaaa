@@ -163,19 +163,19 @@ export const navabar = [
   },
   {
     title: "Service",
-    direction: "/service",
+    direction: "/#service",
   },
   {
     title: "Works",
-    direction: "/works",
+    direction: "/#works",
   },
   {
     title: "Blogs",
-    direction: "/blogs",
+    direction: "/#blogs",
   },
   {
     title: "Career",
-    direction: "/career",
+    direction: "/#career",
   },
 ];
 

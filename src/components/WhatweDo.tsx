@@ -98,7 +98,7 @@ const WhatweDo = () => {
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
-          className="relative -z-0 shadow-xl w-full md:w-[75%] h-[600px] lg:h-[535px] rounded-3xl radial-bg-secondary pl-10 xl:pl-14 py-10 lg:py-16 lg:pr-0 pr-10 flex flex-col lg:flex-row justify-start gap-x-0 text-white"
+          className="relative -z-0 shadow-xl w-full md:w-[75%] h-[600px] lg:h-[535px] rounded-3xl radial-bg-secondary pl-10 xl:pl-14 py-5 md:py-10 lg:py-16 lg:pr-0 pr-10 flex flex-col lg:flex-row justify-start gap-x-0 text-white"
         >
           <motion.div
             key={activeService.id}
@@ -122,7 +122,7 @@ const WhatweDo = () => {
 
             <motion.ul
               variants={fadeRightVariant}
-              className="flex flex-col gap-y-3 mt-5"
+              className="flex flex-col gap-y-2 md:gap-y-3 mt-2 md:mt-5"
             >
               {activeService.subData.map((data, index) => (
                 <li

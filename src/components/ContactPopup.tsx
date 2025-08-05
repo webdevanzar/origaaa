@@ -70,7 +70,7 @@ const ContactPopup = () => {
   };
 
   return (
-    <section className="fixed inset-0 flex justify-center items-center bg-black/80 text-white mx-auto z-50">
+    <section className="fixed md:inset-0 flex justify-center items-center bg-black/80 text-white mx-auto z-50">
       <div className="relative backdrop-blur-[10px] bg-white/15 flex flex-col-reverse md:flex-row justify-between w-11/12 md:w-4/5 lg:w-2/3 xl:w-1/2 mx-auto rounded-[20px]  border-2 p-2">
         <button
           className="absolute top-3 right-3 md:-top-7 md:-right-7 text-2xl font-bold text-white"
@@ -79,14 +79,14 @@ const ContactPopup = () => {
           ✕
         </button>
 
-        <div className="backdrop-blur-0 flex flex-col gap-y-5 items-start md:w-1/2 px-5 py-10 md:py-10 rounded-[10px]">
+        <div className="backdrop-blur-0 flex flex-col gap-y-2 md:gap-y-5 items-start md:w-1/2 px-5 py-2 md:py-10 rounded-[10px]">
           <div className="flex gap-x-3 items-center">
             <MdEmail size={28} />
             <span className="text-lg">info@origanetworks.com</span>
           </div>
 
           <div className="flex items-start gap-x-3">
-            <FaLocationDot size={28} />
+            <FaLocationDot size={48} />
             <span className="text-lg">
               Global Buisness Centre, Swapnil Enclave, Shanmugham Road
               Ernakulam, Kerala 682031 India
@@ -96,8 +96,7 @@ const ContactPopup = () => {
           <div className="flex items-start gap-x-3">
             <FaLocationDot size={28} />
             <span className="text-lg">
-              Global Buisness Centre, Swapnil Enclave, Shanmugham Road
-              Ernakulam, Kerala 682031 India
+              Alis Tower,Melattur, Malappuram, Kerala 679326 India
             </span>
           </div>
 
@@ -139,73 +138,89 @@ const ContactPopup = () => {
         </div>
 
         <form
-          className="flex flex-col gap-y-5 md:w-1/2 px-2 md:px-5 lg:px-10 xl:px-5 py-10"
+          className="flex flex-col gap-y-4 md:gap-y-5 md:w-1/2 px-2 md:px-5 lg:px-10 xl:px-5 py-2 md:py-10"
           action=""
           ref={form}
           onSubmit={sendEmail}
         >
-          <div className="flex gap-x-10 w-full">
-            <motion.div
-              className="flex flex-col gap-y-2 w-full"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <label htmlFor="firstname" className="font-medium text-base">
-                Full Name
-              </label>
-              <input
-                id="firstname"
-                name="firstname"
-                required
-                type="text"
-                className="bg-transparent  font-thin outline-none border-b-[1px] p-1 w-full"
-              />
-            </motion.div>
-          </div>
+          <motion.div
+            className="flex flex-col gap-y-2 w-full"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <label htmlFor="firstname" className="font-medium text-base">
+              Full Name
+            </label>
+            <input
+              id="firstname"
+              name="firstname"
+              required
+              type="text"
+              className="bg-transparent  font-thin outline-none border-b-[1px] p-1 w-full"
+            />
+          </motion.div>
 
-          <div className="flex gap-x-10 w-full">
-            {/* <motion.div
-              className="flex flex-col gap-y-2 w-full"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <label htmlFor="email" className="font-medium text-base">
-                Email
-              </label>
-              <input
-                required
-                name="email"
-                id="email"
-                type="email"
-                className="bg-transparent font-thin outline-none border-b-[1px] p-1 w-full"
-              />
-            </motion.div> */}
+          <motion.div
+            className="flex flex-col gap-y-2 w-full"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <label htmlFor="number" className="font-medium text-base">
+              Phone Number
+            </label>
+            <input
+              name="number"
+              required
+              id="number"
+              type="number"
+              className="bg-transparent font-thin outline-none border-b-[1px] p-1 w-full"
+            />
+          </motion.div>
 
-            <motion.div
-              className="flex flex-col gap-y-2 w-full"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+          <motion.div
+            className="flex flex-col gap-y-2 w-full"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <label htmlFor="service" className="font-medium text-base">
+              Select Service
+            </label>
+            <select
+              id="service"
+              name="service"
+              required
+              className="bg-white/5 font-thin outline-none border-b-[1px] p-1 w-full text-white  rounded-md"
+              defaultValue=""
             >
-              <label htmlFor="number" className="font-medium text-base">
-                Phone Number
-              </label>
-              <input
-                name="number"
-                required
-                id="number"
-                type="number"
-                className="bg-transparent font-thin outline-none border-b-[1px] p-1 w-full"
-              />
-            </motion.div>
-          </div>
+              <option
+                value=""
+                disabled
+                hidden
+                className="text-gray-400 bg-black"
+              >
+                Enquiry on
+              </option>
+              <option value="Website Development"  className="text-black">Web Development</option>
+              <option value="App Development"  className="text-black">App Development</option>
+              <option
+                value="Digital Marketing"
+                className="text-black"
+              >
+                Digital Marketing
+              </option>
+              <option value="Branding"  className="text-black">Branding</option>
+              <option value="E-commerce"  className="text-black">E-commerce</option>
+              <option value="Other"  className="text-black">Other</option>
+            </select>
+          </motion.div>
 
-          <div className="flex items-end justify-end mt-20">
+          <div className="flex items-end justify-end mt-5 md:mt-10">
             <button
               disabled={loading}
               type="submit"
