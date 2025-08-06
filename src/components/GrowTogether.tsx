@@ -12,7 +12,7 @@ const GrowTogether = () => {
 
       <div className="relative  radial-bg w-11/12 xl:w-10/12 mx-auto rounded-[15px] px-10 xl:px-14 py-7 md:py-11 flex flex-col gap-y-5 lg:gap-y-0 lg:flex-row justify-between gap-x-20 items-center mb-10">
         <Image
-          src="/curvedline.png"
+          src="/vectors/curvedline.png"
           alt="image"
           width={643}
           height={244}

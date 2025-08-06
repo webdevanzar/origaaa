@@ -211,7 +211,7 @@ export const industries = [
 export const blogs = [
   {
     id: "1",
-    image: "/blog.jpg",
+    image: "/blogs/blog.jpg",
     date: "2025-04-15 10:48",
     title:
       "Understanding the Distinction Between Web Development and Web Design",
@@ -220,7 +220,7 @@ export const blogs = [
   },
   {
     id: "2",
-    image: "/blog1.jpg",
+    image: "/blogs/blog1.jpg",
     date: "2025-04-15 10:48",
     title: "Comprehensive Guide to Web Hosting: Types and Services Explained",
     description:
@@ -228,7 +228,7 @@ export const blogs = [
   },
   {
     id: "3",
-    image: "/blog2.jpg",
+    image: "/blogs/blog2.jpg",
     date: "2025-04-15 10:48",
     title: "Essential SEO Insights Every Entrepreneur Should Have",
     description:

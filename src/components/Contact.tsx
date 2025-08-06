@@ -376,7 +376,7 @@ const Contact = () => {
 
         <Image
           alt="sendletter"
-          src="/sendletter1.png"
+          src="/vectors/sendletter1.png"
           width={260}
           height={130}
           className="hidden lg:block absolute bottom-1/2 lg:-bottom-10 right-56 -z-10"
