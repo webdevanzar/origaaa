@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { FaLinkedinIn } from "react-icons/fa";
 import {
   FaFacebookF,
-  FaLinkedinIn,
+  FaInstagram,
+  FaLinkedin,
   FaLocationDot,
-  FaThreads,
 } from "react-icons/fa6";
 
 const Explore = [
@@ -63,46 +64,60 @@ const Icons = [
   {
     id: "linkedin",
     link: "https://www.linkedin.com/company/origa-networks/",
-    src: FaLinkedinIn,
+    src: FaLinkedin,
   },
   {
-    id: "threads",
-    link: "https://www.threads.com/@origanetworks?invite=0",
-    src: FaThreads ,
+    id: "instagram",
+    link: "https://www.instagram.com/origanetworks/",
+    src: FaInstagram,
   },
 ];
 
 const Footer = () => {
   return (
-    <footer className="radial-bg px-5 2xl:px-20 pt-16 pb-5 text-white flex flex-col gap-y-10">
+    <footer className="relative radial-bg px-5 2xl:px-20 pt-5 md:pt-16 pb-5 text-white flex flex-col gap-y-10">
+      <Image
+        src="/vectors/logovector.png"
+        width={400}
+        height={400}
+        alt="logo small"
+        className="absolute opacity-40 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+      />
+
       <div className="flex flex-col gap-y-10 lg:gap-y-0 lg:flex-row justify-between items-start">
-        <div className="w-full lg:w-1/2 flex flex-col gap-y-5 md:gap-y-0 md:flex-row justify-between items-start">
-          <div>
+        <div className="w-full lg:w-1/2 flex flex-col gap-y-5 md:gap-y-0 md:flex-row justify-start items-start gap-x-20 lg:gap-x-0 lg:justify-between">
+          <div className="flex w-auto md:w-1/3">
             <Image src={"/origalogo.png"} alt="logo" width={150} height={150} />
           </div>
-          <div>
-            <h2 className="text-[23px] font-medium">Explore</h2>
-            <ul className="flex flex-col gap-y-3 mt-5">
-              {Explore.map((explore) => (
-                <li key={explore.id}>
-                  <Link href={explore.link} className="text-[19px] font-normal">
-                    {explore.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="lg:pr-20 mt-5 md:mt-0">
-            <h2 className="text-[23px] font-medium">Menu</h2>
-            <ul className="flex flex-col gap-y-3 mt-5">
-              {Menu.map((menu) => (
-                <li key={menu.id}>
-                  <Link href={menu.link} className="text-[19px] font-normal">
-                    {menu.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+
+          <div className="flex w-auto flex-row-reverse md:flex-row  md:w-2/3 justify-end gap-x-20">
+            <div>
+              <h2 className="text-[23px] font-medium">Explore</h2>
+              <ul className="flex flex-col gap-y-3 mt-5">
+                {Explore.map((explore) => (
+                  <li key={explore.id}>
+                    <Link
+                      href={explore.link}
+                      className="text-[19px] font-normal"
+                    >
+                      {explore.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="lg:pr-20 ">
+              <h2 className="text-[23px] font-medium">Menu</h2>
+              <ul className="flex flex-col gap-y-3 mt-5">
+                {Menu.map((menu) => (
+                  <li key={menu.id}>
+                    <Link href={menu.link} className="text-[19px] font-normal">
+                      {menu.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
         <div className="w-full lg:w-1/2 flex flex-col md:flex-row justify-between items-start">
@@ -144,7 +159,9 @@ const Footer = () => {
         <Link href="#Cookies">Cookies</Link>
       </div>
 
-      <p className="text-base font-normal text-center">© 2025 Origanetworks All Rights Reserved. </p>
+      <p className="text-base font-normal text-center">
+        © 2025 Origanetworks All Rights Reserved.{" "}
+      </p>
     </footer>
   );
 };

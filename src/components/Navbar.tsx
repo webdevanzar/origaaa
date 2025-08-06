@@ -5,21 +5,27 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { BiMessageRoundedDots } from "react-icons/bi";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { RxCross1 } from "react-icons/rx";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const path = usePathname();
 
+
   return (
     <>
       {/* Main Navigation */}
-      <nav className="w-full absolute top-0 z-30">
-        <div className="mx-auto px-5 md:px-2 lg:px-10 flex items-center justify-between">
-          <div className="flex items-center mt-7" aria-label="Home" role="img">
+      <nav className="w-full absolute top-0 z-40">
+        <div className="mx-auto px-3 md:px-2 lg:px-10 flex items-center justify-between">
+          <div
+            className="flex items-center mt-1 md:mt-5"
+            aria-label="Home"
+            role="img"
+          >
             <Image
-              className="cursor-pointer w-32"
+              className="cursor-pointer w-28 md:w-32"
               src="/origalogo.png"
               alt="logo"
               width={400}
@@ -31,48 +37,93 @@ const Navbar = () => {
               onClick={() => setShow(!show)}
               className={`${
                 show ? "hidden" : "block"
-              } sm:block bg-white/10 p-3 rounded-lg md:hidden lg:hidden text-gray-500 flex items-center justify-center hover:text-gray-700 focus:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500`}
+              } focus:outline-none  lg:hidden bg-white/10 p-3 rounded-lg`}
+              aria-label="Toggle menu"
             >
-              <Image
-                className="h-8 w-8"
-                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/center_aligned_with_image-svg4.svg"
-                alt="show"
-                width={60}
-                height={60}
-              />
-            </button>
-            <div
-              id="menu"
-              className={`md:block lg:block ${show ? "" : "hidden"} pr-10`}
-            >
-              <button
-                onClick={() => setShow(!show)}
-                className="block md:hidden lg:hidden text-gray-500 hover:text-gray-700 focus:text-gray-700 fixed focus:outline-none focus:ring-2 focus:ring-gray-500 z-30 top-0 mt-3"
+              <div
+                className={`w-6 flex flex-col ${show ? "gap-1" : "gap-1.5"} `}
               >
-                <Image
-                  className="h-8 w-8"
-                  src="https://tuk-cdn.s3.amazonaws.com/can-uploader/center_aligned_with_image-svg5.svg"
-                  alt="hide"
-                  width={60}
-                  height={60}
-                />
-              </button>
-              <ul className="transition-all duration-500 flex text-base pr-10 md:pr-0 justify-start items-end md:items-center py-10 md:py-3 md:flex flex-col md:flex-row md:justify-center gap-x-10 fixed md:relative top-0 bottom-0 left-0 right-0 bg-black/30 md:bg-transparent z-20">
-                {navabar.map((item) => (
-                  <li
-                    key={nanoid()}
+                <span
+                  className={`block h-0.5 w-full bg-white transition-all duration-300 ${
+                    show ? "rotate-45 translate-y-1.5" : ""
+                  }`}
+                ></span>
+                <span
+                  className={`block h-0.5 w-full bg-white transition-all duration-300 ${
+                    show ? "opacity-0" : ""
+                  }`}
+                ></span>
+                <span
+                  className={`block h-0.5 w-full bg-white transition-all duration-300 ${
+                    show ? "-rotate-45 -translate-y-1.5" : ""
+                  }`}
+                ></span>
+              </div>
+            </button>
+
+            {/** Mobile Menu */}
+            <AnimatePresence>
+              {show && (
+                <motion.div
+                  id="menu"
+                  initial={{ y: "-100%", opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: "-100%", opacity: 1 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className={`${
+                    show ? "fixed" : "hidden"
+                  } lg:hidden top-0 left-0 right-0 bottom-0 z-50`}
+                >
+                  <button
                     onClick={() => setShow(!show)}
-                    className={`${
-                      path === item.direction ? "text-white" : " text-gray-300"
-                    } hover:text-white cursor-pointer pt-5 md:pt-0`}
+                    className="text-white absolute top-10 right-10"
                   >
-                    <Link href={item.direction}>{item.title}</Link>
-                  </li>
-                ))}
-              </ul>
+                    <RxCross1 className="text-4xl" />
+                  </button>
+                  <ul
+                    className={`flex h-screen flex-col justify-center items-start
+                 px-20 py-10 gap-4 text-base bg-black/90 transition-all duration-500`}
+                  >
+                    {navabar.map((item, index) => (
+                      <motion.li
+                        key={nanoid()}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{
+                          delay: index * 0.3, 
+                          duration: 0.4,
+                          ease: "easeOut",
+                        }}
+                        onClick={() => setShow(false)}
+                        className={`${
+                          path === item.direction
+                            ? "text-white"
+                            : "text-gray-300"
+                        } hover:text-white cursor-pointer text-2xl`}
+                      >
+                        <Link href={item.direction}>{item.title}</Link>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/** Desktop Menu */}
+            <div className="hidden lg:flex items-center gap-x-10">
+              {navabar.map((item) => (
+                <li
+                  key={nanoid()}
+                  className={`${
+                    path === item.direction ? "text-white" : "text-gray-300"
+                  } hover:text-white cursor-pointer text-base list-none`}
+                >
+                  <Link href={item.direction}>{item.title}</Link>
+                </li>
+              ))}
             </div>
           </div>
-          <Link href="#contLinkct" className="hidden md:block">
+          <Link href="#contLinkct" className="hidden lg:block">
             <div className="p-[2px] mt-8 rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit">
               <div className="bg-violet-950 backdrop-blur-sm p-1 rounded-[40px]">
                 <button className="flex items-center gap-x-5 rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-3 lg:px-6 py-2 lg:py-3 text-base md:text-xl font-semibold text-white">

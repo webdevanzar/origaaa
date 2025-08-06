@@ -58,13 +58,13 @@ export const HeroLight = () => {
 
   const settings = {
     initialSlide: 1,
-    // autoplay: true,
-    // autoplaySpeed: 100,
-    // pauseOnHover: true,
-    // Infinity: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    Infinity: true,
     centerMode: true,
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,

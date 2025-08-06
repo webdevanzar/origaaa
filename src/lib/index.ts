@@ -20,9 +20,6 @@ export const services = [
       {
         title: "SEO Optimization",
       },
-      {
-        title: "CMS (WordPress, Headless CMS, etc.)",
-      },
     ],
   },
   {
@@ -119,9 +116,6 @@ export const services = [
       },
       {
         title: "Product Uploads & Inventory",
-      },
-      {
-        title: "Customer Dashboard & Admin Panel",
       },
     ],
   },

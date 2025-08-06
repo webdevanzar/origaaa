@@ -4,31 +4,41 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { motion } from "framer-motion";
+import { RiArrowLeftWideFill } from "react-icons/ri";
 
 const WhatweDo = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const activeService = services[currentIndex];
   const [isMobile, setIsMobile] = useState(false);
-  const touchStartX = useRef(0);
-  const touchEndX = useRef(0);
+  // const touchStartX = useRef(0);
+  // const touchEndX = useRef(0);
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-  const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.touches[0].clientX;
-  };
-  const handleTouchEnd = () => {
-    const delta = touchStartX.current - touchEndX.current;
+  // const handleTouchStart = (e: React.TouchEvent) => {
+  //   touchStartX.current = e.touches[0].clientX;
+  // };
+  // const handleTouchMove = (e: React.TouchEvent) => {
+  //   touchEndX.current = e.touches[0].clientX;
+  // };
+  // const handleTouchEnd = () => {
+  //   const delta = touchStartX.current - touchEndX.current;
 
-    if (Math.abs(delta) > 50) {
-      if (delta > 0 && currentIndex < services.length - 1) {
-        // swipe left
-        setCurrentIndex(currentIndex + 1);
-      } else if (delta < 0 && currentIndex > 0) {
-        // swipe right
-        setCurrentIndex(currentIndex - 1);
-      }
+  //   if (Math.abs(delta) > 50) {
+  //     if (delta > 0 && currentIndex < services.length - 1) {
+  //       // swipe left
+  //       setCurrentIndex(currentIndex + 1);
+  //     } else if (delta < 0 && currentIndex > 0) {
+  //       // swipe right
+  //       setCurrentIndex(currentIndex - 1);
+  //     }
+  //   }
+  // };
+
+  const handleArrowClick = (direction: "left" | "right") => {
+    if (direction === "left" && currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+    if (direction === "right" && currentIndex < services.length - 1) {
+      setCurrentIndex(currentIndex + 1);
     }
   };
 
@@ -95,11 +105,30 @@ const WhatweDo = () => {
           </ul>
         </div>
         <motion.div
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
+          // onTouchStart={handleTouchStart}
+          // onTouchMove={handleTouchMove}
+          // onTouchEnd={handleTouchEnd}
           className="relative -z-0 shadow-xl w-full md:w-[75%] h-[600px] lg:h-[535px] rounded-3xl radial-bg-secondary pl-10 xl:pl-14 py-5 md:py-10 lg:py-16 lg:pr-0 pr-10 flex flex-col lg:flex-row justify-start gap-x-0 text-white"
         >
+          {/* Mobile Arrows */}
+          {isMobile && currentIndex > 0 && (
+            <button
+              onClick={() => handleArrowClick("left")}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-50  hover:scale-110 transition-all duration-500"
+            >
+              <RiArrowLeftWideFill size={36} />
+            </button>
+          )}
+
+          {isMobile && currentIndex < services.length - 1 && (
+            <button
+              onClick={() => handleArrowClick("right")}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-50 hover:scale-110 transition-all duration-500"
+            >
+              <RiArrowLeftWideFill className="rotate-180" size={36} />
+            </button>
+          )}
+
           <motion.div
             key={activeService.id}
             variants={containerVariants}
@@ -129,7 +158,10 @@ const WhatweDo = () => {
                   key={index}
                   className="flex justify-start items-center gap-x-3"
                 >
-                  <MdOutlineKeyboardDoubleArrowRight size={20} className="text-[#28CDA0]"/>
+                  <MdOutlineKeyboardDoubleArrowRight
+                    size={20}
+                    className="text-[#28CDA0]"
+                  />
                   {data.title}
                 </li>
               ))}

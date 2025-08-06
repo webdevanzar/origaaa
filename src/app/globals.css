@@ -59,7 +59,7 @@
   background: linear-gradient(107.74deg, #ab8c40 2.79%, #269785 96.76%);
 }
 
-/* .bubblebg {
+.bubblebg {
   background: linear-gradient(
     229.18deg,
     #93703a 20.2%,
@@ -67,7 +67,7 @@
     #136750 68.96%,
     #125053 85.21%
   );
-} */
+}
 
 /* .liquid-glass-bg {
   From https://css.glass

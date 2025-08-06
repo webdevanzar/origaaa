@@ -148,7 +148,7 @@ const Contact = () => {
           </div>
 
           <div className="flex items-start gap-x-3">
-            <FaLocationDot size={28} />
+            <FaLocationDot size={40} />
             <span className="text-lg">
               Global Buisness Centre, Swapnil Enclave, Shanmugham Road
               Ernakulam, Kerala 682031 India
@@ -158,8 +158,7 @@ const Contact = () => {
           <div className="flex items-start gap-x-3">
             <FaLocationDot size={28} />
             <span className="text-lg">
-              Global Buisness Centre, Swapnil Enclave, Shanmugham Road
-              Ernakulam, Kerala 682031 India
+             Alis Tower,Melattur, Malappuram, Kerala 679326 India
             </span>
           </div>
 
