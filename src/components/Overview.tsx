@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
+import { IoMdArrowRoundForward } from "react-icons/io";
 
 const Overview = () => {
   const sectionRef = useRef(null);
@@ -51,7 +52,10 @@ const Overview = () => {
               <span className="invisible">01</span>
             </h2>
             <h4 className="font-bold my-[10px] text-lg">Enquiry</h4>
-            <p className=" text-[15px] mt-2">Connect with Multiple Ways</p>
+            <p className=" text-[15px] mt-2">
+              Start the Conversation <br /> <IoMdArrowRoundForward className="inline-flex text-xl" /> Reach us through WhatsApp, call,
+              or email.
+            </p>
           </motion.div>
 
           <motion.div
@@ -72,8 +76,10 @@ const Overview = () => {
               </span>
               <span className="invisible">02</span>
             </h2>
-            <h4 className="font-bold my-[10px] text-lg">Enquiry</h4>
-            <p className="text-[15px] mt-2">Connect with Multiple Ways</p>
+            <h4 className="font-bold my-[10px] text-lg">Discovery Call</h4>
+            <p className="text-[15px] mt-2">
+              Understand Your Needs <br /> <IoMdArrowRoundForward className="inline-flex text-xl" /> Let’s align on your goals and ideas.
+            </p>
           </motion.div>
 
           <motion.div
@@ -94,8 +100,10 @@ const Overview = () => {
               </span>
               <span className="invisible">03</span>
             </h2>
-            <h4 className="font-bold my-[10px] text-lg">Enquiry</h4>
-            <p className="text-[15px] mt-2">Connect with Multiple Ways</p>
+            <h4 className="font-bold my-[10px] text-lg">Project Planning</h4>
+            <p className="text-[15px] mt-2">
+              Begin the Journey <br /> <IoMdArrowRoundForward className="inline-flex text-xl" /> We lay out your solution roadmap.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -112,7 +120,6 @@ const Overview = () => {
           height={1200}
           className="w-full h-full opacity-30"
         />
-
       </motion.div>
     </div>
   );

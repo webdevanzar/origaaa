@@ -111,7 +111,7 @@ export const OurProcess = () => {
 
   return (
     <div
-      className="min-h-screen py-20 px-4 relative overflow-hidden"
+      className="min-h-screen py-10 md:py-20 px-4 relative overflow-hidden"
     >
       {/* Background decorations */}
       <div className="absolute inset-0 opacity-20">

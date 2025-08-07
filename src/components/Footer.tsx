@@ -75,7 +75,7 @@ const Icons = [
 
 const Footer = () => {
   return (
-    <footer className="relative radial-bg px-5 2xl:px-20 pt-5 md:pt-16 pb-5 text-white flex flex-col gap-y-10">
+    <footer className="relative radial-bg px-5 2xl:px-20 pt-5 md:pt-16 pb-5 text-white flex flex-col gap-y-5 md:gap-y-10">
       <Image
         src="/vectors/logovector.png"
         width={400}
@@ -84,7 +84,7 @@ const Footer = () => {
         className="absolute opacity-40 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
       />
 
-      <div className="flex flex-col gap-y-10 lg:gap-y-0 lg:flex-row justify-between items-start">
+      <div className="flex flex-col gap-y-5 lg:gap-y-0 lg:flex-row justify-between items-start">
         <div className="w-full lg:w-1/2 flex flex-col gap-y-5 md:gap-y-0 md:flex-row justify-start items-start gap-x-20 lg:gap-x-0 lg:justify-between">
           <div className="flex w-auto md:w-1/3">
             <Image src={"/origalogo.png"} alt="logo" width={150} height={150} />
@@ -92,13 +92,13 @@ const Footer = () => {
 
           <div className="flex w-auto flex-row-reverse md:flex-row  md:w-2/3 justify-end gap-x-20">
             <div>
-              <h2 className="text-[23px] font-medium">Explore</h2>
-              <ul className="flex flex-col gap-y-3 mt-5">
+              <h2 className="text-[20px] sm:text-[23px] font-medium">Explore</h2>
+              <ul className="flex flex-col gap-y-2 mt-3">
                 {Explore.map((explore) => (
                   <li key={explore.id}>
                     <Link
                       href={explore.link}
-                      className="text-[19px] font-normal"
+                      className="sm:text-[19px] font-normal"
                     >
                       {explore.name}
                     </Link>
@@ -106,12 +106,12 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-            <div className="lg:pr-20 ">
-              <h2 className="text-[23px] font-medium">Menu</h2>
-              <ul className="flex flex-col gap-y-3 mt-5">
+            <div className="lg:pr-20">
+              <h2 className="text-[20px] sm:text-[23px] font-medium">Menu</h2>
+              <ul className="flex flex-col gap-y-2 mt-3">
                 {Menu.map((menu) => (
                   <li key={menu.id}>
-                    <Link href={menu.link} className="text-[19px] font-normal">
+                    <Link href={menu.link} className="sm:text-[19px] font-normal">
                       {menu.name}
                     </Link>
                   </li>
@@ -120,25 +120,24 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
         <div className="w-full lg:w-1/2 flex flex-col md:flex-row justify-between items-start">
           <div className="md:w-[55%] flex flex-col gap-y-3">
-            <h2 className="text-[23px] font-medium">OFFICE LOCATION</h2>
-            <div className="flex items-start gap-x-3 mt-4">
-              <FaLocationDot size={28} />
-              <span className="text-lg">
-                Global Buisness Centre, Swapnil Enclave, Shanmugham Road
-                Ernakulam, Kerala 682031 India
+            <h2 className="text-[20px] sm:text-[23px] font-medium">OFFICE LOCATION</h2>
+            <div className="flex items-start gap-x-3 mt-2 sm:mt-4">
+              <FaLocationDot className="text-[28px] lg:text-[32px]" />
+              <span className="sm:text-lg">
+                Global Business Centre, Shanmugham Road, Ernakulam, Kerala 682031 India
               </span>
             </div>
             <div className="flex items-start gap-x-3">
-              <FaLocationDot size={28} />
-              <span className="text-lg">
-                Global Buisness Centre, Swapnil Enclave, Shanmugham Road
-                Ernakulam, Kerala 682031 India
+              <FaLocationDot className="text-[24px]" />
+              <span className="sm:text-lg">
+                Alis Tower,Melattur, Malappuram, Kerala 679326 India
               </span>
             </div>
           </div>
-          <div className="md:w-[45%] flex justify-end gap-x-2 items-center pt-12">
+          <div className="md:w-[45%] flex justify-end gap-x-2 items-center pt-5 md:pt-12">
             {Icons.map((Icon) => (
               <Link
                 key={Icon.id}
@@ -153,14 +152,14 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex justify-start gap-x-10 items-center text-[19px] font-normal">
+      <div className="flex justify-start gap-x-10 items-center sm:text-[19px] font-normal">
         <Link href="#terms">Terms</Link>
         <Link href="#Privacy">Privacy</Link>
         <Link href="#Cookies">Cookies</Link>
       </div>
 
-      <p className="text-base font-normal text-center">
-        © 2025 Origanetworks All Rights Reserved.{" "}
+      <p className="sm:text-base font-normal text-center">
+        © 2025 Origanetworks All Rights Reserved.
       </p>
     </footer>
   );

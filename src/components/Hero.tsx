@@ -6,7 +6,7 @@ import TypingEffect from "./shared/TypingEffect";
 
 const Hero = () => {
   return (
-    <div className="relative bg-gray-100 overflow-y-hidden ">
+    <div className="relative bg-gray-100 overflow-hidden ">
       <Navbar />
       <div className="w-full">
         <div className="h-[70vh] md:h-screen overflow-hidden relative  bg-gray-900  mx-auto flex flex-col items-center pt-12 sm:pt-24 pb-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
@@ -23,7 +23,7 @@ const Hero = () => {
       </div>
 
       {/* shade */}
-      <div className="absolute inset-x-0 -bottom-[50px] h-[100px] md:h-[150px] blur-sm pointer-events-none overflow-hidden">
+      <div className="absolute -left-[1px] -right-[1px] inset-x-0 -bottom-[50px] h-[100px] md:h-[150px] blur-sm pointer-events-none">
         <div className="w-full scale-x-150 backdrop-blur-[1px] bg-gradient-to-t from-white via-white to-transparent h-full" />
       </div>
     </div>

@@ -54,12 +54,11 @@ export const HeroLight = () => {
   const [cursorVisible, setCursorVisible] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<Slider>(null);
-  console.log("activeSlide", activeSlide);
 
   const settings = {
     initialSlide: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 1500,
     pauseOnHover: true,
     Infinity: true,
     centerMode: true,
@@ -70,7 +69,6 @@ export const HeroLight = () => {
     arrows: false,
     centerPadding: "0",
     beforeChange: (_: number, next: number) => {
-      console.log("Changing to slide index:", next);
       setActiveSlide(next);
     },
     responsive: [

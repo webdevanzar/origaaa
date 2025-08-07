@@ -13,7 +13,6 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
   const path = usePathname();
 
-
   return (
     <>
       {/* Main Navigation */}
@@ -90,7 +89,7 @@ const Navbar = () => {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{
-                          delay: index * 0.3, 
+                          delay: index * 0.3,
                           duration: 0.4,
                           ease: "easeOut",
                         }}
@@ -104,6 +103,26 @@ const Navbar = () => {
                         <Link href={item.direction}>{item.title}</Link>
                       </motion.li>
                     ))}
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: navabar.length * 0.3, // Appears after last item
+                        duration: 0.5,
+                        ease: "easeOut",
+                      }}
+                    >
+                      <Link href="#contLinkct" className="">
+                        <div className="p-[2px] rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit">
+                          <div className="bg-violet-950 backdrop-blur-sm p-1 rounded-[40px]">
+                            <button className="flex items-center gap-x-5 rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-4 py-1 text-base md:text-xl font-semibold text-white">
+                              Let’s Talk
+                              <BiMessageRoundedDots size={30} />
+                            </button>
+                          </div>
+                        </div>
+                      </Link>
+                    </motion.div>
                   </ul>
                 </motion.div>
               )}

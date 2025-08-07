@@ -34,12 +34,16 @@ const ContactPopup = () => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const hasSeen = localStorage.getItem("hasSeenPopup");
-    if (!hasSeen) {
+  const hasSeen = localStorage.getItem("hasSeenPopup");
+  if (!hasSeen) {
+    const timer = setTimeout(() => {
       setShow(true);
       localStorage.setItem("hasSeenPopup", "true");
-    }
-  }, []);
+    }, 10000); // 10 seconds
+
+    return () => clearTimeout(timer); // Cleanup
+  }
+}, []);
 
   if (!show) return null;
 
@@ -70,7 +74,7 @@ const ContactPopup = () => {
   };
 
   return (
-    <section className="fixed md:inset-0 flex justify-center items-center bg-black/80 text-white mx-auto z-50">
+    <section className="h-screen fixed md:inset-0 flex justify-center items-center bg-black/80 text-white mx-auto z-50">
       <div className="relative backdrop-blur-[10px] bg-white/15 flex flex-col-reverse md:flex-row justify-between w-11/12 md:w-4/5 lg:w-2/3 xl:w-1/2 mx-auto rounded-[20px]  border-2 p-2">
         <button
           className="absolute top-3 right-3 md:-top-7 md:-right-7 text-2xl font-bold text-white"
@@ -82,12 +86,12 @@ const ContactPopup = () => {
         <div className="backdrop-blur-0 flex flex-col gap-y-2 md:gap-y-5 items-start md:w-1/2 px-5 py-2 md:py-10 rounded-[10px]">
           <div className="flex gap-x-3 items-center">
             <MdEmail size={28} />
-            <span className="text-lg">info@origanetworks.com</span>
+            <span className="sm:text-lg">info@origanetworks.com</span>
           </div>
 
           <div className="flex items-start gap-x-3">
             <FaLocationDot size={48} />
-            <span className="text-lg">
+            <span className="sm:text-lg">
               Global Buisness Centre, Swapnil Enclave, Shanmugham Road
               Ernakulam, Kerala 682031 India
             </span>
@@ -95,7 +99,7 @@ const ContactPopup = () => {
 
           <div className="flex items-start gap-x-3">
             <FaLocationDot size={28} />
-            <span className="text-lg">
+            <span className="sm:text-lg">
               Alis Tower,Melattur, Malappuram, Kerala 679326 India
             </span>
           </div>
@@ -105,14 +109,14 @@ const ContactPopup = () => {
             <div className="flex flex-col gap-y-2">
               <Link
                 href="tel:+918129164869"
-                className="text-lg hover:translate-x-0.5 duration-200"
+                className="sm:text-lg hover:translate-x-0.5 duration-200"
                 target="_blank"
               >
                 +91 8129164869
               </Link>
               <Link
                 href="tel:+918078154338"
-                className="text-lg hover:translate-x-0.5 duration-200"
+                className="sm:text-lg hover:translate-x-0.5 duration-200"
                 target="_blank"
               >
                 +91 8078154338
@@ -129,8 +133,7 @@ const ContactPopup = () => {
                 className="cursor-pointer hover:-translate-y-0.5 transition-all duration-200"
               >
                 <Icon.src
-                  size={40}
-                  className="p-2 backdrop-blur-[50px] bg-white/20 rounded-lg border-[1px]"
+                  className="p-1 sm:p-2 backdrop-blur-[50px] bg-white/20  text-[36px] sm:text-[40px] rounded-lg border-[1px]"
                 />
               </Link>
             ))}
@@ -144,7 +147,7 @@ const ContactPopup = () => {
           onSubmit={sendEmail}
         >
           <motion.div
-            className="flex flex-col gap-y-2 w-full"
+            className="flex flex-col gap-y-1 sm:gap-y-2 w-full"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -163,7 +166,7 @@ const ContactPopup = () => {
           </motion.div>
 
           <motion.div
-            className="flex flex-col gap-y-2 w-full"
+            className="flex flex-col gap-y-1 sm:gap-y-2 w-full"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -182,7 +185,7 @@ const ContactPopup = () => {
           </motion.div>
 
           <motion.div
-            className="flex flex-col gap-y-2 w-full"
+            className="flex flex-col gap-y-1 sm:gap-y-2 w-full"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -220,15 +223,15 @@ const ContactPopup = () => {
             </select>
           </motion.div>
 
-          <div className="flex items-end justify-end mt-5 md:mt-10">
+          <div className="flex items-end justify-end mt-2 sm:mt-5 md:mt-10">
             <button
               disabled={loading}
               type="submit"
               className="p-[1px] rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit"
             >
-              <span className="flex items-center gap-x-5 border-[5px] border-[#0C3535]   rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-3 md:px-6 py-2 md:py-3 text-base md:text-xl font-semibold text-white">
+              <span className="flex items-center gap-x-5 border-[5px] border-[#0C3535]   rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-4 md:px-6 py-1 sm:py-2 md:py-3 text-base md:text-xl font-semibold text-white">
                 {loading ? "Connecting..." : "Connect"}
-                <LuSend size={30} />
+                <LuSend className="text-[20px] sm:text-[30px]" />
               </span>
             </button>
           </div>
