@@ -12,6 +12,35 @@ import { RxCross1 } from "react-icons/rx";
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const path = usePathname();
+  const [loading, setLoading] = useState(true);
+
+  //loader
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timeout);
+  });
+
+  if (loading) {
+    return (
+      <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center">
+        <div className="flex flex-col items-center gap-6">
+          <Image
+            src="logo.svg"
+            alt="pearllagoon Logo"
+            width={200}
+            height={80}
+            className="animate-pulse"
+          />
+          <div className="relative w-16 h-16">
+            <div className="absolute inset-0 border-4 border-[#136750] border-t-transparent rounded-full animate-spin"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>

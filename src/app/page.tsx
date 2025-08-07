@@ -28,7 +28,6 @@ interface StoryblockTestimonialType {
   image: { filename: string };
   logo: { filename: string };
 }
-
 export interface TestimonialType {
   id: string;
   name: string;
@@ -38,17 +37,33 @@ export interface TestimonialType {
   logo: string;
 }
 
+interface StoryblokBlogType {
+  _uid: string;
+  title: string;
+  date: string;
+  image: { filename: string };
+  blogcontent: string;
+  component: string;
+}
+
+export interface BlogType {
+  id: string;
+  title: string;
+  date: string;
+  image: string;
+  content: string;
+}
+
 export default async function Home() {
   const storyblokApi = getStoryblokApi();
 
+  //testimonials
   const { data } = await storyblokApi.get("cdn/stories/testimonials", {
     version: "published",
   });
-
   // Get the testimonials array from content
   const testimonials = data.story.content
     .Testimonials as StoryblockTestimonialType[];
-
   // Format testimonials as needed
   const formattedTestimonials: TestimonialType[] = testimonials.map(
     (item, index) => ({
@@ -61,6 +76,20 @@ export default async function Home() {
     })
   );
 
+  const { data: blogData } = await storyblokApi.get("cdn/stories/blogs", {
+    version: "published",
+  });
+
+  //blogs
+  const blogs = blogData.story.content.blogs as StoryblokBlogType[];
+
+  const formattedBlogs: BlogType[] = blogs.map((item, index) => ({
+    id: item._uid || `blog-${index}`,
+    title: item.title,
+    date: item.date,
+    image: item.image.filename,
+    content: item.blogcontent,
+  }));
 
   return (
     <div className="overflow-x-hidden">
@@ -87,7 +116,7 @@ export default async function Home() {
         <ClientLogo />
         <Testimonial Testimonials={formattedTestimonials} />
       </AnimatedBlobBackground>
-      <Blogs />
+      <Blogs blogs={formattedBlogs} />
 
       <Contact />
       <Whatsapp />

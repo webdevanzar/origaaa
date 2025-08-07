@@ -19,8 +19,8 @@ const config: Config = {
         "aurora-gradient": "linear-gradient(135deg, #3A29FF, #FF94B4, #FF3232)",
       },
       animation: {
-        "infinite-scroll": "infinite-scroll 25s linear infinite",
-        "infinite-scroll-right": "infinite-scroll-right 25s linear infinite",
+        "infinite-scroll": "infinite-scroll 40s linear infinite",
+        "infinite-scroll-right": "infinite-scroll-right 40s linear infinite",
       },
       keyframes: {
         "infinite-scroll": {

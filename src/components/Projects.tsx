@@ -22,6 +22,8 @@ export const Projects = () => {
 
   const [activeSlide, setActiveSlide] = React.useState(0);
   const sliderRef = useRef<Slider>(null);
+  const [cursorVisible, setCursorVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const settings = {
     // centerMode: true,
@@ -76,8 +78,6 @@ export const Projects = () => {
     return index === active || index === (active - 1 + total) % total;
   };
 
-  const [cursorVisible, setCursorVisible] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="relative">

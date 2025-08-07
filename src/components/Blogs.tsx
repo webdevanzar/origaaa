@@ -1,13 +1,13 @@
 "use client";
-import { blogs } from "@/lib";
 import Image from "next/image";
 import React, { useRef } from "react";
 import { FaArrowRight, FaRegCalendarDays } from "react-icons/fa6";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import { TiltCard } from "./shared/TiltCard";
+import { BlogType } from "@/app/page";
 
-const Blogs = () => {
+const Blogs = ({ blogs }: { blogs: BlogType[] }) => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
 
@@ -171,7 +171,7 @@ const Blogs = () => {
                   className="text-[15px] text-[#727272] leading-6 mt-2 line-clamp-3"
                   variants={textVariants}
                 >
-                  {blog.description}
+                  {blog.content}
                 </motion.p>
                 <Link
                   href={`/#`}
