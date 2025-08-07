@@ -5,9 +5,9 @@ import React, { useEffect, useRef, useState } from "react";
 
 import "slick-carousel/slick/slick.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import storyblokClient from "@/utils/storyblock";
 import { CustomCursor } from "./shared/CustomeCursor";
 import Link from "next/link";
+import storyblokClient from "@/utils/storyblockClient";
 
 type ProjectType = {
   id: string;

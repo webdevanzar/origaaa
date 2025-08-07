@@ -12,6 +12,7 @@ import Whatsapp from "@/components/Whatsapp";
 import AnimatedBlobBackground from "@/components/shared/AnimatedBlobBackground";
 import Overview from "@/components/Overview";
 import ContactPopup from "@/components/ContactPopup";
+import { getStoryblokApi } from "@/utils/storyblock";
 
 const blobPositions = [
   { x: 10, y: 10 }, // Top-left
@@ -20,7 +21,47 @@ const blobPositions = [
   { x: 90, y: 90 }, // Bottom-right
 ];
 
-export default function Home() {
+interface StoryblockTestimonialType {
+  name: string;
+  role?: string;
+  content: string;
+  image: { filename: string };
+  logo: { filename: string };
+}
+
+export interface TestimonialType {
+  id: string;
+  name: string;
+  role?: string;
+  content: string;
+  image: string;
+  logo: string;
+}
+
+export default async function Home() {
+  const storyblokApi = getStoryblokApi();
+
+  const { data } = await storyblokApi.get("cdn/stories/testimonials", {
+    version: "published",
+  });
+
+  // Get the testimonials array from content
+  const testimonials = data.story.content
+    .Testimonials as StoryblockTestimonialType[];
+
+  // Format testimonials as needed
+  const formattedTestimonials: TestimonialType[] = testimonials.map(
+    (item, index) => ({
+      id: `testimonial-${index}`,
+      name: item.name,
+      role: item.role,
+      content: item.content,
+      image: item.image.filename,
+      logo: item.logo.filename,
+    })
+  );
+
+
   return (
     <div className="overflow-x-hidden">
       <ContactPopup />
@@ -44,7 +85,7 @@ export default function Home() {
         <Overview />
         <OurProcess />
         <ClientLogo />
-        <Testimonial />
+        <Testimonial Testimonials={formattedTestimonials} />
       </AnimatedBlobBackground>
       <Blogs />
 

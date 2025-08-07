@@ -1,43 +1,40 @@
 "use client";
+import { TestimonialType } from "@/app/page";
 import Image from "next/image";
 import React from "react";
-import AnimatedBlobBackground from "./shared/AnimatedBlobBackground";
-import { TiltCard } from "./shared/TiltCard";
 import Slider from "react-slick";
 
-const Testimonials = [
-  {
-    id: "1",
-    image: "/man1.jpg",
-    name: "VINOD KUMAR",
-    logoImage: "/testimoniallogo.png",
-    content:
-      "Origa Networks played a key role in transforming our digital presence. They built a modern, responsive website and delivered a fully customized ERP solution that streamlined our operations. Their technical expertise and commitment to quality were evident throughout. We’re very pleased with the results.",
-    role: "GENERAL MANAGER OF AMAN ENTERPRISE",
-  },
-  {
-    id: "1",
-    image: "/man1.jpg",
-    name: "VINOD KUMAR",
-    logoImage: "/testimoniallogo.png",
-    content:
-      "Origa Networks played a key role in transforming our digital presence. They built a modern, responsive website and delivered a fully customized ERP solution that streamlined our operations. Their technical expertise and commitment to quality were evident throughout. We’re very pleased with the results.",
-    role: "GENERAL MANAGER OF AMAN ENTERPRISE",
-  },
-  {
-    id: "1",
-    image: "/man1.jpg",
-    name: "VINOD KUMAR",
-    logoImage: "/testimoniallogo.png",
-    content:
-      "Origa Networks played a key role in transforming our digital presence. They built a modern, responsive website and delivered a fully customized ERP solution that streamlined our operations. Their technical expertise and commitment to quality were evident throughout. We’re very pleased with the results.",
-    role: "GENERAL MANAGER OF AMAN ENTERPRISE",
-  },
-];
+// const Testimonials = [
+//   {
+//     id: "1",
+//     image: "/man1.jpg",
+//     name: "VINOD KUMAR",
+//     logoImage: "/testimoniallogo.png",
+//     content:
+//       "Origa Networks played a key role in transforming our digital presence. They built a modern, responsive website and delivered a fully customized ERP solution that streamlined our operations. Their technical expertise and commitment to quality were evident throughout. We’re very pleased with the results.",
+//     role: "GENERAL MANAGER OF AMAN ENTERPRISE",
+//   },
+//   {
+//     id: "1",
+//     image: "/man1.jpg",
+//     name: "VINOD KUMAR",
+//     logoImage: "/testimoniallogo.png",
+//     content:
+//       "Origa Networks played a key role in transforming our digital presence. They built a modern, responsive website and delivered a fully customized ERP solution that streamlined our operations. Their technical expertise and commitment to quality were evident throughout. We’re very pleased with the results.",
+//     role: "GENERAL MANAGER OF AMAN ENTERPRISE",
+//   },
+//   {
+//     id: "1",
+//     image: "/man1.jpg",
+//     name: "VINOD KUMAR",
+//     logoImage: "/testimoniallogo.png",
+//     content:
+//       "Origa Networks played a key role in transforming our digital presence. They built a modern, responsive website and delivered a fully customized ERP solution that streamlined our operations. Their technical expertise and commitment to quality were evident throughout. We’re very pleased with the results.",
+//     role: "GENERAL MANAGER OF AMAN ENTERPRISE",
+//   },
+// ];
 
-
-
-const Testimonial = () => {
+const Testimonial = ({ Testimonials }: { Testimonials: TestimonialType[] }) => {
   const settings = {
     centerMode: true,
     autoplay: true,
@@ -66,57 +63,57 @@ const Testimonial = () => {
   };
 
   return (
+    <section className="relative py-10 lg:py-20 text-white w-11/12 sm:w-full lg:w-11/12 xl:w-10/12 mx-auto">
+      <h2 className="text-4xl lg:text-6xl font-bold text-center pb-5">
+        Voices of Trust
+      </h2>
 
-      <section className="relative py-10 lg:py-20 text-white w-11/12 sm:w-full lg:w-11/12 xl:w-10/12 mx-auto">
-        <h2 className="text-4xl lg:text-6xl font-bold text-center pb-5">
-          Voices of Trust
-        </h2>
-        
-        
-        <Slider {...settings} className="testimonial-slide custom-dots z-10 cursor-pointer">
-          {Testimonials.map((item) => (
-            <div
-              key={item.id}
-              className="relative p-8 sm:p-4 lg:p-8 pb-14 rounded-3xl border-[3px] backdrop-blur-lg bg-white/10 border-white bg-cover  w-[540px] h-[500px] flex flex-col justify-end items-end gap-y-10"
-            >
-              <Image
-                src={item.image}
-                alt="testimonial"
-                width={152}
-                height={152}
-                className="rounded-full w object-cover absolute -top-[75px] left-10"
-              />
-              <Image
-                src="/vectors/quotes.png"
-                alt="testimonial"
-                width={185}
-                height={155}
-                className="absolute bottom-3 left-3"
-              />
-              <div className="h-3/4 flex flex-col gap-y-10 pt-20 xl:pt-28">
-                <p className="text-base md:text-xl font-medium italic">
-                  {item.content}
-                </p>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-2xl">{item.name}</h3>
-                    <p className="text-xs"> {item.role} </p>
-                  </div>
-                  <div>
-                    <Image
-                      src="/testimoniallogo.png"
-                      alt="logo"
-                      width={1000}
-                      height={1000}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+      <Slider
+        {...settings}
+        className="testimonial-slide custom-dots z-10 cursor-pointer"
+      >
+        {Testimonials.map((item) => (
+          <div
+            key={item.id}
+            className="relative p-4 lg:p-8 pb-14 rounded-3xl border-[3px] backdrop-blur-lg bg-white/10 border-white bg-cover  w-[540px] h-[500px] flex flex-col justify-end items-end gap-y-10"
+          >
+            <Image
+              src={item.image}
+              alt="testimonial"
+              width={152}
+              height={152}
+              className="rounded-full w object-cover absolute -top-[75px] left-10"
+            />
+            <Image
+              src="/vectors/quotes.png"
+              alt="testimonial"
+              width={185}
+              height={155}
+              className="absolute bottom-3 left-3"
+            />
+            <div className="h-3/4 flex flex-col gap-y-10 pt-20 xl:pt-28">
+              <p className="text-base md:text-xl font-medium italic">
+                {item.content}
+              </p>
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-lg md:text-2xl uppercase">{item.name}</h3>
+                  <p className="text-xs uppercase"> {item.role} </p>
+                </div>
+                <div className="relative w-36 h-36">
+                  <Image
+                    src={item.logo}
+                    alt="logo"
+                    fill
+                    className="w-full h-full object-contain"
+                  />
                 </div>
               </div>
             </div>
-          ))}
-        </Slider>
-      </section>
+          </div>
+        ))}
+      </Slider>
+    </section>
   );
 };
 

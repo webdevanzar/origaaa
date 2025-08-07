@@ -1,11 +1,8 @@
-import StoryblokClient from "storyblok-js-client";
+import { storyblokInit, apiPlugin } from "@storyblok/react";
 
-const storyblokClient = new StoryblokClient({
-  accessToken: "glHqHKsLnN2WBlAAsF65DAtt", // use a public token
-  cache: {
-    clear: "auto",
-    type: "memory",
-  },
+storyblokInit({
+  accessToken: "glHqHKsLnN2WBlAAsF65DAtt",
+  use: [apiPlugin],
 });
 
-export default storyblokClient;
+export { getStoryblokApi } from "@storyblok/react";

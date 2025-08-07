@@ -12,6 +12,7 @@
     "@emailjs/browser": "^4.3.3",
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.8.9",
+    "@storyblok/react": "^5.4.3",
     "@svgr/webpack": "^8.1.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.9",
