@@ -8,7 +8,7 @@ const Overview = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
   return (
-    <div className="py-5 max-w-[1600px] mx-auto md:mb-10 overflow-hidden relative text-[#24a776] bg-white">
+    <div className="py-5 mx-auto md:mb-10 overflow-hidden relative text-[#24a776] bg-white">
       <section
         ref={sectionRef}
         className="max-w-6xl px-3 md:px-10 lg:px-5 relative z-10 w-full mx-auto py-0 md:py-16 flex flex-col items-center"

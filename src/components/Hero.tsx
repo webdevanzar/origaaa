@@ -1,8 +1,5 @@
 "use client";
-import Image from "next/image";
 import Navbar from "./Navbar";
-import { MotiionDiv } from "./shared/MotionDiv";
-import TypingEffect from "./shared/TypingEffect";
 
 const Hero = () => {
   return (
