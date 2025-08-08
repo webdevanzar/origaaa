@@ -100,7 +100,7 @@ const Navbar = () => {
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                   className={`${
                     show ? "fixed" : "hidden"
-                  } lg:hidden top-0 left-0 right-0 bottom-0 z-50`}
+                  } lg:hidden top-0 left-0 h-dvh right-0 bottom-0 z-50`}
                 >
                   <button
                     onClick={() => setShow(!show)}
@@ -109,7 +109,7 @@ const Navbar = () => {
                     <RxCross1 className="text-4xl" />
                   </button>
                   <ul
-                    className={`flex h-screen flex-col justify-center items-start
+                    className={`flex h-dvh flex-col justify-center items-start
                  px-20 py-10 gap-4 text-base bg-black/90 transition-all duration-500`}
                   >
                     {navabar.map((item, index) => (
