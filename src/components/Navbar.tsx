@@ -23,16 +23,16 @@ const Navbar = () => {
     return () => clearTimeout(timeout);
   });
 
-  const showLoaderPages = ["/", "/about", "/work", "/blogs"];
+  const showLoaderPages = ["/", "/about", "/work", "/blogs","/contact"];
 
   if (loading && showLoaderPages.includes(path)) {
     return (
-      <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center">
+      <div className="fixed inset-0 bg-black/85 z-50 flex items-center justify-center">
         <div className="flex flex-col items-center gap-6">
           <Image
             src="logo.svg"
             alt="origa logo"
-            width={200}
+            width={180}
             height={80}
             className="animate-pulse"
           />
@@ -144,7 +144,7 @@ const Navbar = () => {
                         ease: "easeOut",
                       }}
                     >
-                      <Link href="#contLinkct" className="">
+                      <Link href="/contact" className="">
                         <div className="p-[2px] rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit">
                           <div className="bg-violet-950 backdrop-blur-sm p-1 rounded-[40px]">
                             <button className="flex items-center gap-x-5 rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-4 py-1 text-base md:text-xl font-semibold text-white">
@@ -174,7 +174,7 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-          <Link href="#contLinkct" className="hidden lg:block">
+          <Link href="/contact" className="hidden lg:block">
             <div className="p-[2px] mt-8 rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit">
               <div className="bg-violet-950 backdrop-blur-sm p-1 rounded-[40px]">
                 <button className="flex items-center gap-x-5 rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-3 lg:px-6 py-2 lg:py-3 text-base md:text-xl font-semibold text-white">

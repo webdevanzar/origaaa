@@ -135,7 +135,7 @@ const Contact = () => {
 
       {/* actual content */}
       <div className="">
-        <h1 className="text-center text-[30px] md:text-[50px] lg:text-[80px] xl:text-[150px] font-semibold">
+        <h1 className="text-center text-[30px] md:text-[50px] lg:text-[80px] xl:text-[110px] font-semibold">
           Contact Us
         </h1>
         <p className="text-[18px] md:text-[25px] xl:text-[37px] text-center px-5">
@@ -371,7 +371,7 @@ const Contact = () => {
             >
               <span className="flex items-center gap-x-5 border-[5px] border-[#0C3535]   rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-3 md:px-6 py-2 md:py-3 text-base md:text-xl font-semibold text-white">
                 {loading ? "Sending..." : "Send"}
-                <LuSend size={30} />
+                <LuSend className="text-[20px] md:text-[30px]" />
               </span>
             </button>
           </div>
