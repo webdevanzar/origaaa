@@ -23,13 +23,15 @@ const Navbar = () => {
     return () => clearTimeout(timeout);
   });
 
-  if (loading) {
+  const showLoaderPages = ["/", "/about", "/work", "/blogs"];
+
+  if (loading && showLoaderPages.includes(path)) {
     return (
       <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center">
         <div className="flex flex-col items-center gap-6">
           <Image
             src="logo.svg"
-            alt="pearllagoon Logo"
+            alt="origa logo"
             width={200}
             height={80}
             className="animate-pulse"
@@ -100,7 +102,8 @@ const Navbar = () => {
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                   className={`${
                     show ? "fixed" : "hidden"
-                  } lg:hidden top-0 left-0 h-dvh right-0 bottom-0 z-50`}
+                  } lg:hidden inset-0 top-0 left-0 right-0 bottom-0 z-50`}
+                  style={{ minHeight: "100dvh" }}
                 >
                   <button
                     onClick={() => setShow(!show)}

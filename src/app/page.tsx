@@ -13,6 +13,7 @@ import AnimatedBlobBackground from "@/components/shared/AnimatedBlobBackground";
 import Overview from "@/components/Overview";
 import ContactPopup from "@/components/ContactPopup";
 import { getStoryblokApi } from "@/utils/storyblock";
+import { fetchblogs } from "@/utils/fetchblogs";
 
 const blobPositions = [
   { x: 10, y: 10 }, // Top-left
@@ -37,23 +38,6 @@ export interface TestimonialType {
   logo: string;
 }
 
-interface StoryblokBlogType {
-  _uid: string;
-  title: string;
-  date: string;
-  image: { filename: string };
-  blogcontent: string;
-  component: string;
-}
-
-export interface BlogType {
-  id: string;
-  title: string;
-  date: string;
-  image: string;
-  content: string;
-}
-
 export default async function Home() {
   const storyblokApi = getStoryblokApi();
 
@@ -76,20 +60,8 @@ export default async function Home() {
     })
   );
 
-  const { data: blogData } = await storyblokApi.get("cdn/stories/blogs", {
-    version: "published",
-  });
-
   //blogs
-  const blogs = blogData.story.content.blogs as StoryblokBlogType[];
-
-  const formattedBlogs: BlogType[] = blogs.map((item, index) => ({
-    id: item._uid || `blog-${index}`,
-    title: item.title,
-    date: item.date,
-    image: item.image.filename,
-    content: item.blogcontent,
-  }));
+  const blogs = await fetchblogs();
 
   return (
     <div className="overflow-x-hidden">
@@ -116,7 +88,7 @@ export default async function Home() {
         <ClientLogo />
         <Testimonial Testimonials={formattedTestimonials} />
       </AnimatedBlobBackground>
-      <Blogs blogs={formattedBlogs} />
+      <Blogs blogs={blogs} />
 
       <Contact />
       <Whatsapp />

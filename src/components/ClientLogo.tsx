@@ -24,7 +24,7 @@ const ClientLogo = () => {
     <div className="overflow-hidden text-white">
       <GrowTogether />
 
-      <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+      <div className="mx-auto max-w-screen-2xl">
         <h2 className="md:mb-5 text-4xl lg:text-6xl font-bold text-center">
           Proudly Partner With
         </h2>

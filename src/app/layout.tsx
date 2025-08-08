@@ -13,7 +13,6 @@ export const passionone = Passion_One({
 });
 
 export const metadata: Metadata = {
-  // metadataBase: new URL("https://www.zigzagdigitalsolutions.com"),
   twitter: {
     images: "/logo.svg",
     description:
