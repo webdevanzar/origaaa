@@ -38,8 +38,8 @@ const Contact = () => {
     setLoading(true);
 
     emailjs
-      .sendForm("service_hmgrh09", "template_ss2ir6t", form.current, {
-        publicKey: "wwPCgmsKl7Pk5zZDz",
+      .sendForm("service_8yrd2b9", "template_18t6arn", form.current, {
+        publicKey: "LUeAta2VxJHqjMv-U",
       })
       .then(
         () => {
@@ -147,12 +147,12 @@ const Contact = () => {
         <div className="backdrop-blur-0 flex flex-col gap-y-5 lg:gap-y-14 xl:gap-y-[50px] items-start w-full lg:w-1/2 xl:w-2/5 px-5 lg:px-10 py-5 lg:py-10 md:py-20 rounded-[15px] md:rounded-[30px]">
           <div className="flex gap-x-3 items-center">
             <MdEmail size={28} />
-            <span className="text-base sm:text-lg">info@origanetworks.com</span>
+            <span className="text-base sm:text-lg hover:text-green-500  hover:translate-x-0.5 duration-200">info@origanetworks.com</span>
           </div>
 
           <div className="flex items-start gap-x-3">
             <FaLocationDot  className="text-[34px] sm:text-[30px]"/>
-            <span className="text-base sm:text-lg">
+            <span className="text-base sm:text-lg hover:text-green-500 hover:translate-x-0.5 duration-200">
               Global Business Centre, Shanmugham Road, Ernakulam, Kerala 682031
               India
             </span>
@@ -160,7 +160,7 @@ const Contact = () => {
 
           <div className="flex items-start gap-x-3">
             <FaLocationDot size={28} />
-            <span className="text-base sm:text-lg">
+            <span className="text-base sm:text-lg hover:text-green-500 hover:translate-x-0.5 duration-200">
               Alis Tower,Melattur, Malappuram, Kerala 679326 India
             </span>
           </div>
@@ -170,14 +170,14 @@ const Contact = () => {
             <div className="flex flex-col gap-y-2">
               <Link
                 href="tel:+918129164869"
-                className="text-base sm:text-lg hover:translate-x-0.5 duration-200"
+                className="text-base sm:text-lg hover:translate-x-0.5 duration-200 hover:text-green-500"
                 target="_blank"
               >
                 +91 8129164869
               </Link>
               <Link
                 href="tel:+918078154338"
-                className="text-base sm:text-lg hover:translate-x-0.5 duration-200"
+                className="text-base sm:text-lg hover:translate-x-0.5 duration-200 hover:text-green-500"
                 target="_blank"
               >
                 +91 8078154338
@@ -299,6 +299,7 @@ const Contact = () => {
                     type="radio"
                     name="subject"
                     id="general"
+                     value="General Enquiry"
                     className="w-4 h-4"
                   />
                   <label htmlFor="general" className="text-[15px]">
@@ -310,6 +311,7 @@ const Contact = () => {
                     type="radio"
                     name="subject"
                     id="web-development"
+                     value="web-development"
                     className="w-4 h-4"
                   />
                   <label htmlFor="web-development" className="text-[15px]">
@@ -323,6 +325,7 @@ const Contact = () => {
                     type="radio"
                     name="subject"
                     id="ui/ux"
+                     value="ui/ux"
                     className="w-4 h-4"
                   />
                   <label htmlFor="ui/ux" className="text-[15px]">
@@ -334,6 +337,7 @@ const Contact = () => {
                     type="radio"
                     name="subject"
                     id="digital-marketing"
+                     value="digital-marketing"
                     className="w-4 h-4"
                   />
                   <label htmlFor="digital-marketing" className="text-[15px]">

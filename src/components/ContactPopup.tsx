@@ -59,8 +59,8 @@ const ContactPopup = ({
     setLoading(true);
 
     emailjs
-      .sendForm("service_hmgrh09", "template_ss2ir6t", form.current, {
-        publicKey: "wwPCgmsKl7Pk5zZDz",
+      .sendForm("service_8yrd2b9", "template_1t6lzgl", form.current, {
+        publicKey: "LUeAta2VxJHqjMv-U",
       })
       .then(
         () => {

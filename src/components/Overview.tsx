@@ -51,7 +51,7 @@ const Overview = () => {
               </span>
               <span className="invisible">01</span>
             </h2>
-            <h4 className="font-bold my-[10px] text-lg">Enquiry</h4>
+            <h4 className="font-bold my-[10px] text-lg text-[#5b542b]">Enquiry</h4>
             <p className=" text-[15px] mt-2">
               Start the Conversation <br />{" "}
               <IoMdArrowRoundForward className="inline-flex text-xl" /> Reach us
@@ -77,7 +77,7 @@ const Overview = () => {
               </span>
               <span className="invisible">02</span>
             </h2>
-            <h4 className="font-bold my-[10px] text-lg">Discovery Call</h4>
+            <h4 className="font-bold my-[10px] text-lg text-[#5b542b]">Discovery Call</h4>
             <p className="text-[15px] mt-2">
               Understand Your Needs <br />{" "}
               <IoMdArrowRoundForward className="inline-flex text-xl" /> Let’s
@@ -103,9 +103,9 @@ const Overview = () => {
               </span>
               <span className="invisible">03</span>
             </h2>
-            <h4 className="font-bold my-[10px] text-lg">Project Planning</h4>
+            <h4 className="font-bold my-[10px] text-lg text-[#5b542b]">Project Planning</h4>
             <p className="text-[15px] mt-2">
-              Begin the Journey <br />{" "}
+              Begin the Journey <br />
               <IoMdArrowRoundForward className="inline-flex text-xl" /> We lay
               out your solution roadmap.
             </p>
