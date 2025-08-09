@@ -12,7 +12,8 @@ const GrowTogether = () => {
     <div className="pb-10 bg-[linear-gradient(to_bottom,white_55%,transparent_45%)] text-white">
       <h1 className="w-11/12 mx-auto strok-text2 text-transparent text-center text-[50px] md:text-[80px] lg:text-[100px] xl:text-[124px] text-clip font-passionone animate-infinite-scroll whitespace-nowrap">
         The Numbers Speak for Themselves The Numbers Speak for Themselves The
-        Numbers Speak for Themselves
+        Numbers Speak for Themselves The Numbers Speak for Themselves The
+        Numbers Speak for Themselves The Numbers Speak for Themselves
       </h1>
 
       <div className="relative  radial-bg w-11/12 xl:w-10/12 mx-auto rounded-[15px] px-10 xl:px-14 py-7 md:py-11 flex flex-col gap-y-5 lg:gap-y-0 lg:flex-row justify-between gap-x-20 items-center mb-10">

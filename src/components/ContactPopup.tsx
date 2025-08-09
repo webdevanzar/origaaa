@@ -32,8 +32,8 @@ const ContactPopup = ({
   isOpen,
   onClose,
 }: {
-  isOpen: boolean;
-  onClose: () => void;
+  isOpen?: boolean;
+  onClose?: () => void;
 }) => {
   const [loading, setLoading] = useState(false);
   const form = useRef<HTMLFormElement | null>(null);

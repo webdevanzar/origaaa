@@ -15,14 +15,14 @@ const ClientLogo = () => {
     { src: "/clientlogos/30india.jpg", alt: "Farwish Logo" },
     { src: "/clientlogos/tot.png", alt: "Farwish Logo" },
     { src: "/clientlogos/amanlogo.png", alt: "Aman Enerprises Logo" },
+  ];
+  
+  const logos2 = [
     { src: "/clientlogos/outfyndlogo.svg", alt: "Outfynd Logo" },
     { src: "/clientlogos/virtuelogo.png", alt: "virtue Logo" },
     { src: "/clientlogos/ozmialogo.svg", alt: "Ozmia Logo" },
-  ];
-
-  const logos2 = [
     { src: "/clientlogos/arabnetlogo.jpg", alt: "arabnet Logo" },
-    { src: "/clientlogos/dezertlogo.jpg", alt: "dezertlogo" },
+    { src: "/clientlogos/dezert.jpeg", alt: "dezertlogo" },
     { src: "/clientlogos/mindralogo.png", alt: "mindralogo" },
     { src: "/clientlogos/yemslogo.jpeg", alt: "yemslogo" },
     { src: "/clientlogos/xdslogo.jpeg", alt: "xdslogo" },
@@ -52,11 +52,11 @@ const ClientLogo = () => {
           {/*second Slider */}
           <div className="relative flex items-center gap-x-14  overflow-hidden">
             <LogoScroller
-              logos={logos}
+              logos={logos2}
               className="animate-infinite-scroll-right"
             />
             <LogoScroller
-              logos={logos}
+              logos={logos2}
               className="animate-infinite-scroll-right"
             />
           </div>

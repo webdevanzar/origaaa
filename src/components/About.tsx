@@ -105,11 +105,11 @@ const About = () => {
               duration: 0.25,
             }}
             viewport={{ once: true }}
-            className="w-full md:w-1/2 lg:w-2/5 flex items-center"
+            className="w-full md:w-1/2 lg:w-2/5 flex "
           >
             {/* <span className="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100"></span> */}
 
-            <div className="text-black flex flex-col gap-y-4 xl:gap-y-7">
+            <div className="text-black flex flex-col justify-center gap-y-4 xl:gap-y-7">
               <h5 className="text-xl md:text-[30px] font-bold text-green-800">
                 About Us
               </h5>
@@ -134,17 +134,15 @@ const About = () => {
                 drive impact, we make the digital journey effortless and
                 effective
               </p>
-              {/* <a href="#contact"> */}
               <div
                 onClick={() => setIsPopupOpen(true)}
-                className="p-[2px] mt-3 lg:mt-5 xl:mt-8 rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit"
+                className="ml-60 md:ml-0 p-[2px] mt-3 lg:mt-5 xl:mt-8 rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit"
               >
-                <button className="flex items-center gap-x-5 border-[5px] border-white rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-3 lg:px-6 py-2 lg:py-3 text-base md:text-xl font-semibold text-white">
+                <button className=" flex items-center gap-x-5 border-[5px] border-white rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-3 lg:px-6 py-2 lg:py-3 text-base md:text-xl font-semibold text-white">
                   Get in Touch
                   <BiMessageRoundedDots size={30} />
                 </button>
               </div>
-              {/* </a> */}
             </div>
           </MotiionDiv>
         </div>

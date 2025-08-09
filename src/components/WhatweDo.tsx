@@ -77,7 +77,7 @@ const WhatweDo = () => {
         What We Do ?
       </h1>
 
-      <div className="flex h-full justify-between items-start w-11/12 2xl:w-10/12 mx-auto rounded-3xl bg-white md:pl-3 py-3 md:py-16">
+      <div className="flex h-full justify-between border-2 md:border-none border-white items-start w-11/12 2xl:w-10/12 mx-auto rounded-3xl bg-white md:pl-3 md:py-16">
         <div className="w-[25%] hidden md:flex flex-col justify-center items-center">
           <Image
             src="/logosmall.png"

@@ -65,7 +65,7 @@ export default async function Home() {
 
   return (
     <div className="overflow-x-hidden">
-      <ContactPopup />
+      <ContactPopup  />
       <Hero />
       <HeroLight />
       <About />
