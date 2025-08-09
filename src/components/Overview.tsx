@@ -34,7 +34,7 @@ const Overview = () => {
         </h2>
         <div className=" w-full grid md:grid-cols-3 gap-4 md:gap-7 mt-10 md:mt-20 mb-10 md:mb-36">
           <motion.div
-            className="bg-[#F5F3FF] shadow-md rounded-[20px] py-7 px-10"
+            className="bg-[#F5F3FF] shadow-md rounded-[20px] py-7 px-10 bg-gradient-to-b transition-all duration-200 from-green-50 to-white"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.5 }}
@@ -53,13 +53,14 @@ const Overview = () => {
             </h2>
             <h4 className="font-bold my-[10px] text-lg">Enquiry</h4>
             <p className=" text-[15px] mt-2">
-              Start the Conversation <br /> <IoMdArrowRoundForward className="inline-flex text-xl" /> Reach us through WhatsApp, call,
-              or email.
+              Start the Conversation <br />{" "}
+              <IoMdArrowRoundForward className="inline-flex text-xl" /> Reach us
+              through WhatsApp, call, or email.
             </p>
           </motion.div>
 
           <motion.div
-            className="bg-[#F5F3FF] transform translate-y-8 shadow-md rounded-[20px] py-7 px-10"
+            className="bg-[#F5F3FF] transform translate-y-8 shadow-md rounded-[20px] py-7 px-10  bg-gradient-to-b transition-all duration-200 from-green-50 to-white"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -78,12 +79,14 @@ const Overview = () => {
             </h2>
             <h4 className="font-bold my-[10px] text-lg">Discovery Call</h4>
             <p className="text-[15px] mt-2">
-              Understand Your Needs <br /> <IoMdArrowRoundForward className="inline-flex text-xl" /> Let’s align on your goals and ideas.
+              Understand Your Needs <br />{" "}
+              <IoMdArrowRoundForward className="inline-flex text-xl" /> Let’s
+              align on your goals and ideas.
             </p>
           </motion.div>
 
           <motion.div
-            className="bg-[#F5F3FF] shadow-md rounded-[20px] py-7 px-10"
+            className="bg-[#F5F3FF] shadow-md rounded-[20px] py-7 px-10  bg-gradient-to-b transition-all duration-200 from-green-50 to-white"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -102,7 +105,9 @@ const Overview = () => {
             </h2>
             <h4 className="font-bold my-[10px] text-lg">Project Planning</h4>
             <p className="text-[15px] mt-2">
-              Begin the Journey <br /> <IoMdArrowRoundForward className="inline-flex text-xl" /> We lay out your solution roadmap.
+              Begin the Journey <br />{" "}
+              <IoMdArrowRoundForward className="inline-flex text-xl" /> We lay
+              out your solution roadmap.
             </p>
           </motion.div>
         </div>

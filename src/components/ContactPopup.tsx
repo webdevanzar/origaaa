@@ -28,24 +28,30 @@ const Icons = [
     src: FaFacebookSquare,
   },
 ];
-const ContactPopup = () => {
+const ContactPopup = ({
+  isOpen,
+  onClose,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+}) => {
   const [loading, setLoading] = useState(false);
   const form = useRef<HTMLFormElement | null>(null);
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-  const hasSeen = localStorage.getItem("hasSeenPopup");
-  if (!hasSeen) {
-    const timer = setTimeout(() => {
-      setShow(true);
-      localStorage.setItem("hasSeenPopup", "true");
-    }, 10000); // 10 seconds
+    const hasSeen = localStorage.getItem("hasSeenPopup");
+    if (!hasSeen) {
+      const timer = setTimeout(() => {
+        setShow(true);
+        localStorage.setItem("hasSeenPopup", "true");
+      }, 10000); // 10 seconds
 
-    return () => clearTimeout(timer); // Cleanup
-  }
-}, []);
+      return () => clearTimeout(timer); // Cleanup
+    }
+  }, []);
 
-  if (!show) return null;
+  if (!show && !isOpen) return null;
 
   const sendEmail = (e: any) => {
     e.preventDefault();
@@ -78,7 +84,10 @@ const ContactPopup = () => {
       <div className="relative backdrop-blur-[10px] bg-white/15 flex flex-col-reverse md:flex-row justify-between w-11/12 md:w-4/5 lg:w-2/3 xl:w-1/2 mx-auto rounded-[20px]  border-2 p-2">
         <button
           className="absolute top-3 right-3 md:-top-7 md:-right-7 text-2xl font-bold text-white"
-          onClick={() => setShow(false)}
+          onClick={() => {
+            onClose && onClose();
+            setShow(false);
+          }}
         >
           ✕
         </button>
@@ -132,9 +141,7 @@ const ContactPopup = () => {
                 target="_blank"
                 className="cursor-pointer hover:-translate-y-0.5 transition-all duration-200"
               >
-                <Icon.src
-                  className="p-1 sm:p-2 backdrop-blur-[50px] bg-white/20  text-[36px] sm:text-[40px] rounded-lg border-[1px]"
-                />
+                <Icon.src className="p-1 sm:p-2 backdrop-blur-[50px] bg-white/20  text-[36px] sm:text-[40px] rounded-lg border-[1px]" />
               </Link>
             ))}
           </div>
@@ -209,17 +216,24 @@ const ContactPopup = () => {
               >
                 Enquiry on
               </option>
-              <option value="Website Development"  className="text-black">Web Development</option>
-              <option value="App Development"  className="text-black">App Development</option>
-              <option
-                value="Digital Marketing"
-                className="text-black"
-              >
+              <option value="Website Development" className="text-black">
+                Web Development
+              </option>
+              <option value="App Development" className="text-black">
+                App Development
+              </option>
+              <option value="Digital Marketing" className="text-black">
                 Digital Marketing
               </option>
-              <option value="Branding"  className="text-black">Branding</option>
-              <option value="E-commerce"  className="text-black">E-commerce</option>
-              <option value="Other"  className="text-black">Other</option>
+              <option value="Branding" className="text-black">
+                Branding
+              </option>
+              <option value="E-commerce" className="text-black">
+                E-commerce
+              </option>
+              <option value="Other" className="text-black">
+                Other
+              </option>
             </select>
           </motion.div>
 

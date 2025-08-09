@@ -1,8 +1,13 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import { FaPlus } from "react-icons/fa6";
+import CountUp from "react-countup";
+import { useInView } from "framer-motion";
 
 const GrowTogether = () => {
+  const statRef = useRef(null);
+  const isInView = useInView(statRef, { once: true });
   return (
     <div className="pb-10 bg-[linear-gradient(to_bottom,white_55%,transparent_45%)] text-white">
       <h1 className="w-11/12 mx-auto strok-text2 text-transparent text-center text-[50px] md:text-[80px] lg:text-[100px] xl:text-[124px] text-clip font-passionone animate-infinite-scroll whitespace-nowrap">
@@ -31,17 +36,28 @@ const GrowTogether = () => {
           </p>
         </div>
 
-        <div className=" w-full lg:w-[60%] flex flex-col sm:flex-row gap-x-16 xl:gap-x-20 lg:items-center">
+        <div
+          ref={statRef}
+          className=" w-full lg:w-[60%] flex flex-col sm:flex-row gap-x-16 xl:gap-x-20 lg:items-center"
+        >
           <div className="flex flex-col sm:gap-y-5 lg:gap-y-10 z-20">
             <div className="flex justify-start items-center gap-x-3">
-              <p className="text-[38px] lg:text-[50px] font-bold">40</p>
+              <p className="text-[38px] lg:text-[50px] font-bold">
+                {isInView && (
+                  <CountUp start={0} end={40} duration={2} delay={0.2} />
+                )}
+              </p>
               <div>
                 <FaPlus className="text-[#24A776]" />
                 <p className="text-xs lg:text-base">Global Happy Clients</p>
               </div>
             </div>
             <div className="flex justify-start items-center gap-x-3">
-              <p className="text-[38px] lg:text-[50px] font-bold">12</p>
+              <p className="text-[38px] lg:text-[50px] font-bold">
+                {isInView && (
+                  <CountUp start={0} end={8} duration={2} delay={0.2} />
+                )}
+              </p>
               <div>
                 <FaPlus className="text-[#24A776]" />
                 <p className="text-xs lg:text-base">Team Members</p>
@@ -51,14 +67,22 @@ const GrowTogether = () => {
 
           <div className="flex flex-col sm:gap-y-5 lg:gap-y-10 z-20">
             <div className="flex justify-start items-center gap-x-3">
-              <p className="text-[38px] lg:text-[50px] font-bold">30</p>
+              <p className="text-[38px] lg:text-[50px] font-bold">
+                {isInView && (
+                  <CountUp start={0} end={30} duration={2} delay={0.2} />
+                )}
+              </p>
               <div>
                 <FaPlus className="text-[#24A776]" />
                 <p className="text-xs lg:text-base">Project Completed</p>
               </div>
             </div>
             <div className="flex justify-start items-center gap-x-3">
-              <p className="text-[38px] lg:text-[50px] font-bold">12</p>
+              <p className="text-[38px] lg:text-[50px] font-bold">
+                {isInView && (
+                  <CountUp start={0} end={12} duration={2} delay={0.2} />
+                )}
+              </p>
               <div>
                 <FaPlus className="text-[#24A776]" />
                 <p className="text-xs lg:text-base">Glorious Months</p>

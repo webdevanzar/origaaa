@@ -6,7 +6,7 @@ const Hero = () => {
     <div className="relative bg-gray-100 overflow-hidden ">
       <Navbar />
       <div className="w-full">
-        <div className="h-[70vh] md:h-screen overflow-hidden relative  bg-gray-900  mx-auto flex flex-col items-center pt-12 sm:pt-24 pb-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
+        <div className="h-[50dvh] md:h-screen overflow-hidden relative  bg-gray-900  mx-auto flex flex-col items-center pt-12 sm:pt-24 pb-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
           <video
             autoPlay
             muted

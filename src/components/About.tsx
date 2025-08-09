@@ -1,9 +1,10 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { MotiionDiv } from "./shared/MotionDiv";
 import { BiMessageRoundedDots } from "react-icons/bi";
 import { motion } from "framer-motion";
+import ContactPopup from "./ContactPopup";
 
 const aboutVarients = {
   hidden: { opacity: 0, x: -200 },
@@ -19,8 +20,16 @@ const statVarients = {
   visible: { scale: 1 },
 };
 const About = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   return (
     <section id="about" className="relative py-10 md:py-20">
+      {isPopupOpen && (
+        <ContactPopup
+          isOpen={isPopupOpen}
+          onClose={() => setIsPopupOpen(false)}
+        />
+      )}
       <div className="w-11/12 xl:w-10/12 mx-auto">
         <div className="flex flex-col md:flex-row justify-between gap-y-7 md:gap-y-0 gap-x-5">
           <MotiionDiv
@@ -101,7 +110,7 @@ const About = () => {
             {/* <span className="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100"></span> */}
 
             <div className="text-black flex flex-col gap-y-4 xl:gap-y-7">
-              <h5 className="text-base md:text-[20px] text-gray-500">
+              <h5 className="text-xl md:text-[30px] font-bold text-green-800">
                 About Us
               </h5>
 
@@ -125,14 +134,17 @@ const About = () => {
                 drive impact, we make the digital journey effortless and
                 effective
               </p>
-              <a href="#contact">
-                <div className="p-[2px] mt-3 lg:mt-5 xl:mt-8 rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit">
-                  <button className="flex items-center gap-x-5 border-[5px] border-white rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-3 lg:px-6 py-2 lg:py-3 text-base md:text-xl font-semibold text-white">
-                    Get in Touch
-                    <BiMessageRoundedDots size={30} />
-                  </button>
-                </div>
-              </a>
+              {/* <a href="#contact"> */}
+              <div
+                onClick={() => setIsPopupOpen(true)}
+                className="p-[2px] mt-3 lg:mt-5 xl:mt-8 rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit"
+              >
+                <button className="flex items-center gap-x-5 border-[5px] border-white rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-3 lg:px-6 py-2 lg:py-3 text-base md:text-xl font-semibold text-white">
+                  Get in Touch
+                  <BiMessageRoundedDots size={30} />
+                </button>
+              </div>
+              {/* </a> */}
             </div>
           </MotiionDiv>
         </div>

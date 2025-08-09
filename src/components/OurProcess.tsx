@@ -111,7 +111,7 @@ export const OurProcess = () => {
 
   return (
     <div
-      className="lg:h-screen py-20 px-4 relative overflow-hidden"
+      className="lg:h-screen py-10 px-4 relative overflow-hidden"
     >
       {/* Background decorations */}
       <div className="absolute inset-0 opacity-20">
@@ -122,7 +122,7 @@ export const OurProcess = () => {
 
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-10">
           <h2 className="text-4xl lg:text-6xl font-bold text-white mb-4">Our Process</h2>
           <p className="text-white/70 text-lg">
             We follow a structured approach to deliver exceptional results for

@@ -171,6 +171,10 @@ export const navabar = [
     title: "Career",
     direction: "/#career",
   },
+    {
+    title: "Contact",
+    direction: "/contact",
+  },
 ];
 
 export const industries = [

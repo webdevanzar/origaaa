@@ -20,6 +20,15 @@ const ClientLogo = () => {
     { src: "/clientlogos/ozmialogo.svg", alt: "Ozmia Logo" },
   ];
 
+  const logos2 = [
+    { src: "/clientlogos/arabnetlogo.jpg", alt: "arabnet Logo" },
+    { src: "/clientlogos/dezertlogo.jpg", alt: "dezertlogo" },
+    { src: "/clientlogos/mindralogo.png", alt: "mindralogo" },
+    { src: "/clientlogos/yemslogo.jpeg", alt: "yemslogo" },
+    { src: "/clientlogos/xdslogo.jpeg", alt: "xdslogo" },
+    { src: "/clientlogos/pearllagoon.jpeg", alt: "pearllagoon Logo" },
+  ];
+
   return (
     <div className="overflow-hidden text-white">
       <GrowTogether />

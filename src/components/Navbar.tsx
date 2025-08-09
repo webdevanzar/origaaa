@@ -8,11 +8,13 @@ import { BiMessageRoundedDots } from "react-icons/bi";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { RxCross1 } from "react-icons/rx";
+import ContactPopup from "./ContactPopup";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const path = usePathname();
   const [loading, setLoading] = useState(true);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   //loader
   useEffect(() => {
@@ -23,7 +25,7 @@ const Navbar = () => {
     return () => clearTimeout(timeout);
   });
 
-  const showLoaderPages = ["/", "/about", "/work", "/blogs","/contact"];
+  const showLoaderPages = ["/", "/about", "/work", "/blogs", "/contact"];
 
   if (loading && showLoaderPages.includes(path)) {
     return (
@@ -32,7 +34,7 @@ const Navbar = () => {
           <Image
             src="logo.svg"
             alt="origa logo"
-            width={180}
+            width={200}
             height={80}
             className="animate-pulse"
           />
@@ -46,6 +48,13 @@ const Navbar = () => {
 
   return (
     <>
+      {isPopupOpen && (
+        <ContactPopup
+          isOpen={isPopupOpen}
+          onClose={() => setIsPopupOpen(false)}
+        />
+      )}
+
       {/* Main Navigation */}
       <nav className="w-full absolute top-0 z-40">
         <div className="mx-auto px-3 md:px-2 lg:px-10 flex items-center justify-between">
@@ -93,7 +102,7 @@ const Navbar = () => {
 
             {/** Mobile Menu */}
             <AnimatePresence>
-              {show && (
+              {show && !isPopupOpen && (
                 <motion.div
                   id="menu"
                   initial={{ y: "-100%", opacity: 0 }}
@@ -128,7 +137,7 @@ const Navbar = () => {
                         onClick={() => setShow(false)}
                         className={`${
                           path === item.direction
-                            ? "text-white"
+                            ? "text-green-400"
                             : "text-gray-300"
                         } hover:text-white cursor-pointer text-2xl`}
                       >
@@ -144,16 +153,17 @@ const Navbar = () => {
                         ease: "easeOut",
                       }}
                     >
-                      <Link href="/contact" className="">
-                        <div className="p-[2px] rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit">
-                          <div className="bg-violet-950 backdrop-blur-sm p-1 rounded-[40px]">
-                            <button className="flex items-center gap-x-5 rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-4 py-1 text-base md:text-xl font-semibold text-white">
-                              Let’s Talk
-                              <BiMessageRoundedDots size={30} />
-                            </button>
-                          </div>
+                      <div
+                        onClick={() => setIsPopupOpen(true)}
+                        className="p-[2px] rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit"
+                      >
+                        <div className="bg-violet-950 backdrop-blur-sm p-1 rounded-[40px]">
+                          <button className="flex items-center gap-x-5 rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-4 py-1 text-base md:text-xl font-semibold text-white">
+                            Talk to Us
+                            <BiMessageRoundedDots size={30} />
+                          </button>
                         </div>
-                      </Link>
+                      </div>
                     </motion.div>
                   </ul>
                 </motion.div>
@@ -166,7 +176,7 @@ const Navbar = () => {
                 <li
                   key={nanoid()}
                   className={`${
-                    path === item.direction ? "text-white" : "text-gray-300"
+                    path === item.direction ? "text-green-400" : "text-gray-300"
                   } hover:text-white cursor-pointer text-base list-none`}
                 >
                   <Link href={item.direction}>{item.title}</Link>
@@ -174,46 +184,166 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-          <Link href="/contact" className="hidden lg:block">
+          <div className="hidden lg:block" onClick={() => setIsPopupOpen(true)}>
             <div className="p-[2px] mt-8 rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit">
               <div className="bg-violet-950 backdrop-blur-sm p-1 rounded-[40px]">
                 <button className="flex items-center gap-x-5 rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-3 lg:px-6 py-2 lg:py-3 text-base md:text-xl font-semibold text-white">
-                  Let’s Talk
+                  Talk to Us
                   <BiMessageRoundedDots size={30} />
                 </button>
               </div>
             </div>
-          </Link>
+          </div>
         </div>
       </nav>
 
-      <div
-        className={`${
-          path !== "/" ? "hidden" : "flex"
-        } z-20 w-10/12 text-white absolute flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
-      >
-        <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg backdrop-blur-md overflow-y-auto">
-          <motion.p
-            animate={{
-              x: ["0%", "-100%"],
-            }}
-            transition={{
-              duration: 300,
-              ease: "linear",
-              repeat: Infinity,
-            }}
-            className=" text-[40px] md:text-[60px] lg:text-[80px] xl:text-[100px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
-          >
-            Innovative Web, App, and Marketing Solutions Tailored for Your
-            Business Growth . Innovative Web, App, and Marketing Solutions
-            Tailored for Your Business Growth . Innovative Web, App, and
-            Marketing Solutions Tailored for Your Business Growth . Innovative
-            Web, App, and Marketing Solutions Tailored for Your Business Growth
-            . Innovative Web, App, and Marketing Solutions Tailored for Your
-            Business Growth .
-          </motion.p>
+      {/* scrolling lines */}
+
+      {path === "/" ? (
+        <div
+          className={` z-20 w-10/12 text-white absolute flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
+        >
+          <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg backdrop-blur-md overflow-y-auto">
+            <motion.p
+              animate={{
+                x: ["0%", "-100%"],
+              }}
+              transition={{
+                duration: 300,
+                ease: "linear",
+                repeat: Infinity,
+              }}
+              className="text-[40px] md:text-[60px] lg:text-[80px] xl:text-[100px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
+            >
+              Innovative Web, App, and Marketing Solutions Tailored for Your
+              Business Growth . Innovative Web, App, and Marketing Solutions
+              Tailored for Your Business Growth . Innovative Web, App, and
+              Marketing Solutions Tailored for Your Business Growth . Innovative
+              Web, App, and Marketing Solutions Tailored for Your Business
+              Growth . Innovative Web, App, and Marketing Solutions Tailored for
+              Your Business Growth .
+            </motion.p>
+          </div>
         </div>
-      </div>
+      ) : path === "/about" ? (
+        <div
+          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-20 left-1/2 transform -translate-x-1/2`}
+        >
+          <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg backdrop-blur-md overflow-y-auto">
+            <motion.p
+              animate={{
+                x: ["0%", "-100%"],
+              }}
+              transition={{
+                duration: 300,
+                ease: "linear",
+                repeat: Infinity,
+              }}
+              className="text-[40px] md:text-[60px] lg:text-[80px] xl:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
+            >
+              Empowering businesses with next-gen network solutions. Empowering
+              businesses with next-gen network solutions. Empowering businesses
+              with next-gen network solutions. Empowering businesses with
+              next-gen network solutions. Empowering businesses with next-gen
+              network solutions. Empowering businesses with next-gen network
+              solutions. Empowering businesses with next-gen network solutions.
+              Empowering businesses with next-gen network solutions. Empowering
+              businesses with next-gen network solutions. Empowering businesses
+              with next-gen network solutions. Empowering businesses with
+              next-gen network solutions. Empowering businesses with next-gen
+              network solutions. Empowering businesses with next-gen network
+              solutions. Empowering businesses with next-gen network solutions.
+            </motion.p>
+          </div>
+        </div>
+      ) : path === "/blogs" ? (
+        <div
+          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-20 left-1/2 transform -translate-x-1/2`}
+        >
+          <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg backdrop-blur-md overflow-y-auto">
+            <motion.p
+              animate={{
+                x: ["0%", "-100%"],
+              }}
+              transition={{
+                duration: 300,
+                ease: "linear",
+                repeat: Infinity,
+              }}
+              className="text-[40px] md:text-[60px] lg:text-[80px] xl:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
+            >
+              Trends that Shape the Digital World. Trends that Shape the Digital
+              World. Trends that Shape the Digital World. Trends that Shape the
+              Digital World. Trends that Shape the Digital World. Trends that
+              Shape the Digital World. Trends that Shape the Digital World.
+              Trends that Shape the Digital World. Trends that Shape the Digital
+              World. Trends that Shape the Digital World. Trends that Shape the
+              Digital World. Trends that Shape the Digital World. Trends that
+              Shape the Digital World. Trends that Shape the Digital World.
+              Trends that Shape the Digital World. Trends that Shape the Digital
+              World. Trends that Shape the Digital World. Trends that Shape the
+              Digital World.
+            </motion.p>
+          </div>
+        </div>
+      ) : path === "/contact" ? (
+        <div
+          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-20 left-1/2 transform -translate-x-1/2`}
+        >
+          <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg backdrop-blur-md overflow-y-auto">
+            <motion.p
+              animate={{
+                x: ["0%", "-100%"],
+              }}
+              transition={{
+                duration: 300,
+                ease: "linear",
+                repeat: Infinity,
+              }}
+              className="text-[40px] md:text-[60px] lg:text-[80px] xl:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
+            >
+              Your Next Big Idea Starts Here. Your Next Big Idea Starts Here.
+              Your Next Big Idea Starts Here. Your Next Big Idea Starts Here.
+              Your Next Big Idea Starts Here. Your Next Big Idea Starts Here.
+              Your Next Big Idea Starts Here. Your Next Big Idea Starts Here.
+              Your Next Big Idea Starts Here. Your Next Big Idea Starts Here.
+              Your Next Big Idea Starts Here. Your Next Big Idea Starts Here.
+              Your Next Big Idea Starts Here. Your Next Big Idea Starts Here.
+              Your Next Big Idea Starts Here. Your Next Big Idea Starts Here.
+              Your Next Big Idea Starts Here. Your Next Big Idea Starts Here.
+              Your Next Big Idea Starts Here. Your Next Big Idea Starts Here.
+              Your Next Big Idea Starts Here. Your Next Big Idea Starts Here.
+              Your Next Big Idea Starts Here. Your Next Big Idea Starts Here.
+            </motion.p>
+          </div>
+        </div>
+      ) : (
+        <div
+          className={`z-20 w-10/12 text-white absolute flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
+        >
+          <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg backdrop-blur-md overflow-y-auto">
+            <motion.p
+              animate={{
+                x: ["0%", "-100%"],
+              }}
+              transition={{
+                duration: 300,
+                ease: "linear",
+                repeat: Infinity,
+              }}
+              className="text-[40px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
+            >
+              Innovative Web, App, and Marketing Solutions Tailored for Your
+              Business Growth . Innovative Web, App, and Marketing Solutions
+              Tailored for Your Business Growth . Innovative Web, App, and
+              Marketing Solutions Tailored for Your Business Growth . Innovative
+              Web, App, and Marketing Solutions Tailored for Your Business
+              Growth . Innovative Web, App, and Marketing Solutions Tailored for
+              Your Business Growth .
+            </motion.p>
+          </div>
+        </div>
+      )}
     </>
   );
 };
