@@ -111,8 +111,12 @@ const Navbar = () => {
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                   className={`${
                     show ? "fixed" : "hidden"
-                  } lg:hidden inset-0 top-0 left-0 right-0 bottom-0 z-50`}
-                  style={{ minHeight: "100dvh" }}
+                  } mobile-menu lg:hidden inset-0 top-0 left-0 right-0 bottom-0 z-50`}
+                  style={{
+                    minHeight: "-webkit-fill-available", // iOS fix
+                    height: "100dvh", // Double down on dynamic units
+                    overflow: "hidden", // Prevent scroll issues
+                  }}
                 >
                   <button
                     onClick={() => setShow(!show)}
@@ -227,7 +231,7 @@ const Navbar = () => {
         </div>
       ) : path === "/about" ? (
         <div
-          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-20 left-1/2 transform -translate-x-1/2`}
+          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-5 md:bottom-20 left-1/2 transform -translate-x-1/2`}
         >
           <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg backdrop-blur-md overflow-y-auto">
             <motion.p
@@ -239,7 +243,7 @@ const Navbar = () => {
                 ease: "linear",
                 repeat: Infinity,
               }}
-              className="text-[40px] md:text-[60px] lg:text-[80px] xl:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
+              className="text-[30px] md:text-[60px] lg:text-[80px] xl:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
             >
               Empowering businesses with next-gen network solutions. Empowering
               businesses with next-gen network solutions. Empowering businesses
@@ -258,7 +262,7 @@ const Navbar = () => {
         </div>
       ) : path === "/blogs" ? (
         <div
-          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-20 left-1/2 transform -translate-x-1/2`}
+          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-5  md:bottom-20  left-1/2 transform -translate-x-1/2`}
         >
           <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg backdrop-blur-md overflow-y-auto">
             <motion.p
@@ -270,7 +274,7 @@ const Navbar = () => {
                 ease: "linear",
                 repeat: Infinity,
               }}
-              className="text-[40px] md:text-[60px] lg:text-[80px] xl:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
+              className="text-[30px] md:text-[60px] lg:text-[80px] xl:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
             >
               Trends that Shape the Digital World. Trends that Shape the Digital
               World. Trends that Shape the Digital World. Trends that Shape the
@@ -288,7 +292,7 @@ const Navbar = () => {
         </div>
       ) : path === "/contact" ? (
         <div
-          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-20 left-1/2 transform -translate-x-1/2`}
+          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-5  md:bottom-20  left-1/2 transform -translate-x-1/2`}
         >
           <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg backdrop-blur-md overflow-y-auto">
             <motion.p
@@ -300,7 +304,7 @@ const Navbar = () => {
                 ease: "linear",
                 repeat: Infinity,
               }}
-              className="text-[40px] md:text-[60px] lg:text-[80px] xl:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
+              className="text-[30px] md:text-[60px] lg:text-[80px] xl:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
             >
               Your Next Big Idea Starts Here. Your Next Big Idea Starts Here.
               Your Next Big Idea Starts Here. Your Next Big Idea Starts Here.

@@ -136,7 +136,7 @@ const About = () => {
               </p>
               <div
                 onClick={() => setIsPopupOpen(true)}
-                className="ml-60 md:ml-0 p-[2px] mt-3 lg:mt-5 xl:mt-8 rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit"
+                className="ml-36 md:ml-0 p-[2px] mt-3 lg:mt-5 xl:mt-8 rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit"
               >
                 <button className=" flex items-center gap-x-5 border-[5px] border-white rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-3 lg:px-6 py-2 lg:py-3 text-base md:text-xl font-semibold text-white">
                   Get in Touch

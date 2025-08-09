@@ -9,6 +9,19 @@
   --font-passionone: "Passion One";
 }
 
+@supports (-webkit-touch-callout: none) {
+  /* iOS-specific CSS */
+  .ios-fix {
+    height: -webkit-fill-available;
+  }
+}
+
+@media (max-height: 700px) and (max-width: 400px) {
+  .mobile-menu {
+    height: 100% !important;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
