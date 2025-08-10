@@ -367,7 +367,7 @@ const Contact = () => {
             />
           </motion.div>
 
-          <div className="flex items-center justify-center md:justify-end md:pr-10">
+          <div className=" flex items-center justify-center md:justify-end md:pr-10">
             <button
               disabled={loading}
               type="submit"

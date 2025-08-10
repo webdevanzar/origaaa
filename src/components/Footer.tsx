@@ -86,13 +86,13 @@ const Footer = () => {
 
       <div className="flex flex-col gap-y-5 lg:gap-y-0 lg:flex-row justify-between items-start">
         <div className="w-full lg:w-1/2 flex flex-col gap-y-5 md:gap-y-0 md:flex-row justify-start items-start gap-x-20 lg:gap-x-0 lg:justify-between">
-          <div className="flex w-auto md:w-1/3">
+          <div className="flex w-full sm:justify-center md:w-1/3">
             <Image src={"/origalogo.png"} alt="logo" width={150} height={150} />
           </div>
 
           <div className="flex w-auto flex-row-reverse md:flex-row  md:w-2/3 justify-end gap-x-20">
             <div>
-              <h2 className="text-[20px] sm:text-[23px] font-medium">Explore</h2>
+              <h2 className="text-[23px] font-medium">Explore</h2>
               <ul className="flex flex-col gap-y-2 mt-3">
                 {Explore.map((explore) => (
                   <li key={explore.id}>
@@ -107,7 +107,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="lg:pr-20">
-              <h2 className="text-[20px] sm:text-[23px] font-medium">Menu</h2>
+              <h2 className="text-[23px] font-medium">Menu</h2>
               <ul className="flex flex-col gap-y-2 mt-3">
                 {Menu.map((menu) => (
                   <li key={menu.id}>
@@ -123,7 +123,7 @@ const Footer = () => {
 
         <div className="w-full lg:w-1/2 flex flex-col md:flex-row justify-between items-start">
           <div className="md:w-[55%] flex flex-col gap-y-3">
-            <h2 className="text-[20px] sm:text-[23px] font-medium">OFFICE LOCATION</h2>
+            <h2 className="text-[23px] font-medium">OFFICE LOCATION</h2>
             <div className="flex items-start gap-x-3 mt-2 sm:mt-4">
               <FaLocationDot className="text-[28px] lg:text-[32px]" />
               <span className="sm:text-lg">
@@ -158,7 +158,7 @@ const Footer = () => {
         <Link href="#Cookies">Cookies</Link>
       </div>
 
-      <p className="sm:text-base font-normal text-center">
+      <p className="text-xs sm:text-base text-center">
         © 2025 Origanetworks All Rights Reserved.
       </p>
     </footer>

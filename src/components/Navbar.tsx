@@ -159,7 +159,7 @@ const Navbar = () => {
                     >
                       <div
                         onClick={() => setIsPopupOpen(true)}
-                        className="p-[2px] rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit"
+                        className="glow-parent p-[2px] rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit"
                       >
                         <div className="bg-violet-950 backdrop-blur-sm p-1 rounded-[40px]">
                           <button className="flex items-center gap-x-5 rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-4 py-1 text-base md:text-xl font-semibold text-white">
@@ -188,10 +188,11 @@ const Navbar = () => {
               ))}
             </div>
           </div>
+
           <div className="hidden lg:block" onClick={() => setIsPopupOpen(true)}>
-            <div className="p-[2px] mt-8 rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit">
+            <div className="glow-parent p-[2px] mt-8 rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit transition-all duration-300">
               <div className="bg-violet-950 backdrop-blur-sm p-1 rounded-[40px]">
-                <button className="flex items-center gap-x-5 rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-3 lg:px-6 py-2 lg:py-3 text-base md:text-xl font-semibold text-white">
+                <button className="glow-on-hover flex items-center gap-x-5 rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] px-3 lg:px-6 py-2 lg:py-3 text-base md:text-xl font-semibold text-white">
                   Talk to Us
                   <BiMessageRoundedDots size={30} />
                 </button>
@@ -205,9 +206,9 @@ const Navbar = () => {
 
       {path === "/" ? (
         <div
-          className={` z-20 w-10/12 text-white absolute flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
+          className={`z-20 w-10/12 text-white absolute flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
         >
-          <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg backdrop-blur-md overflow-y-auto">
+          <div className="relative liquid-glass-bg overflow-x-hidden px-8 border-[1px] border-white rounded-full  overflow-y-auto">
             <motion.p
               animate={{
                 x: ["0%", "-100%"],
@@ -231,9 +232,9 @@ const Navbar = () => {
         </div>
       ) : path === "/about" ? (
         <div
-          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-5 md:bottom-20 left-1/2 transform -translate-x-1/2`}
+          className={`z-20 w-9/12 text-white absolute flex justify-center items-center bottom-7 md:bottom-20 left-1/2 transform -translate-x-1/2`}
         >
-          <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg backdrop-blur-md overflow-y-auto">
+          <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg overflow-y-auto">
             <motion.p
               animate={{
                 x: ["0%", "-100%"],
@@ -262,9 +263,9 @@ const Navbar = () => {
         </div>
       ) : path === "/blogs" ? (
         <div
-          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-5  md:bottom-20  left-1/2 transform -translate-x-1/2`}
+          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-7  md:bottom-20  left-1/2 transform -translate-x-1/2`}
         >
-          <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg backdrop-blur-md overflow-y-auto">
+          <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg  overflow-y-auto">
             <motion.p
               animate={{
                 x: ["0%", "-100%"],
@@ -292,9 +293,9 @@ const Navbar = () => {
         </div>
       ) : path === "/contact" ? (
         <div
-          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-5  md:bottom-20  left-1/2 transform -translate-x-1/2`}
+          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-7  md:bottom-20  left-1/2 transform -translate-x-1/2`}
         >
-          <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg backdrop-blur-md overflow-y-auto">
+          <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg  overflow-y-auto">
             <motion.p
               animate={{
                 x: ["0%", "-100%"],

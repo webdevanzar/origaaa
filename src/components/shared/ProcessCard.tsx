@@ -21,7 +21,8 @@ export const ProcessCard = ({
     <div className="px-3 cursor-pointer">
       {/* ${gradientFrom} ${gradientTo} backdrop-blur-sm */}
       <div
-        className={`relative backdrop-blur-[0px] bg-[#ffffff33] h-96 rounded-2xl p-8 border border-white transition-all duration-300 hover:transform hover:scale-105`}
+        //  bg-[#ffffff33] border border-white
+        className={`relative liquid-glass-bg  h-96 rounded-2xl p-8  transition-all duration-300 hover:transform hover:scale-105`}
       >
         {/* Icon */}
         <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mb-6">

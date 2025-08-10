@@ -6,12 +6,14 @@ const Hero = () => {
     <div className="relative bg-gray-100 overflow-hidden ">
       <Navbar />
       <div className="w-full">
-        <div className="h-[50dvh] md:h-[110dvh] overflow-hidden relative  bg-gray-900  mx-auto flex flex-col items-center pt-12 sm:pt-24 pb-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
+        <div className="h-[60dvh] md:h-[110dvh] overflow-hidden relative  bg-gray-900  mx-auto flex flex-col items-center pt-12 sm:pt-24 pb-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
           <video
             autoPlay
             muted
             loop
             playsInline
+            poster="/fallbackimg.png"
+            preload="metadata"
             className="absolute top-0 opacity-30 left-0 w-full h-full object-cover"
           >
             <source src="/herovideo2.mp4" type="video/mp4" />
