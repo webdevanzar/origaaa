@@ -56,7 +56,7 @@ const GrowTogether = () => {
             <div className="flex justify-start items-center gap-x-3">
               <p className="text-[38px] lg:text-[50px] font-bold">
                 {isInView && (
-                  <CountUp start={0} end={8} duration={2} delay={0.2} />
+                  <CountUp start={0} end={15} duration={2} delay={0.2} />
                 )}
               </p>
               <div>

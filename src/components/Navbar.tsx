@@ -25,6 +25,14 @@ const Navbar = () => {
     return () => clearTimeout(timeout);
   });
 
+  useEffect(() => {
+    if (show) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [show]);
+
   const showLoaderPages = ["/", "/about", "/work", "/blogs", "/contact"];
 
   if (loading && showLoaderPages.includes(path)) {
@@ -113,7 +121,6 @@ const Navbar = () => {
                     show ? "fixed" : "hidden"
                   } mobile-menu lg:hidden inset-0 top-0 left-0 right-0 bottom-0 z-50`}
                   style={{
-                    minHeight: "-webkit-fill-available", // iOS fix
                     height: "100dvh", // Double down on dynamic units
                     overflow: "hidden", // Prevent scroll issues
                   }}
@@ -230,9 +237,9 @@ const Navbar = () => {
             </motion.p>
           </div>
         </div>
-      ) : path === "/about" ? (
+      ) : path.startsWith("/about") ? (
         <div
-          className={`z-20 w-9/12 text-white absolute flex justify-center items-center bottom-7 md:bottom-20 left-1/2 transform -translate-x-1/2`}
+          className={`z-20 w-9/12 text-white absolute flex justify-center items-center bottom-10 md:bottom-20 left-1/2 transform -translate-x-1/2`}
         >
           <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg overflow-y-auto">
             <motion.p
@@ -261,9 +268,9 @@ const Navbar = () => {
             </motion.p>
           </div>
         </div>
-      ) : path === "/blogs" ? (
+      ) : path.startsWith("/blogs") ? (
         <div
-          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-7  md:bottom-20  left-1/2 transform -translate-x-1/2`}
+          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-10  md:bottom-20  left-1/2 transform -translate-x-1/2`}
         >
           <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg  overflow-y-auto">
             <motion.p
@@ -291,9 +298,9 @@ const Navbar = () => {
             </motion.p>
           </div>
         </div>
-      ) : path === "/contact" ? (
+      ) : path.startsWith("/contact") ? (
         <div
-          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-7  md:bottom-20  left-1/2 transform -translate-x-1/2`}
+          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-10  md:bottom-20  left-1/2 transform -translate-x-1/2`}
         >
           <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg  overflow-y-auto">
             <motion.p

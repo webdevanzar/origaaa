@@ -111,7 +111,10 @@ const Footer = () => {
               <ul className="flex flex-col gap-y-2 mt-3">
                 {Menu.map((menu) => (
                   <li key={menu.id}>
-                    <Link href={menu.link} className="sm:text-[19px] font-normal">
+                    <Link
+                      href={menu.link}
+                      className="sm:text-[19px] font-normal"
+                    >
                       {menu.name}
                     </Link>
                   </li>
@@ -127,13 +130,16 @@ const Footer = () => {
             <div className="flex items-start gap-x-3 mt-2 sm:mt-4">
               <FaLocationDot className="text-[28px] lg:text-[32px]" />
               <span className="sm:text-lg">
-                Global Business Centre, Shanmugham Road, Ernakulam, Kerala 682031 India
+                Global Business Centre, Shanmugham Road, Ernakulam, Kerala
+                682031 India. <br />
+                <span> +91 81291 64869</span>
               </span>
             </div>
             <div className="flex items-start gap-x-3">
               <FaLocationDot className="text-[24px]" />
               <span className="sm:text-lg">
-                Alis Tower,Melattur, Malappuram, Kerala 679326 India
+                Alis Tower, Melattur, Malappuram, Kerala 679326, India. <br />
+                <span>+91 80781 54338</span>
               </span>
             </div>
           </div>
@@ -152,7 +158,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex justify-start gap-x-10 items-center sm:text-[19px] font-normal">
+      <div className="flex justify-center md:justify-start gap-x-20 sm:gap-x-10 items-center text-xs sm:text-[19px] font-normal">
         <Link href="#terms">Terms</Link>
         <Link href="#Privacy">Privacy</Link>
         <Link href="#Cookies">Cookies</Link>
