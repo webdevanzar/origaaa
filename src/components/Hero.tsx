@@ -1,12 +1,19 @@
 "use client";
 import Navbar from "./Navbar";
+import { useSidebar } from "@/context/SidebarContext";
 
 const Hero = () => {
+  const { isSidebarOpen } = useSidebar();
+
   return (
     <div className="relative bg-gray-100 overflow-hidden ">
       <Navbar />
       <div className="w-full">
-        <div className="h-[60dvh] md:h-[110dvh] overflow-hidden relative  bg-gray-900  mx-auto flex flex-col items-center pt-12 sm:pt-24 pb-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
+        <div
+          className={`${
+            isSidebarOpen ? "h-[100dvh]" : " h-[60dvh]"
+          } md:h-[110dvh] overflow-hidden relative  bg-gray-900  mx-auto flex flex-col items-center pt-12 sm:pt-24 pb-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64`}
+        >
           <video
             autoPlay
             muted
