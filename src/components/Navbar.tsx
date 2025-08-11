@@ -9,9 +9,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { RxCross1 } from "react-icons/rx";
 import ContactPopup from "./ContactPopup";
+import { useSidebar } from "@/context/SidebarContext";
 
 const Navbar = () => {
-  const [show, setShow] = useState(false);
+  const { isSidebarOpen, toggleSidebar, closeSidebar } = useSidebar();
+  // const [show, setShow] = useState(false);
   const path = usePathname();
   const [loading, setLoading] = useState(true);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -26,12 +28,12 @@ const Navbar = () => {
   });
 
   useEffect(() => {
-    if (show) {
+    if (isSidebarOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
-  }, [show]);
+  }, [isSidebarOpen]);
 
   const showLoaderPages = ["/", "/about", "/work", "/blogs", "/contact"];
 
@@ -81,28 +83,28 @@ const Navbar = () => {
           </div>
           <div>
             <button
-              onClick={() => setShow(!show)}
+              onClick={() => toggleSidebar()}
               className={`${
-                show ? "hidden" : "block"
+                isSidebarOpen ? "hidden" : "block"
               } focus:outline-none  lg:hidden bg-white/10 p-3 rounded-lg`}
               aria-label="Toggle menu"
             >
               <div
-                className={`w-6 flex flex-col ${show ? "gap-1" : "gap-1.5"} `}
+                className={`w-6 flex flex-col ${isSidebarOpen ? "gap-1" : "gap-1.5"} `}
               >
                 <span
                   className={`block h-0.5 w-full bg-white transition-all duration-300 ${
-                    show ? "rotate-45 translate-y-1.5" : ""
+                    isSidebarOpen ? "rotate-45 translate-y-1.5" : ""
                   }`}
                 ></span>
                 <span
                   className={`block h-0.5 w-full bg-white transition-all duration-300 ${
-                    show ? "opacity-0" : ""
+                    isSidebarOpen ? "opacity-0" : ""
                   }`}
                 ></span>
                 <span
                   className={`block h-0.5 w-full bg-white transition-all duration-300 ${
-                    show ? "-rotate-45 -translate-y-1.5" : ""
+                    isSidebarOpen ? "-rotate-45 -translate-y-1.5" : ""
                   }`}
                 ></span>
               </div>
@@ -110,7 +112,7 @@ const Navbar = () => {
 
             {/** Mobile Menu */}
             <AnimatePresence>
-              {show && !isPopupOpen && (
+              {isSidebarOpen && !isPopupOpen && (
                 <motion.div
                   id="menu"
                   initial={{ y: "-100%", opacity: 0 }}
@@ -118,7 +120,7 @@ const Navbar = () => {
                   exit={{ y: "-100%", opacity: 1 }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                   className={`${
-                    show ? "fixed" : "hidden"
+                    isSidebarOpen ? "fixed" : "hidden"
                   } mobile-menu lg:hidden inset-0 top-0 left-0 right-0 bottom-0 z-50`}
                   style={{
                     height: "100dvh", // Double down on dynamic units
@@ -126,7 +128,7 @@ const Navbar = () => {
                   }}
                 >
                   <button
-                    onClick={() => setShow(!show)}
+                    onClick={() => toggleSidebar()}
                     className="text-white absolute top-10 right-10"
                   >
                     <RxCross1 className="text-4xl" />
@@ -145,7 +147,7 @@ const Navbar = () => {
                           duration: 0.4,
                           ease: "easeOut",
                         }}
-                        onClick={() => setShow(false)}
+                        onClick={() => closeSidebar()}
                         className={`${
                           path === item.direction
                             ? "text-green-400"

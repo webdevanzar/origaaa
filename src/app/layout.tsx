@@ -3,6 +3,7 @@ import { Inter, Manrope, Passion_One } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import SonerProvider from "@/components/shared/SonnerProvider";
+import { SidebarProvider } from "@/context/SidebarContext";
 
 const inter = Inter({ subsets: ["latin"] });
 const manrope = Manrope({ subsets: ["latin"] });
@@ -45,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={manrope.className}>
-        {children}
+        <SidebarProvider>{children}</SidebarProvider>
         <Footer />
         <SonerProvider />
       </body>

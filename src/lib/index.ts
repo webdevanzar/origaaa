@@ -156,12 +156,12 @@ export const navabar = [
     direction: "/about",
   },
   {
-    title: "Service",
-    direction: "/#service",
+    title: "Services",
+    direction: "/services",
   },
   {
     title: "Works",
-    direction: "/#works",
+    direction: "/works",
   },
   {
     title: "Blogs",

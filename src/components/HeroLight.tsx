@@ -27,6 +27,7 @@ import {
   MdSecurity,
 } from "react-icons/md";
 import { RiNextjsLine } from "react-icons/ri";
+import { useSidebar } from "@/context/SidebarContext";
 
 export const HeroLight = () => {
   const projects = [
@@ -91,6 +92,8 @@ export const HeroLight = () => {
       icon3: FaHandshake,
     },
   ];
+
+  const { isSidebarOpen } = useSidebar();
   const [activeSlide, setActiveSlide] = React.useState(1);
   const [cursorVisible, setCursorVisible] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -127,6 +130,8 @@ export const HeroLight = () => {
       },
     ],
   };
+
+  if (isSidebarOpen) return null;
   return (
     <section className="w-full  xl:w-12/12 mx-auto">
       <div className="radial-bg w-[47.2vw] h-[55.5vh] rounded-full blur-[150px] opacity-50 absolute right-1/2 bottom-1/4 translate-x-1/2 translate-y-1/2 ">
