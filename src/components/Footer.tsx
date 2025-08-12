@@ -13,17 +13,17 @@ const Explore = [
   {
     id: "1",
     name: "Our projects",
-    link: "#projects",
+    link: "/#ourprojects",
   },
   {
     id: "2",
     name: "Blog",
-    link: "#blog",
+    link: "/blogs",
   },
   {
     id: "3",
     name: "What we do",
-    link: "#partners",
+    link: "/#whatwedo",
   },
 ];
 
@@ -31,27 +31,27 @@ const Menu = [
   {
     id: "1",
     name: "Home",
-    link: "#home",
+    link: "/",
   },
   {
     id: "2",
     name: "About",
-    link: "#about",
+    link: "/about",
   },
   {
     id: "3",
     name: "Services",
-    link: "#services",
+    link: "/services",
   },
   {
     id: "4",
-    name: "Expertise",
-    link: "#expertise",
+    name: "Works",
+    link: "#works",
   },
   {
     id: "5",
-    name: "Works",
-    link: "#works",
+    name: "Career",
+    link: "#career",
   },
 ];
 
@@ -81,7 +81,7 @@ const Footer = () => {
         width={400}
         height={400}
         alt="logo small"
-        className="absolute opacity-40 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+        className="absolute opacity-40 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
       />
 
       <div className="flex flex-col gap-y-5 lg:gap-y-0 lg:flex-row justify-between items-start">
@@ -98,7 +98,7 @@ const Footer = () => {
                   <li key={explore.id}>
                     <Link
                       href={explore.link}
-                      className="sm:text-[19px] font-normal"
+                      className="sm:text-[19px] font-normal cursor-pointer"
                     >
                       {explore.name}
                     </Link>
@@ -113,7 +113,7 @@ const Footer = () => {
                   <li key={menu.id}>
                     <Link
                       href={menu.link}
-                      className="sm:text-[19px] font-normal"
+                      className="sm:text-[19px] font-normal cursor-pointer"
                     >
                       {menu.name}
                     </Link>
@@ -127,19 +127,19 @@ const Footer = () => {
         <div className="w-full lg:w-1/2 flex flex-col md:flex-row justify-between items-start">
           <div className="md:w-[55%] flex flex-col gap-y-3">
             <h2 className="text-[23px] font-medium">OFFICE LOCATION</h2>
+            <div className="flex items-start gap-x-3">
+              <FaLocationDot className="text-[24px]" />
+              <span className="sm:text-lg">
+                Alis Tower, Melattur, Malappuram, Kerala 679326, India. <br />
+                <span>+91 80781 54338</span>
+              </span>
+            </div>
             <div className="flex items-start gap-x-3 mt-2 sm:mt-4">
               <FaLocationDot className="text-[28px] lg:text-[32px]" />
               <span className="sm:text-lg">
                 Global Business Centre, Shanmugham Road, Ernakulam, Kerala
                 682031 India. <br />
                 <span> +91 81291 64869</span>
-              </span>
-            </div>
-            <div className="flex items-start gap-x-3">
-              <FaLocationDot className="text-[24px]" />
-              <span className="sm:text-lg">
-                Alis Tower, Melattur, Malappuram, Kerala 679326, India. <br />
-                <span>+91 80781 54338</span>
               </span>
             </div>
           </div>

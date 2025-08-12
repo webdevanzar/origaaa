@@ -118,52 +118,6 @@ const BlogosDetailPage = () => {
     },
   };
 
-  //   // Fallback data in case API fails
-  //   const DUMMY_NEWS: BlogPost[] = [
-  //     {
-  //       id: 1,
-  //       image: "/images/news/blog.jpeg",
-  //       date: "Mar 19, 2025",
-  //       title: "New UAE visa regulations announced.",
-  //       desc: "In the UAE, Sheikh Zayed of Dubai has announced new rules and regulations regarding eligibility for deposit amounts and accommodation. Candidates must ensure that they have no legal issues in their home country, and they will also be subject to additional legal requirements that are applicable.",
-  //     },
-  //     {
-  //       id: 2,
-  //       image: "/images/new.png",
-  //       date: "Feb 22, 2025",
-  //       title: "The Latest Advancements in AI Learning Platforms ",
-  //       desc: "India: The Rise of Artificial Intelligence and Its Impact on Tech Jobs In recent years, India has witnessed a significant surge in the adoption of Artificial Intelligence (AI) technologies across various sectors. This transformation is reshaping the job landscape, particularly in the technology sector, where AI is increasingly taking over tasks traditionally performance",
-  //     },
-  //     {
-  //       id: 3,
-  //       image: "/images/new2.png",
-  //       date: "Jan 30, 2025",
-  //       title: "Journeys of Discovery Uncovering Hidden Treasures",
-  //       desc: "Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper posuere viverra .Aliquam eros justo, posuere lobortis viverra laoreet augue mattis fmentum ullamcorper viverra laoreet Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper posuere viverra .Aliquam eros justo, pos Aliquam eros ",
-  //     },
-  //   ];
-
-  //   const DUMMY_POPULAR_POSTS: PopularPost[] = [
-  //     {
-  //       id: "1",
-  //       title: "New UAE visa regulations announced.",
-  //       date: "Mar 19, 2025",
-  //       image: "/images/news/blog.jpeg",
-  //     },
-  //     {
-  //       id: "2",
-  //       title: "The Latest Advancements in AI Learning Platforms",
-  //       date: "Feb 22, 2025",
-  //       image: "/images/new.png",
-  //     },
-  //     {
-  //       id: "3",
-  //       title: "Journeys of Discovery Uncovering Hidden Treasures",
-  //       date: "Jan 30, 2025",
-  //       image: "/images/new2.png",
-  //     },
-  //   ];
-
   // Render content based on loading state
   const renderContent = () => {
     if (loading) {
@@ -325,7 +279,7 @@ const BlogosDetailPage = () => {
                   </div>
                   <div className="flex flex-col gap-y-1 md:gap-y-0">
                     <div className="flex gap-x-2">
-                      <SlCalender className="w-3 text-[#B542FA]" />
+                      <SlCalender className="w-3 text-yellow-900" />
                       <span className="text-xs md:text-sm text-[#727272]">
                         {formatDate(item.date)}
                       </span>
@@ -349,7 +303,7 @@ const BlogosDetailPage = () => {
             className="bg-[#FFFFFF] rounded-[20px] p-4 lg:p-7 flex flex-col"
           >
             <h4 className="font-bold text-[17px] text-[#5b542b]">Category</h4>
-            <hr className="border border-[#E3DBD8]/60 mt-3" />
+            <hr className="border border-[#E3DBD8]/60 mt-3 " />
             <motion.div
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -370,8 +324,8 @@ const BlogosDetailPage = () => {
                   key={index}
                   variants={fadeUp}
                   custom={index + 8}
-                  whileHover={{ x: 8, color: "#B542FA" }}
-                  className="text-[15px] flexStart gap-x-3 cursor-pointer"
+                  whileHover={{ x: 8, color: "#22c55e" }}
+                  className="text-[15px] flex gap-x-3 cursor-pointer"
                 >
                   {item}
                 </motion.span>

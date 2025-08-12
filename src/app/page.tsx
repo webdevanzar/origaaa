@@ -15,7 +15,7 @@ import ContactPopup from "@/components/ContactPopup";
 import { getStoryblokApi } from "@/utils/storyblock";
 import { fetchblogs } from "@/utils/fetchblogs";
 
-const blobPositions = [
+export const blobPositions = [
   { x: 10, y: 10 }, // Top-left
   { x: 90, y: 10 }, // Top-right
   { x: 10, y: 90 }, // Bottom-left
@@ -91,7 +91,6 @@ export default async function Home() {
       <Blogs blogs={blogs} />
 
       <Contact />
-      <Whatsapp />
     </div>
   );
 }

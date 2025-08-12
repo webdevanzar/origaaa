@@ -122,7 +122,6 @@ const Blogs = ({ blogs }: { blogs: BlogType[] }) => {
                   ? "bg-gray-100 text-gray-400 cursor-not-allowed"
                   : "bg-gray-200 text-[#24a776] hover:bg-[#24a776] hover:text-white"
               }`}
-            // className="w-14 h-14 rounded-full cursor-pointer flex hover:bg-[#24a776] hover:text-white items-center justify-center bg-gray-200 text-[#24a776] transition-all"
           >
             <FaArrowRight className="-rotate-180" />
           </motion.button>
@@ -136,7 +135,6 @@ const Blogs = ({ blogs }: { blogs: BlogType[] }) => {
                   ? "bg-gray-100 text-gray-400 cursor-not-allowed"
                   : "bg-gray-200 text-[#24a776] hover:bg-[#24a776] hover:text-white"
               }`}
-            // className="w-14 h-14 rounded-full cursor-pointer flex items-center hover:bg-[#24a776] text-[#24a776] bg-gray-200 hover:text-white justify-center transition-all"
           >
             <FaArrowRight className="" />
           </motion.button>

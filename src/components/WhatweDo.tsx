@@ -68,7 +68,7 @@ const WhatweDo = () => {
   };
 
   return (
-    <section className="py-10 relative">
+    <section className="py-10 relative" id="whatwedo">
       <div className="absolute -right-10 -top-5 md:-top-20 -left-10 z-50 border-none h-[45px] md:h-[90px] blur-sm bg-gradient-to-t from-white to-white">
         {/* shade */}
       </div>

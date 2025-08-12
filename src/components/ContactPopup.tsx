@@ -80,7 +80,7 @@ const ContactPopup = ({
   };
 
   return (
-    <section className="h-screen fixed md:inset-0 flex justify-center items-center bg-black/80 text-white mx-auto z-50">
+    <section className="h-screen fixed inset-0 flex justify-center items-center bg-black/80 text-white mx-auto z-50">
       <div className="relative backdrop-blur-[10px] bg-white/15 flex flex-col-reverse md:flex-row justify-between w-11/12 md:w-4/5 lg:w-2/3 xl:w-1/2 mx-auto rounded-[20px]  border-2 p-2">
         <button
           className="absolute top-3 right-3 md:-top-7 md:-right-7 text-2xl font-bold text-white"
@@ -99,17 +99,17 @@ const ContactPopup = ({
           </div>
 
           <div className="flex items-start gap-x-3">
-            <FaLocationDot size={48} />
+            <FaLocationDot size={28} />
             <span className="sm:text-lg">
-              Global Buisness Centre, Swapnil Enclave, Shanmugham Road
-              Ernakulam, Kerala 682031 India
+              Alis Tower,Melattur, Malappuram, Kerala 679326 India
             </span>
           </div>
 
           <div className="flex items-start gap-x-3">
-            <FaLocationDot size={28} />
+            <FaLocationDot size={48} />
             <span className="sm:text-lg">
-              Alis Tower,Melattur, Malappuram, Kerala 679326 India
+              Global Buisness Centre, Swapnil Enclave, Shanmugham Road
+              Ernakulam, Kerala 682031 India
             </span>
           </div>
 

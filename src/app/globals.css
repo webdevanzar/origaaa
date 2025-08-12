@@ -12,6 +12,7 @@
 html,
 body {
   height: -webkit-fill-available;
+  scroll-behavior: smooth;
 }
 .mobile-menu {
   height: 100vh; /* fallback */

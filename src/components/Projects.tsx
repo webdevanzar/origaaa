@@ -80,7 +80,7 @@ export const Projects = () => {
 
 
   return (
-    <div className="relative">
+    <div className="relative" id="ourprojects">
       {projects.length !== 0 && (
         <div className="relative py-8 flex flex-col items-center md:flex-row xl:py-20 w-[98%] m-auto">
           <div className="md:absolute w-full  md:w-1/2 lg:w-1/3 left-0 flex flex-col justify-center gap-y-5 md:gap-y-10 p-5 z-20">

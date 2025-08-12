@@ -27,11 +27,12 @@ import {
   MdSecurity,
 } from "react-icons/md";
 import { RiNextjsLine } from "react-icons/ri";
+import Link from "next/link";
 
 export const HeroLight = () => {
   const projects = [
     {
-      id: "1",
+      id: "app",
       image: "/herolight/image1.jpg",
       title: "App Development",
       p1: "User-Centric",
@@ -41,7 +42,7 @@ export const HeroLight = () => {
       icon3: CiGlobe,
     },
     {
-      id: "2",
+      id: "web",
       image: "/herolight/image2.jpg",
       title: "Web Development",
       p1: "User-Centric",
@@ -51,7 +52,7 @@ export const HeroLight = () => {
       icon3: RiNextjsLine,
     },
     {
-      id: "3",
+      id: "ecommerce",
       image: "/herolight/image3.jpg",
       title: "Ecommerce Development",
       p1: "SSL encryption",
@@ -61,7 +62,7 @@ export const HeroLight = () => {
       icon3: MdOutlineSell,
     },
     {
-      id: "4",
+      id: "amc",
       image: "/herolight/image1.jpg",
       title: "AMC",
       p1: "User-Centric",
@@ -71,7 +72,7 @@ export const HeroLight = () => {
       icon3: FaServer,
     },
     {
-      id: "5",
+      id: "erp",
       image: "/herolight/image2.jpg",
       title: "ERP Development",
       p1: "User-Centric",
@@ -81,7 +82,7 @@ export const HeroLight = () => {
       icon3: FaCloudflare,
     },
     {
-      id: "6",
+      id: "marketing",
       image: "/herolight/image3.jpg",
       title: "Digital Marketing",
       p1: "User-Centric",
@@ -167,10 +168,17 @@ export const HeroLight = () => {
                 <h2 className="text-2xl font-semibold xl:text-4xl pt-2 text-white line-clamp-2 w-2/3 text-center">
                   {Item.title}
                 </h2>
-                <FiArrowUpRight
-                  size={60}
-                  className="rounded-full border-[1px] p-3 text-white"
-                />
+                <Link
+                  href={`/services#${Item.id}`}
+                  onMouseEnter={() => setCursorVisible(false)}
+                  onMouseLeave={() => setCursorVisible(true)}
+                >
+                  <FiArrowUpRight
+                    size={60}
+                    className="rounded-full border-[1px] p-3 text-white"
+                  />
+                </Link>
+
                 <div
                   className={`${
                     index === activeSlide ? "opacity-0" : "opacity-100"
