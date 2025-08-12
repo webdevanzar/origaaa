@@ -1,33 +1,15 @@
 "use client";
-import Image from "next/image";
 import React from "react";
 import GrowTogether from "./GrowTogether";
 import { LogoScroller } from "./shared/LogoScroller";
+import { ClientLogoType } from "@/app/page";
 
-const ClientLogo = () => {
-  const logos = [
-    { src: "/clientlogos/delta.png", alt: "Delta Logo" },
-    { src: "/clientlogos/CapitalMarket.svg", alt: "Capital Market Logo" },
-    { src: "/clientlogos/zyrus.png", alt: "Zyrus Logo" },
-    { src: "/clientlogos/farwish.jpg", alt: "Farwish Logo" },
-    { src: "/clientlogos/flora.png", alt: "Flora Logo" },
-    { src: "/clientlogos/Valluvanad.png", alt: "Valluvanad Logo" },
-    { src: "/clientlogos/30india.jpg", alt: "Farwish Logo" },
-    { src: "/clientlogos/tot.png", alt: "Farwish Logo" },
-    { src: "/clientlogos/amanlogo.png", alt: "Aman Enerprises Logo" },
-  ];
-  
-  const logos2 = [
-    { src: "/clientlogos/outfyndlogo.svg", alt: "Outfynd Logo" },
-    { src: "/clientlogos/virtuelogo.png", alt: "virtue Logo" },
-    { src: "/clientlogos/ozmialogo.svg", alt: "Ozmia Logo" },
-    { src: "/clientlogos/arabnetlogo.jpg", alt: "arabnet Logo" },
-    { src: "/clientlogos/dezert.jpeg", alt: "dezertlogo" },
-    { src: "/clientlogos/mindralogo.png", alt: "mindralogo" },
-    { src: "/clientlogos/yemslogo.jpeg", alt: "yemslogo" },
-    { src: "/clientlogos/xdslogo.jpeg", alt: "xdslogo" },
-    { src: "/clientlogos/pearllagoon.jpeg", alt: "pearllagoon Logo" },
-  ];
+interface ClientLogoProps {
+  clientLogos1: ClientLogoType[];
+  clientLogos2: ClientLogoType[];
+}
+
+const ClientLogo = ({ clientLogos1, clientLogos2 }: ClientLogoProps) => {
 
   return (
     <div className="overflow-hidden text-white">
@@ -45,18 +27,18 @@ const ClientLogo = () => {
 
           {/*first Slider */}
           <div className="relative flex items-center gap-x-14 overflow-hidden">
-            <LogoScroller logos={logos} className="animate-infinite-scroll" />
-            <LogoScroller logos={logos} className="animate-infinite-scroll" />
+            <LogoScroller logos={clientLogos1} className="animate-infinite-scroll" />
+            <LogoScroller logos={clientLogos1} className="animate-infinite-scroll" />
           </div>
 
           {/*second Slider */}
           <div className="relative flex items-center gap-x-14  overflow-hidden">
             <LogoScroller
-              logos={logos2}
+              logos={clientLogos2}
               className="animate-infinite-scroll-right"
             />
             <LogoScroller
-              logos={logos2}
+              logos={clientLogos2}
               className="animate-infinite-scroll-right"
             />
           </div>
