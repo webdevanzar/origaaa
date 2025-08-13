@@ -90,7 +90,9 @@ const Navbar = () => {
               aria-label="Toggle menu"
             >
               <div
-                className={`w-6 flex flex-col ${isSidebarOpen ? "gap-1" : "gap-1.5"} `}
+                className={`w-6 flex flex-col ${
+                  isSidebarOpen ? "gap-1" : "gap-1.5"
+                } `}
               >
                 <span
                   className={`block h-0.5 w-full bg-white transition-all duration-300 ${
@@ -270,8 +272,8 @@ const Navbar = () => {
             </motion.p>
           </div>
         </div>
-      ): path.startsWith("/services") ? (
-          <div
+      ) : path.startsWith("/services") ? (
+        <div
           className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-7  md:bottom-20  left-1/2 transform -translate-x-1/2`}
         >
           <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg  overflow-y-auto">
@@ -297,6 +299,40 @@ const Navbar = () => {
               Trends that Shape the Digital World. Trends that Shape the Digital
               World. Trends that Shape the Digital World. Trends that Shape the
               Digital World.
+            </motion.p>
+          </div>
+        </div>
+      ) : path.startsWith("/works") ? (
+        <div
+          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-7  md:bottom-20  left-1/2 transform -translate-x-1/2`}
+        >
+          <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg  overflow-y-auto">
+            <motion.p
+              animate={{
+                x: ["0%", "-100%"],
+              }}
+              transition={{
+                duration: 300,
+                ease: "linear",
+                repeat: Infinity,
+              }}
+              className="text-[30px] md:text-[60px] lg:text-[80px] xl:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
+            >
+              Projects That Speak for Themselves. Projects That Speak for
+              Themselves Projects That Speak for Themselves. Projects That Speak
+              for Themselves Projects That Speak for Themselves. Projects That
+              Speak for Themselves Projects That Speak for Themselves. Projects
+              That Speak for Themselves Projects That Speak for Themselves.
+              Projects That Speak for Themselves Projects That Speak for
+              Themselves. Projects That Speak for Themselves Projects That Speak
+              for Themselves. Projects That Speak for Themselves Projects That
+              Speak for Themselves. Projects That Speak for Themselves Projects
+              That Speak for Themselves. Projects That Speak for Themselves
+              Projects That Speak for Themselves. Projects That Speak for
+              Themselves Projects That Speak for Themselves. Projects That Speak
+              for Themselves Projects That Speak for Themselves. Projects That
+              Speak for Themselves Projects That Speak for Themselves. Projects
+              That Speak for Themselves
             </motion.p>
           </div>
         </div>

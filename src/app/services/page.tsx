@@ -4,6 +4,7 @@ import { TiltCard } from "@/components/shared/TiltCard";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { BiMessageRoundedDots } from "react-icons/bi";
 
 const services = [
   {
@@ -163,34 +164,62 @@ const ServicesPage = () => {
         <Navbar />
       </div>
 
-      {/* our services */}
-      <div className="relative bg-white text-black z-10 mx-auto text-center px-4 py-20">
-        <div className="">
-          {/* Heading */}
-          <h2 className="text-4xl md:text-5xl font-bold mb-10">
-            <span className="text-green-800">Our</span> Services
-          </h2>
+      {/* Services Section */}
+      <div className="bg-white text-black py-16 px-6 text-center">
+        <h2 className="text-4xl md:text-7xl font-bold mb-4">
+          <span className="text-green-800">Our </span> Solutions
+        </h2>
+        <p className="text-xl md:text-2xl max-w-4xl mx-auto mb-8">
+          <span className="font-semibold text-[#816C37]">Experience </span>a
+          distinguished suite of solutions — from bespoke web and mobile apps to
+          strategic marketing, branding, and enterprise systems.
+        </p>
 
-          {/* Tags */}
-          <div className="flex  md:w-11/12 lg:w-2/3 xl:w-1/2 mx-auto flex-wrap justify-center gap-2 md:gap-4">
-            {services.map((service) => (
-              <Link
-                href={`#${service.id}`} 
-                key={service.id}
-                className="px-2 hover:scale-110 transition-all text-white md:px-6 py-1 sm:py-2 bg-gradient-to-br from-green-800 to-yellow-600 hover:from-green-500 hover:to-green-500  border-2 border-black rounded-full text-base lg:text-lg font-medium hover:text-blac duration-300 cursor-pointer"
-              >
-                {service.title}
-              </Link>
-            ))}
+        {/* View All Services Button */}
+        <Link href="/services">
+          <div className="p-[3px] rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit mx-auto">
+            <div className="bg-white backdrop-blur-sm p-1 rounded-[40px]">
+              <button className="flex items-center gap-x-5 rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] hover:bg-gradient-to-l px-6 py-2 text-lg font-semibold text-white">
+                Discover Our Services
+              </button>
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
 
       <AnimatedBlobBackground uniqueId="services-section">
         <div className="bg-black/80 text-white">
+          {/* our services */}
+          <div className="relative z-10 mx-auto text-center px-4 py-20">
+            <div className="">
+              {/* Heading */}
+              <h2 className="text-4xl md:text-5xl font-bold mb-10">
+                Our Services
+              </h2>
+
+              <p className="text-lg max-w-3xl mx-auto mb-8">
+                <span className="font-semibold text-green-400"> Explore </span>
+                our comprehensive range of professional services designed to
+                empower businesses and inspire growth.
+              </p>
+
+              {/* Tags */}
+              <div className="flex  md:w-11/12 lg:w-2/3 xl:w-1/2 mx-auto flex-wrap justify-center gap-2 md:gap-4">
+                {services.map((service) => (
+                  <Link
+                    href={`#${service.id}`}
+                    key={service.id}
+                    className="px-2 transition-all bg-white/10 border liquid-glass-bg border-white hover:scale-110  hover:bg-green-800 hover:text-black md:px-6 py-1 sm:py-2 rounded-full text-base lg:text-lg font-medium duration-300 cursor-pointer"
+                  >
+                    {service.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
           {OurServices.map((service, index) => (
             <div
-            id={service.id}
+              id={service.id}
               key={index}
               className={`py-10 md:py-20 px-6 lg:px-16 grid lg:grid-cols-2 gap-12 items-center mx-auto border-b-[0.5px] border-white/20 ${
                 index % 2 !== 0 ? "lg:flex-row-reverse" : ""
@@ -263,6 +292,29 @@ const ServicesPage = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="bg-black/80 text-white py-20 px-6 text-center">
+          <h2 className="text-4xl md:text-7xl font-bold mb-4">
+            Empower Your Brand with
+            <span className="text-green-800"> Our Expertise</span>
+          </h2>
+          <p className="text-xl md:text-2xl max-w-4xl mx-auto mb-8">
+            <span className="font-semibold text-[#816C37]">Partner </span>
+            with us to deliver bespoke solutions that drive growth and lasting
+            impact.
+          </p>
+
+          <div>
+            <div className="p-[3px] rounded-[40px] bg-gradient-to-r from-[#FFC841] to-[#4CF8CD] w-fit h-fit mx-auto">
+              <div className="bg-black backdrop-blur-sm p-1 rounded-[40px]">
+                <button className="flex items-center gap-x-5 rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] hover:bg-gradient-to-l px-6 py-2 text-lg font-semibold text-white">
+                  Enquire Now
+                  <BiMessageRoundedDots size={30} />
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </AnimatedBlobBackground>
     </section>

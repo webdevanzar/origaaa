@@ -14,6 +14,7 @@ import Overview from "@/components/Overview";
 import ContactPopup from "@/components/ContactPopup";
 import { getStoryblokApi } from "@/utils/storyblock";
 import { fetchblogs } from "@/utils/fetchblogs";
+import { fetchClientLogos } from "@/utils/fetchclientlogos";
 
 export const blobPositions = [
   { x: 10, y: 10 }, // Top-left
@@ -38,21 +39,6 @@ export interface TestimonialType {
   logo: string;
 }
 
-interface StoryblokClientLogoType {
-  logo: {
-    filename: string;
-    alt?: string;
-    name?: string;
-    // Add other Storyblok asset fields you might need
-  };
-}
-
-export interface ClientLogoType {
-  id: string;
-  logo: string;
-  alt?: string;
-  name?: string;
-}
 
 export default async function Home() {
   const storyblokApi = getStoryblokApi();
@@ -77,26 +63,9 @@ export default async function Home() {
   );
 
   // Fetch client logos
-  const { data: logos } = await storyblokApi.get("cdn/stories/clientlogos", {
-    version: "published",
-  });
-  // Get the logos array from content
-  const clientLogos = logos.story.content.logo as StoryblokClientLogoType[];
-  // Format logos
-  const formattedClientLogos: ClientLogoType[] = clientLogos.map(
-    (item, index) => ({
-      id: `client-logo-${index}`,
-      logo: item.logo.filename,
-      alt: item.logo.alt || "",
-      name: item.logo.name || "",
-    })
-  );
-  // Split the array into two equal parts
-  const middleIndex = Math.ceil(formattedClientLogos.length / 2);
-  const clientLogos1 = formattedClientLogos.slice(0, middleIndex);
-  const clientLogos2 = formattedClientLogos.slice(middleIndex);
+  const { clientLogos1, clientLogos2 } = await fetchClientLogos();
 
-  //blogs
+  //fetch blogs
   const blogs = await fetchblogs();
 
   return (

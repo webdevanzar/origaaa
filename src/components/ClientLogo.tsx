@@ -2,7 +2,7 @@
 import React from "react";
 import GrowTogether from "./GrowTogether";
 import { LogoScroller } from "./shared/LogoScroller";
-import { ClientLogoType } from "@/app/page";
+import { ClientLogoType } from "@/utils/fetchclientlogos";
 
 interface ClientLogoProps {
   clientLogos1: ClientLogoType[];
@@ -21,9 +21,6 @@ const ClientLogo = ({ clientLogos1, clientLogos2 }: ClientLogoProps) => {
         </h2>
 
         <div className="relative flex flex-col gap-y-5 mt-8">
-          {/* Gradient Overlays */}
-          {/* <div className="absolute left-0 top-0 w-20 md:w-52 h-full bg-gradient-to-r from-white to-transparent z-10" /> */}
-          {/* <div className="absolute right-0 top-0 w-20 md:w-52 h-full bg-gradient-to-l from-white to-transparent z-10" /> */}
 
           {/*first Slider */}
           <div className="relative flex items-center gap-x-14 overflow-hidden">

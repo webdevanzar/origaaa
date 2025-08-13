@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import SonerProvider from "@/components/shared/SonnerProvider";
 import { SidebarProvider } from "@/context/SidebarContext";
 import Whatsapp from "@/components/Whatsapp";
+import Phone from "@/components/Phone";
+import ContactButtons from "@/components/Phone";
 
 const inter = Inter({ subsets: ["latin"] });
 const manrope = Manrope({ subsets: ["latin"] });
@@ -50,7 +52,9 @@ export default function RootLayout({
         <SidebarProvider>{children}</SidebarProvider>
         <Footer />
         <SonerProvider />
-        <Whatsapp />
+        {/* <Phone/> */}
+        {/* <Whatsapp /> */}
+        <ContactButtons/>
       </body>
     </html>
   );

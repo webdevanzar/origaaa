@@ -26,9 +26,9 @@ export const services = [
     id: "2",
     title: "App Development",
     title2: "Mobile App Development Company in Kerala | Android & iOS Apps",
-    image1: "/wedo/image1.png",
-    image2: "/wedo/image2.png",
-    image3: "/wedo/image3.png",
+    image1: "/wedo/app1.png",
+    image2: "/wedo/app2.png",
+    image3: "/wedo/app3.png",
     color: "#CFF527",
     content:
       "We specialize in intuitive and scalable mobile apps for Android and iOS. From UI/UX to development and deployment, Origa Networks serves clients across Kerala with user-focused mobile solutions that enhance engagement and performance.",
@@ -51,9 +51,9 @@ export const services = [
     id: "3",
     title: "Digital Marketing",
     title2: "Digital Marketing Services in Kerala | SEO, Social Media & PPC",
-    image1: "/wedo/image1.png",
-    image2: "/wedo/image2.png",
-    image3: "/wedo/image3.png",
+    image1: "/wedo/dm1.png",
+    image2: "/wedo/dm2.png",
+    image3: "/wedo/dm3.png",
     content:
       "Origa Networks offers result-oriented digital marketing services tailored for Kerala businesses.From SEO and social media to paid campaigns, we build data-driven strategies that increase visibility, attract leads, and grow your business online.",
     color: "#05FFEA",
@@ -161,7 +161,7 @@ export const navabar = [
   },
   {
     title: "Works",
-    direction: "/#works",
+    direction: "/works",
   },
   {
     title: "Blogs",

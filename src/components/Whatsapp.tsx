@@ -15,11 +15,11 @@ const Whatsapp = () => {
   return (
     <div
       onClick={redirectToWhatsApp}
-      className="animate-bounce fixed bottom-7 md:bottom-5 cursor-pointer w-12 h-12 md:w-16 md:h-16 bg-green-500 group z-50 rounded-full right-5 flex items-center justify-center shadow-xl"
+      className="fixed bottom-7 md:bottom-5 cursor-pointer w-10 h-10 md:w-12 md:h-12 group-hover:scale-110 transition-all duration-300 bg-green-500 group z-50 rounded-full right-5 flex items-center justify-center shadow-xl"
     >
       <FaWhatsapp
-        size={32}
-        className="group-hover:scale-125 transition-all duration-300 text-white"
+        size={28}
+        className="text-white"
       />
     </div>
   );

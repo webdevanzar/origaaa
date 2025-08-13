@@ -1,4 +1,4 @@
-import { ClientLogoType } from "@/app/page";
+import { ClientLogoType } from "@/utils/fetchclientlogos";
 import Image from "next/image";
 
 
