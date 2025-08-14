@@ -18,15 +18,15 @@ const ContactPage = () => {
         <Navbar />
       </div>
 
-        <div className="py-10 w-10/12 mx-auto flex flex-col gap-y-7 lg:text-left text-center">
-          <h1 className="text-[30px] md:text-[50px] lg:text-[80px]  font-semibold leading-tight text-green-900">
+        <div className="py-10 w-10/12 mx-auto flex flex-col items-center gap-y-6 lg:text-left text-center">
+          <h1 className="text-[30px] md:text-[50px] lg:text-[80px] text-center  font-semibold leading-tight text-green-900">
             Let's Connect <br />
-            <span className="font-bold">We're Here To Help</span>
+            <span className="font-bold text-black">We're Here To Help</span>
           </h1>
-          <p className="text-[#5b542b]">
+          <p className="text-black">
             Have Questions Or Need Assistance? Reach Out To Our Team,And We'll
             Be
-            <span className="font-bold"> Happy To Guide You</span>
+            <span className="font-bold text-[#5b542b]"> Happy To Guide You</span>
           </p>
 
           <Link href="mailto:info@origanetworks.com" className="flex justify-center lg:justify-start" target="_blank">
