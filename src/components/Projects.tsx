@@ -1,24 +1,17 @@
 "use client";
 import Image from "next/image";
 import Slider from "react-slick";
-import React, { useEffect, useRef, useState } from "react";
+import React, {  useRef, useState } from "react";
 
 import "slick-carousel/slick/slick.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { CustomCursor } from "./shared/CustomeCursor";
 import Link from "next/link";
-import storyblokClient from "@/utils/storyblockClient";
+import { ProjectType } from "@/utils/fetchprojects";
 
-type ProjectType = {
-  id: string;
-  image: string;
-  image2: string;
-  title: string; //max 30 characters
-  link: string;
-};
 
-export const Projects = () => {
-  const [projects, setProjects] = useState<ProjectType[]>([]);
+
+export const Projects = ({ projects }: { projects: ProjectType[] }) => {
 
   const [activeSlide, setActiveSlide] = React.useState(0);
   const sliderRef = useRef<Slider>(null);
@@ -50,34 +43,9 @@ export const Projects = () => {
     ],
   };
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const { data } = await storyblokClient.get("cdn/stories/projects", {
-          version: "published",
-        });
-
-        const raw = data.story.content.contents;
-        const formatted: ProjectType[] = raw.map((item: any, idx: number) => ({
-          id: item._uid || idx.toString(),
-          image: item.image1.filename,
-          image2: item.image2.filename,
-          title: item.title,
-          link: item.link,
-        }));
-
-        setProjects(formatted);
-      } catch (err) {
-        console.error("Failed to fetch Storyblok data:", err);
-      }
-    };
-
-    fetchProjects();
-  }, []);
   const isInactiveSlide = (index: number, active: number, total: number) => {
     return index === active || index === (active - 1 + total) % total;
   };
-
 
   return (
     <div className="relative" id="ourprojects">
@@ -132,14 +100,14 @@ export const Projects = () => {
                   >
                     <Image
                       alt="projects"
-                      src={item.image}
+                      src={item.image1 as string}
                       width={1000}
                       height={1000}
                       className={`absolute w-full h-full object-cover rounded-xl transition-opacity duration-700 ease-in-out group-hover:opacity-0`}
                     />
                     <Image
                       alt="hover-projects"
-                      src={item.image2}
+                      src={item.image2 as string}
                       width={1000}
                       height={1000}
                       className={`absolute w-full h-full object-contain bg-white opacity-0 rounded-xl group-hover:opacity-100 transition-opacity duration-700 ease-in-out `}

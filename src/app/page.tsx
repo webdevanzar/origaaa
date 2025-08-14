@@ -15,6 +15,7 @@ import ContactPopup from "@/components/ContactPopup";
 import { getStoryblokApi } from "@/utils/storyblock";
 import { fetchblogs } from "@/utils/fetchblogs";
 import { fetchClientLogos } from "@/utils/fetchclientlogos";
+import { fetchProjects } from "@/utils/fetchprojects";
 
 export const blobPositions = [
   { x: 10, y: 10 }, // Top-left
@@ -62,6 +63,9 @@ export default async function Home() {
     })
   );
 
+  //fetch projects
+  const projects = await fetchProjects()
+
   // Fetch client logos
   const { clientLogos1, clientLogos2 } = await fetchClientLogos();
 
@@ -87,7 +91,7 @@ export default async function Home() {
         maxOpacity={0.9}
       >
         <WhatweDo />
-        <Projects />
+        <Projects projects={projects} />
         <Overview />
         <OurProcess />
         <ClientLogo clientLogos1={clientLogos1} clientLogos2={clientLogos2} />

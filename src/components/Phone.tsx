@@ -22,7 +22,7 @@ const ContactButtons = () => {
       {/* Phone Button */}
       <div
         onClick={callPhone}
-        className="cursor-pointer w-12 h-12 bg-red-500 hover:scale-110 rounded-full flex items-center justify-center shadow-xl transition-all duration-300"
+        className="cursor-pointer w-12 h-12 bg-green-700 hover:scale-110 rounded-full flex items-center justify-center shadow-xl transition-all duration-300"
       >
         <FaPhone size={26} className="text-white" />
       </div>

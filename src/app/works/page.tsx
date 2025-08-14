@@ -1,10 +1,12 @@
 import Navbar from "@/components/Navbar";
 import AnimatedBlobBackground from "@/components/shared/AnimatedBlobBackground";
 import { FeaturedWorks } from "@/components/works/featuredworks";
+import { fetchProjects } from "@/utils/fetchprojects";
 import Image from "next/image";
 import Link from "next/link";
 
 const WorksPage = async () => {
+  const projects  = await fetchProjects()
   
   return (
     <section className="overflow-x-hidden">
@@ -44,7 +46,7 @@ const WorksPage = async () => {
 
       {/* Featured Work Section */}
       <AnimatedBlobBackground uniqueId="featured work">
-        <FeaturedWorks />
+        <FeaturedWorks projects={projects}/>
       </AnimatedBlobBackground>
 
 
