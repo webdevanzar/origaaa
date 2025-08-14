@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Slider from "react-slick";
-import React, {  useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 import "slick-carousel/slick/slick.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
@@ -9,10 +9,7 @@ import { CustomCursor } from "./shared/CustomeCursor";
 import Link from "next/link";
 import { ProjectType } from "@/utils/fetchprojects";
 
-
-
 export const Projects = ({ projects }: { projects: ProjectType[] }) => {
-
   const [activeSlide, setActiveSlide] = React.useState(0);
   const sliderRef = useRef<Slider>(null);
   const [cursorVisible, setCursorVisible] = useState(false);
@@ -86,40 +83,43 @@ export const Projects = ({ projects }: { projects: ProjectType[] }) => {
             {/* Custom Cursor - only visible when hovering the component */}
             <CustomCursor parentRef={containerRef} show={cursorVisible} />
             <Slider ref={sliderRef} {...settings} className="z-10">
-              {projects.map((item, index) => {
-                const total = projects.length;
-                const inactive = isInactiveSlide(index, activeSlide, total);
-                return (
-                  <div
-                    key={item.id}
-                    className={`group transition-all duration-700 ease-in-out transform ${
-                      inactive
-                        ? "md:opacity-0 md:scale-75"
-                        : "opacity-100 scale-100"
-                    } relative w-[500px] h-[300px] md:h-[300px] 2xl:h-[350px] rounded-xl shadow-md outline-none flex flex-col items-center justify-center`}
-                  >
-                    <Image
-                      alt="projects"
-                      src={item.image1 as string}
-                      width={1000}
-                      height={1000}
-                      className={`absolute w-full h-full object-cover rounded-xl transition-opacity duration-700 ease-in-out group-hover:opacity-0`}
-                    />
-                    <Image
-                      alt="hover-projects"
-                      src={item.image2 as string}
-                      width={1000}
-                      height={1000}
-                      className={`absolute w-full h-full object-contain bg-white opacity-0 rounded-xl group-hover:opacity-100 transition-opacity duration-700 ease-in-out `}
-                    />
-                    <Link href={item.link} target="_blank">
-                      <h2 className="absolute -bottom-10 xl:-bottom-12 text-2xl font-semibold xl:text-4xl pt-2 text-white">
-                        {item.title}
-                      </h2>
-                    </Link>
-                  </div>
-                );
-              })}
+              {projects
+                .filter((item) => item.isCompleted) // ✅ Only completed projects
+                .map((item, index, filteredProjects) => {
+                  const total = filteredProjects.length;
+                  const inactive = isInactiveSlide(index, activeSlide, total);
+
+                  return (
+                    <div
+                      key={item.id}
+                      className={`group transition-all duration-700 ease-in-out transform ${
+                        inactive
+                          ? "md:opacity-0 md:scale-75"
+                          : "opacity-100 scale-100"
+                      } relative w-[500px] h-[300px] md:h-[300px] 2xl:h-[350px] rounded-xl shadow-md outline-none flex flex-col items-center justify-center`}
+                    >
+                      <Image
+                        alt="projects"
+                        src={item.image1 as string}
+                        width={1000}
+                        height={1000}
+                        className="absolute w-full h-full object-cover rounded-xl transition-opacity duration-700 ease-in-out group-hover:opacity-0"
+                      />
+                      <Image
+                        alt="hover-projects"
+                        src={item.image2 as string}
+                        width={1000}
+                        height={1000}
+                        className="absolute w-full h-full object-contain bg-white opacity-0 rounded-xl group-hover:opacity-100 transition-opacity duration-700 ease-in-out"
+                      />
+                      <Link href={item.link} target="_blank">
+                        <h2 className="absolute -bottom-10 xl:-bottom-12 text-2xl font-semibold xl:text-4xl pt-2 text-white">
+                          {item.title}
+                        </h2>
+                      </Link>
+                    </div>
+                  );
+                })}
             </Slider>
           </div>
         </div>

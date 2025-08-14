@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { FaPhone } from "react-icons/fa";
+import {  FaPhoneAlt } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa6";
 
 const ContactButtons = () => {
@@ -24,7 +24,7 @@ const ContactButtons = () => {
         onClick={callPhone}
         className="cursor-pointer w-12 h-12 bg-green-700 hover:scale-110 rounded-full flex items-center justify-center shadow-xl transition-all duration-300"
       >
-        <FaPhone size={26} className="text-white" />
+        <FaPhoneAlt size={26} className="text-white" />
       </div>
 
       {/* WhatsApp Button */}
