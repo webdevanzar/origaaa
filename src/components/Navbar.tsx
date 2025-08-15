@@ -366,6 +366,39 @@ const Navbar = () => {
             </motion.p>
           </div>
         </div>
+      ) : path.startsWith("/career") ? (
+        <div
+          className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-10  md:bottom-20  left-1/2 transform -translate-x-1/2`}
+        >
+          <div className="relative overflow-x-hidden px-8 border-[1px] border-white rounded-full liquid-glass-bg  overflow-y-auto">
+            <motion.p
+              animate={{
+                x: ["0%", "-100%"],
+              }}
+              transition={{
+                duration: 300,
+                ease: "linear",
+                repeat: Infinity,
+              }}
+              className="text-[30px] md:text-[60px] lg:text-[80px] xl:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
+            >
+              Shape the Future With Us. Shape the Future With Us. Shape the
+              Future With Us. Shape the Future With Us. Shape the Future With
+              Us. Shape the Future With Us. Shape the Future With Us. Shape the
+              Future With Us. Shape the Future With Us. Shape the Future With
+              Us. Shape the Future With Us. Shape the Future With Us. Shape the
+              Future With Us. Shape the Future With Us. Shape the Future With
+              Us. Shape the Future With Us. Shape the Future With Us. Shape the
+              Future With Us. Shape the Future With Us. Shape the Future With
+              Us. Shape the Future With Us. Shape the Future With Us. Shape the
+              Future With Us. Shape the Future With Us. Shape the Future With
+              Us. Shape the Future With Us. Shape the Future With Us. Shape the
+              Future With Us. Shape the Future With Us. Shape the Future With
+              Us. Shape the Future With Us. Shape the Future With Us. Shape the
+              Future With Us. Shape the Future With Us.
+            </motion.p>
+          </div>
+        </div>
       ) : path.startsWith("/contact") ? (
         <div
           className={` z-20 w-9/12 text-white absolute flex justify-center items-center bottom-10  md:bottom-20  left-1/2 transform -translate-x-1/2`}

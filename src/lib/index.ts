@@ -169,7 +169,7 @@ export const navabar = [
   },
   {
     title: "Career",
-    direction: "/#career",
+    direction: "/career",
   },
     {
     title: "Contact",
