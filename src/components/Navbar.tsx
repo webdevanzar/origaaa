@@ -255,7 +255,7 @@ const Navbar = () => {
                 ease: "linear",
                 repeat: Infinity,
               }}
-              className="text-[30px] md:text-[60px] lg:text-[80px] xl:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
+              className="text-[30px] md:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
             >
               Empowering businesses with next-gen network solutions. Empowering
               businesses with next-gen network solutions. Empowering businesses
@@ -286,7 +286,7 @@ const Navbar = () => {
                 ease: "linear",
                 repeat: Infinity,
               }}
-              className="text-[30px] md:text-[60px] lg:text-[80px] xl:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
+              className="text-[30px] md:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
             >
               Trends that Shape the Digital World. Trends that Shape the Digital
               World. Trends that Shape the Digital World. Trends that Shape the
@@ -316,7 +316,7 @@ const Navbar = () => {
                 ease: "linear",
                 repeat: Infinity,
               }}
-              className="text-[30px] md:text-[60px] lg:text-[80px] xl:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
+              className="text-[30px] md:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
             >
               Projects That Speak for Themselves. Projects That Speak for
               Themselves Projects That Speak for Themselves. Projects That Speak
@@ -350,7 +350,7 @@ const Navbar = () => {
                 ease: "linear",
                 repeat: Infinity,
               }}
-              className="text-[30px] md:text-[60px] lg:text-[80px] xl:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
+              className="text-[30px] md:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
             >
               Trends that Shape the Digital World. Trends that Shape the Digital
               World. Trends that Shape the Digital World. Trends that Shape the
@@ -380,7 +380,7 @@ const Navbar = () => {
                 ease: "linear",
                 repeat: Infinity,
               }}
-              className="text-[30px] md:text-[60px] lg:text-[80px] xl:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
+              className="text-[30px] md:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
             >
               Shape the Future With Us. Shape the Future With Us. Shape the
               Future With Us. Shape the Future With Us. Shape the Future With
@@ -413,7 +413,7 @@ const Navbar = () => {
                 ease: "linear",
                 repeat: Infinity,
               }}
-              className="text-[30px] md:text-[60px] lg:text-[80px] xl:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
+              className="text-[30px] md:text-[50px] whitespace-nowrap inline-block uppercase font-semibold cursor-pointer"
             >
               Your Next Big Idea Starts Here. Your Next Big Idea Starts Here.
               Your Next Big Idea Starts Here. Your Next Big Idea Starts Here.

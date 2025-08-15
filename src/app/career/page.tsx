@@ -13,7 +13,7 @@ const jobs = [
     location: "Kochi",
     description:
       "Assist in project coordination, communicate with teams, and manage schedules. Ideal for fresh graduates eager to learn project management skills.",
-    applyEmail: "career@origanetworks.com",
+    applyEmail: "info@origanetworks.com",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const jobs = [
     location: "Kochi",
     description:
       "Work on Angular applications, collaborate with designers, and optimize performance. Requires basic Angular and TypeScript knowledge.",
-    applyEmail: "career@origanetworks.com",
+    applyEmail: "info@origanetworks.com",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const jobs = [
     location: "Kochi",
     description:
       "Assist in building dynamic and responsive web applications using React.js. Work with senior developers to implement new features, maintain existing code, and optimize performance. Basic knowledge of JavaScript, React, and modern frontend workflows is required.",
-    applyEmail: "career@origanetworks.com",
+    applyEmail: "info@origanetworks.com",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const jobs = [
     location: "Melattur",
     description:
       "Design intuitive and visually appealing user interfaces while ensuring a seamless user experience across web and mobile platforms. Collaborate closely with developers and product managers to translate requirements into engaging designs. Proficiency in Figma, Adobe XD, or similar tools is required.",
-    applyEmail: "career@origanetworks.com",
+    applyEmail: "info@origanetworks.com",
   },
 ];
 
@@ -157,7 +157,7 @@ const CareerPage = () => {
                 <button
                   className="flex items-center gap-x-5 rounded-[40px] bg-gradient-to-r from-[#1B6153] to-[#816C37] hover:bg-gradient-to-l px-6 py-2 text-lg font-semibold text-white"
                   onClick={() =>
-                    (window.location.href = "mailto:career@origanetworks.com")
+                    (window.location.href = "mailto:info@origanetworks.com")
                   }
                 >
                   Apply Now
