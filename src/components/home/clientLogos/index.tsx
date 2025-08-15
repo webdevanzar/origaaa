@@ -1,15 +1,15 @@
 "use client";
 import React from "react";
-import GrowTogether from "./GrowTogether";
-import { LogoScroller } from "./shared/LogoScroller";
+import { GrowTogether } from "../growTogether";
 import { ClientLogoType } from "@/utils/fetchclientlogos";
+import { LogoScroller } from "@/components/shared/LogoScroller";
 
 interface ClientLogoProps {
   clientLogos1: ClientLogoType[];
   clientLogos2: ClientLogoType[];
 }
 
-const ClientLogo = ({ clientLogos1, clientLogos2 }: ClientLogoProps) => {
+export const ClientLogo = ({ clientLogos1, clientLogos2 }: ClientLogoProps) => {
 
   return (
     <div className="overflow-hidden text-white">
@@ -45,4 +45,3 @@ const ClientLogo = ({ clientLogos1, clientLogos2 }: ClientLogoProps) => {
   );
 };
 
-export default ClientLogo;

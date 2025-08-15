@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { IoMdArrowRoundForward } from "react-icons/io";
 
-const Overview = () => {
+export const Overview = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
   return (
@@ -130,4 +130,3 @@ const Overview = () => {
   );
 };
 
-export default Overview;

@@ -5,9 +5,9 @@ import React, { useRef, useState } from "react";
 
 import "slick-carousel/slick/slick.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { CustomCursor } from "./shared/CustomeCursor";
 import Link from "next/link";
 import { ProjectType } from "@/utils/fetchprojects";
+import { CustomCursor } from "@/components/shared/CustomeCursor";
 
 export const Projects = ({ projects }: { projects: ProjectType[] }) => {
   const [activeSlide, setActiveSlide] = React.useState(0);

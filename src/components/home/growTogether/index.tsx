@@ -5,7 +5,7 @@ import { FaPlus } from "react-icons/fa6";
 import CountUp from "react-countup";
 import { useInView } from "framer-motion";
 
-const GrowTogether = () => {
+export const GrowTogether = () => {
   const statRef = useRef(null);
   const isInView = useInView(statRef, { once: true });
   return (
@@ -96,4 +96,3 @@ const GrowTogether = () => {
   );
 };
 
-export default GrowTogether;

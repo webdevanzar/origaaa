@@ -1,4 +1,4 @@
-import Contact from "@/components/Contact";
+import { Contact } from "@/components/home/contactUs";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Link from "next/link";

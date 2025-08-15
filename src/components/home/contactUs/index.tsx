@@ -28,7 +28,8 @@ const Icons = [
     src: FaFacebookSquare,
   },
 ];
-const Contact = () => {
+
+export const Contact = () => {
   const [loading, setLoading] = useState(false);
   const form = useRef<HTMLFormElement | null>(null);
 
@@ -392,5 +393,3 @@ const Contact = () => {
     </section>
   );
 };
-
-export default Contact;

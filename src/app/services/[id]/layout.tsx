@@ -1,4 +1,4 @@
-import { OurServices } from "../page";
+import { AllServices } from "@/lib";
 import type { Metadata } from "next";
 
 export async function generateMetadata({
@@ -6,8 +6,9 @@ export async function generateMetadata({
 }: {
   params: { id: string };
 }): Promise<Metadata> {
-  const { id } = await params;
-  const service = OurServices.find((s) => s.id === id);
+ const service = Array.isArray(AllServices) 
+  ? AllServices.find((s) => s.id === params.id)
+  : null;
 
   if (!service) {
     return {

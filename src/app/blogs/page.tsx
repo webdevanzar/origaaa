@@ -1,4 +1,4 @@
-import Blogs from "@/components/Blogs";
+import { Blogs } from "@/components/home/blogs";
 import Navbar from "@/components/Navbar";
 import { fetchblogs } from "@/utils/fetchblogs";
 import Image from "next/image";

@@ -1,8 +1,8 @@
 "use client";
+import { CustomNextArrow, CustomPrevArrow } from "@/components/shared/CustomeArrows";
+import { ProcessCard } from "@/components/shared/ProcessCard";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-import { ProcessCard } from "./shared/ProcessCard";
-import { CustomNextArrow, CustomPrevArrow } from "./shared/CustomeArrows";
 
 const processSteps = [
   {

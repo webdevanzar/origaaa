@@ -1,25 +1,25 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { OurServices } from "../page";
 import Navbar from "@/components/Navbar";
 import AnimatedBlobBackground from "@/components/shared/AnimatedBlobBackground";
-import { FaArrowLeft } from "react-icons/fa";
-import Link from "next/link";
+import { AllServices } from "@/lib";
 
 export default async function ServiceDetail({
   params,
 }: {
   params: { id: string };
 }) {
-  const { id } = await params;
+  console.log("AllServices type:", typeof AllServices, AllServices);
 
-  const service = OurServices.find((s) => s.id === id);
+  const service = Array.isArray(AllServices)
+    ? AllServices.find((s) => s.id === params.id)
+    : null;
 
   if (!service) return notFound();
 
   return (
-    <section className="">
-      <AnimatedBlobBackground uniqueId="career detail">
+    <section>
+      <AnimatedBlobBackground uniqueId="career-detailpage">
         <div className="bg-black/80 w-full h-[30vh] md:h-[45vh] relative">
           <Image
             src={"/hero4.jpg"}

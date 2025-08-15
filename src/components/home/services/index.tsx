@@ -3,7 +3,6 @@ import Image from "next/image";
 import Slider from "react-slick";
 import React, { useRef, useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
-import { CustomCursor } from "./shared/CustomeCursor";
 import { HiCodeBracket } from "react-icons/hi2";
 import {
   FaBullhorn,
@@ -28,8 +27,10 @@ import {
 } from "react-icons/md";
 import { RiNextjsLine } from "react-icons/ri";
 import Link from "next/link";
+import { CustomCursor } from "@/components/shared/CustomeCursor";
 
-export const HeroLight = () => {
+export const Services = () => {
+    
   const projects = [
     {
       id: "app",

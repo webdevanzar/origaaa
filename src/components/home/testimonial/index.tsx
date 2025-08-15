@@ -1,40 +1,11 @@
 "use client";
-import { TestimonialType } from "@/app/page";
+import { TestimonialType } from "@/utils/fetchtestimonials";
 import Image from "next/image";
 import React from "react";
 import Slider from "react-slick";
 
-// const Testimonials = [
-//   {
-//     id: "1",
-//     image: "/man1.jpg",
-//     name: "VINOD KUMAR",
-//     logoImage: "/testimoniallogo.png",
-//     content:
-//       "Origa Networks played a key role in transforming our digital presence. They built a modern, responsive website and delivered a fully customized ERP solution that streamlined our operations. Their technical expertise and commitment to quality were evident throughout. We’re very pleased with the results.",
-//     role: "GENERAL MANAGER OF AMAN ENTERPRISE",
-//   },
-//   {
-//     id: "1",
-//     image: "/man1.jpg",
-//     name: "VINOD KUMAR",
-//     logoImage: "/testimoniallogo.png",
-//     content:
-//       "Origa Networks played a key role in transforming our digital presence. They built a modern, responsive website and delivered a fully customized ERP solution that streamlined our operations. Their technical expertise and commitment to quality were evident throughout. We’re very pleased with the results.",
-//     role: "GENERAL MANAGER OF AMAN ENTERPRISE",
-//   },
-//   {
-//     id: "1",
-//     image: "/man1.jpg",
-//     name: "VINOD KUMAR",
-//     logoImage: "/testimoniallogo.png",
-//     content:
-//       "Origa Networks played a key role in transforming our digital presence. They built a modern, responsive website and delivered a fully customized ERP solution that streamlined our operations. Their technical expertise and commitment to quality were evident throughout. We’re very pleased with the results.",
-//     role: "GENERAL MANAGER OF AMAN ENTERPRISE",
-//   },
-// ];
 
-const Testimonial = ({ Testimonials }: { Testimonials: TestimonialType[] }) => {
+export const Testimonial = ({ Testimonials }: { Testimonials: TestimonialType[] }) => {
   const settings = {
     centerMode: true,
     autoplay: true,
@@ -117,4 +88,3 @@ const Testimonial = ({ Testimonials }: { Testimonials: TestimonialType[] }) => {
   );
 };
 
-export default Testimonial;

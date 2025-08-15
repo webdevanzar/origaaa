@@ -1,21 +1,21 @@
-import About from "@/components/About";
-import Blogs from "@/components/Blogs";
-import ClientLogo from "@/components/ClientLogo";
-import Contact from "@/components/Contact";
-import Hero from "@/components/Hero";
-import { HeroLight } from "@/components/HeroLight";
-import { OurProcess } from "@/components/OurProcess";
-import { Projects } from "@/components/Projects";
-import WhatweDo from "@/components/WhatweDo";
-import Testimonial from "@/components/Testimonial";
-import Whatsapp from "@/components/Whatsapp";
 import AnimatedBlobBackground from "@/components/shared/AnimatedBlobBackground";
-import Overview from "@/components/Overview";
 import ContactPopup from "@/components/ContactPopup";
 import { getStoryblokApi } from "@/utils/storyblock";
 import { fetchblogs } from "@/utils/fetchblogs";
 import { fetchClientLogos } from "@/utils/fetchclientlogos";
 import { fetchProjects } from "@/utils/fetchprojects";
+import Hero from "@/components/home/hero";
+import { Services } from "@/components/home/services";
+import { About } from "@/components/home/aboutUs";
+import { WhatweDo } from "@/components/home/whatWeDo";
+import { Projects } from "@/components/home/projects";
+import { Overview } from "@/components/home/overview";
+import { OurProcess } from "@/components/home/ourProcess";
+import { ClientLogo } from "@/components/home/clientLogos";
+import { Testimonial } from "@/components/home/testimonial";
+import { Blogs } from "@/components/home/blogs";
+import { Contact } from "@/components/home/contactUs";
+import { fetchTestimonials } from "@/utils/fetchtestimonials";
 
 export const blobPositions = [
   { x: 10, y: 10 }, // Top-left
@@ -24,47 +24,14 @@ export const blobPositions = [
   { x: 90, y: 90 }, // Bottom-right
 ];
 
-interface StoryblockTestimonialType {
-  name: string;
-  role?: string;
-  content: string;
-  image: { filename: string };
-  logo: { filename: string };
-}
-export interface TestimonialType {
-  id: string;
-  name: string;
-  role?: string;
-  content: string;
-  image: string;
-  logo: string;
-}
-
 
 export default async function Home() {
-  const storyblokApi = getStoryblokApi();
 
-  //testimonials
-  const { data } = await storyblokApi.get("cdn/stories/testimonials", {
-    version: "published",
-  });
-  // Get the testimonials array from content
-  const testimonials = data.story.content
-    .Testimonials as StoryblockTestimonialType[];
-  // Format testimonials as needed
-  const formattedTestimonials: TestimonialType[] = testimonials.map(
-    (item, index) => ({
-      id: `testimonial-${index}`,
-      name: item.name,
-      role: item.role,
-      content: item.content,
-      image: item.image.filename,
-      logo: item.logo.filename,
-    })
-  );
+  //fetch testimonials
+  const testimonials = await fetchTestimonials();
 
   //fetch projects
-  const projects = await fetchProjects()
+  const projects = await fetchProjects();
 
   // Fetch client logos
   const { clientLogos1, clientLogos2 } = await fetchClientLogos();
@@ -76,7 +43,7 @@ export default async function Home() {
     <div className="overflow-x-hidden">
       <ContactPopup />
       <Hero />
-      <HeroLight />
+      <Services />
       <About />
 
       <AnimatedBlobBackground
@@ -95,7 +62,7 @@ export default async function Home() {
         <Overview />
         <OurProcess />
         <ClientLogo clientLogos1={clientLogos1} clientLogos2={clientLogos2} />
-        <Testimonial Testimonials={formattedTestimonials} />
+        <Testimonial Testimonials={testimonials} />
       </AnimatedBlobBackground>
       <Blogs blogs={blogs} />
 

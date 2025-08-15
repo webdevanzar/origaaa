@@ -6,7 +6,7 @@ import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { motion } from "framer-motion";
 import { RiArrowLeftWideFill } from "react-icons/ri";
 
-const WhatweDo = () => {
+export const WhatweDo = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const activeService = services[currentIndex];
   const [isMobile, setIsMobile] = useState(false);
@@ -218,4 +218,3 @@ const WhatweDo = () => {
   );
 };
 
-export default WhatweDo;

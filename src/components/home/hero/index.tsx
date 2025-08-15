@@ -1,5 +1,5 @@
 "use client";
-import Navbar from "./Navbar";
+import Navbar from "@/components/Navbar";
 import { useSidebar } from "@/context/SidebarContext";
 
 const Hero = () => {

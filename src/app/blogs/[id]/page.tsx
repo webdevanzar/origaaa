@@ -5,7 +5,6 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { IoSearch } from "react-icons/io5";
 import { SlCalender } from "react-icons/sl";
-import { FaRegUser } from "react-icons/fa";
 import { useParams, useRouter } from "next/navigation";
 import ShimmerNewsUpdates from "@/components/shared/Shimmers";
 import Link from "next/link";

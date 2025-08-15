@@ -4,11 +4,11 @@ import React, { useRef, useState } from "react";
 import { FaArrowRight, FaRegCalendarDays } from "react-icons/fa6";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
-import { TiltCard } from "./shared/TiltCard";
 import { formatDate } from "@/utils/formatdate";
 import { BlogType } from "@/utils/fetchblogs";
+import { TiltCard } from "@/components/shared/TiltCard";
 
-const Blogs = ({ blogs }: { blogs: BlogType[] }) => {
+export const Blogs = ({ blogs }: { blogs: BlogType[] }) => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
 
@@ -202,4 +202,3 @@ const Blogs = ({ blogs }: { blogs: BlogType[] }) => {
   );
 };
 
-export default Blogs;

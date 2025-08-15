@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import { MotiionDiv } from "./shared/MotionDiv";
 import { BiMessageRoundedDots } from "react-icons/bi";
 import { motion } from "framer-motion";
-import ContactPopup from "./ContactPopup";
+import ContactPopup from "@/components/ContactPopup";
+import { MotiionDiv } from "@/components/shared/MotionDiv";
 
 const aboutVarients = {
   hidden: { opacity: 0, x: -200 },
@@ -19,7 +19,7 @@ const statVarients = {
   hidden: { scale: 0 },
   visible: { scale: 1 },
 };
-const About = () => {
+export const About = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   return (
@@ -60,7 +60,7 @@ const About = () => {
               initial="hidden"
               whileInView="visible"
               transition={{
-                delay: 0.8,
+                delay: 0.4,
                 ease: "easeInOut",
                 duration: 0.75,
               }}
@@ -78,7 +78,7 @@ const About = () => {
               initial="hidden"
               whileInView="visible"
               transition={{
-                delay: 0.8,
+                delay: 0.4,
                 ease: "easeInOut",
                 duration: 0.75,
               }}
@@ -151,4 +151,3 @@ const About = () => {
   );
 };
 
-export default About;
