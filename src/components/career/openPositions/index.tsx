@@ -1,49 +1,17 @@
 "use client";
+import { CareerType } from "@/utils/fetchjobs";
 import Link from "next/link";
 import React, { useState } from "react";
 import { BiMessageRoundedDots, BiMinus, BiPlus } from "react-icons/bi";
 
-const jobs = [
-  {
-    id: 1,
-    title: "Project Coordinator Intern",
-    location: "Kochi",
-    description:
-      "Assist in project coordination, communicate with teams, and manage schedules. Ideal for fresh graduates eager to learn project management skills.",
-    applyEmail: "info@origanetworks.com",
-  },
-  {
-    id: 2,
-    title: "Junior React Developer",
-    location: "Kochi",
-    description:
-      "Work on Angular applications, collaborate with designers, and optimize performance. Requires basic Angular and TypeScript knowledge.",
-    applyEmail: "info@origanetworks.com",
-  },
-  {
-    id: 3,
-    title: "QA Tester Intern",
-    location: "Kochi",
-    description:
-      "Assist in building dynamic and responsive web applications using React.js. Work with senior developers to implement new features, maintain existing code, and optimize performance. Basic knowledge of JavaScript, React, and modern frontend workflows is required.",
-    applyEmail: "info@origanetworks.com",
-  },
-  {
-    id: 4,
-    title: "Ui/Ux Designer",
-    location: "Melattur",
-    description:
-      "Design intuitive and visually appealing user interfaces while ensuring a seamless user experience across web and mobile platforms. Collaborate closely with developers and product managers to translate requirements into engaging designs. Proficiency in Figma, Adobe XD, or similar tools is required.",
-    applyEmail: "info@origanetworks.com",
-  },
-];
 
-export const OpenPositions = () => {
-  const [openJob, setOpenJob] = useState<number | null>(null);
+export const OpenPositions = ({ jobs }: { jobs: CareerType[] }) => {
+  const [openJob, setOpenJob] = useState<string | null>(null);
 
-  const toggleJob = (id: number) => {
+  const toggleJob = (id: string) => {
     setOpenJob(openJob === id ? null : id);
   };
+  
   return (
     <section>
       {/* Open Positions */}
@@ -60,9 +28,8 @@ export const OpenPositions = () => {
               >
                 <div>
                   <h3 className="text-lg md:text-xl font-semibold text-white">
-                    {job.title}
+                    {job.jobtitle}
                   </h3>
-                  <p className="text-gray-300 text-sm">{job.location}</p>
                 </div>
                 {openJob === job.id ? (
                   <BiMinus className="text-white" size={20} />
@@ -75,7 +42,7 @@ export const OpenPositions = () => {
                 <div className="mt-3 text-gray-200">
                   <p>{job.description}</p>
                   <Link
-                    href={`mailto:${job.applyEmail}?subject=Application for ${job.title}`}
+                    href={`mailto:info@origanetworks.com?subject=Application for ${job.jobtitle}`}
                     target="_blank"
                   >
                     <button className="mt-4 px-4 py-2 bg-gradient-to-r from-[#1B6153] to-[#816C37] text-white rounded-lg font-semibold hover:opacity-90 transition">
@@ -119,4 +86,3 @@ export const OpenPositions = () => {
     </section>
   );
 };
-

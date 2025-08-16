@@ -1,8 +1,10 @@
 import { CareerBanner } from "@/components/career/careerBanner";
 import { OpenPositions } from "@/components/career/openPositions";
 import AnimatedBlobBackground from "@/components/shared/AnimatedBlobBackground";
+import { fetchCareers } from "@/utils/fetchjobs";
 
-const CareerPage = () => {
+const CareerPage = async () => {
+  const jobs =  await fetchCareers()
   return (
     <div>
       <CareerBanner />
@@ -14,7 +16,7 @@ const CareerPage = () => {
         minOpacity={0.5}
         maxOpacity={0.9}
       >
-        <OpenPositions />
+        <OpenPositions jobs={jobs}  />
       </AnimatedBlobBackground>
     </div>
   );
