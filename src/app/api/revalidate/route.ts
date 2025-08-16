@@ -1,38 +1,36 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest) {
-  const secret = req.nextUrl.searchParams.get("secret");
-  const slug = req.nextUrl.searchParams.get("slug"); // e.g. "services/web-development" or "blogs/123"
-
-  if (secret !== process.env.REVALIDATE_SECRET_TOKEN) {
-    return NextResponse.json({ message: "Invalid token" }, { status: 401 });
-  }
-
-  if (!slug) {
-    return NextResponse.json({ message: "Slug is required" }, { status: 400 });
-  }
-
+export async function POST(req: NextRequest) {
   try {
-    // Always revalidate some base pages
-    const basePaths = ["/", "/about", "/services", "/works", "/blogs", "/career", "/contact"];
+    const secret = req.nextUrl.searchParams.get("secret");
 
-    // Add the dynamic page that Storyblok tells us about
-    const pathsToRevalidate = [...basePaths, `/${slug}`];
+    if (secret !== process.env.REVALIDATE_SECRET_TOKEN) {
+      return NextResponse.json({ message: "Invalid token" }, { status: 401 });
+    }
 
+    const body = await req.json();
+    const slug = body.full_slug; // Storyblok sends this
+    const now = new Date();
+
+    const staticPaths = ["/", "/about", "/services", "/works", "/blogs", "/career", "/contact"];
+
+    // Always revalidate base pages
     await Promise.all(
-      pathsToRevalidate.map((path) =>
-        fetch(`${process.env.NEXT_PUBLIC_SITE_URL}${path}`, {
-          next: { revalidate: 0 },
-        })
+      staticPaths.map((path) =>
+        fetch(`${process.env.NEXT_PUBLIC_SITE_URL}${path}`, { next: { revalidate: 0 } })
       )
     );
 
-    return NextResponse.json({ revalidated: true, paths: pathsToRevalidate });
+    // If a detail page (blogs/[id] or services/[id]) changed, revalidate that too
+    if (slug) {
+      await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/${slug}`, {
+        next: { revalidate: 0 },
+      });
+    }
+
+    return NextResponse.json({ revalidated: true, now, slug });
   } catch (err) {
     console.error("Revalidation error:", err);
-    return NextResponse.json(
-      { message: "Error revalidating", error: (err as Error).message },
-      { status: 500 }
-    );
+    return NextResponse.json({ message: "Error revalidating", error: err }, { status: 500 });
   }
 }
