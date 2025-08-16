@@ -39,7 +39,7 @@ export const OpenPositions = ({ jobs }: { jobs: CareerType[] }) => {
               </div>
 
               {openJob === job.id && (
-                <div className="mt-3 text-gray-200">
+                <div className="mt-3  text-gray-200">
                   <p>{job.description}</p>
                   <Link
                     href={`mailto:info@origanetworks.com?subject=Application for ${job.jobtitle}`}
