@@ -54,7 +54,7 @@ export const About = () => {
               src="/about/about.png"
               className="h-auto w-full object-cover"
             />
-
+            
             <motion.div
               variants={statVarients}
               initial="hidden"
