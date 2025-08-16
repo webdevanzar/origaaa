@@ -1,36 +1,34 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 
 export async function POST(req: NextRequest) {
   try {
+    // ✅ security check
     const secret = req.nextUrl.searchParams.get("secret");
-
     if (secret !== process.env.REVALIDATE_SECRET_TOKEN) {
       return NextResponse.json({ message: "Invalid token" }, { status: 401 });
     }
 
+    // ✅ Storyblok webhook sends JSON
     const body = await req.json();
-    const slug = body.full_slug; // Storyblok sends this
-    const now = new Date();
+    const slug = body.full_slug; // e.g. "jobs" or "services/app"
 
-    const staticPaths = ["/", "/about", "/services", "/works", "/blogs", "/career", "/contact"];
+    // ✅ Always revalidate homepage + listing pages (blogs, services etc.)
+    const staticPaths = ["/", "/services", "/blogs"];
+    staticPaths.forEach((path) => revalidatePath(path));
 
-    // Always revalidate base pages
-    await Promise.all(
-      staticPaths.map((path) =>
-        fetch(`${process.env.NEXT_PUBLIC_SITE_URL}${path}`, { next: { revalidate: 0 } })
-      )
-    );
-
-    // If a detail page (blogs/[id] or services/[id]) changed, revalidate that too
+    // ✅ Revalidate the detail page that changed
     if (slug) {
-      await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/${slug}`, {
-        next: { revalidate: 0 },
-      });
+      revalidatePath(`/${slug}`);
     }
 
-    return NextResponse.json({ revalidated: true, now, slug });
+    return NextResponse.json({
+      revalidated: true,
+      slug,
+      now: new Date().toISOString(),
+    });
   } catch (err) {
     console.error("Revalidation error:", err);
-    return NextResponse.json({ message: "Error revalidating", error: err }, { status: 500 });
+    return NextResponse.json({ message: "Error revalidating" }, { status: 500 });
   }
 }
