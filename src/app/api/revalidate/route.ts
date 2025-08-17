@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
     const slug = body.full_slug; // e.g. "jobs" or "services/app"
 
     // ✅ Always revalidate homepage + listing pages (blogs, services etc.)
-    const staticPaths = ["/", "/services", "/blogs"];
+    const staticPaths = ["/", "/services", "/blogs","/works"];
     staticPaths.forEach((path) => revalidatePath(path));
 
     // ✅ Revalidate the detail page that changed
