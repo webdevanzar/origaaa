@@ -70,7 +70,7 @@ export const GrowTogether = () => {
             <div className="flex justify-start items-center gap-x-3">
               <p className="text-[38px] lg:text-[50px] font-bold">
                 {isInView && (
-                  <CountUp start={0} end={30} duration={2} delay={0.2} />
+                  <CountUp start={0} end={40} duration={2} delay={0.2} />
                 )}
               </p>
               <div>
@@ -81,7 +81,7 @@ export const GrowTogether = () => {
             <div className="flex justify-start items-center gap-x-3">
               <p className="text-[38px] lg:text-[50px] font-bold">
                 {isInView && (
-                  <CountUp start={0} end={12} duration={2} delay={0.2} />
+                  <CountUp start={0} end={17} duration={2} delay={0.2} />
                 )}
               </p>
               <div>

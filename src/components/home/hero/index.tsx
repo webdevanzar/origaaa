@@ -19,11 +19,11 @@ const Hero = () => {
             muted
             loop
             playsInline
-            poster="/fallbackimg.png"
+            poster="/fallbackimg.webp"
             preload="metadata"
             className="absolute top-0 opacity-30 left-0 w-full h-full object-cover"
           >
-            <source src="/herovideo2.mp4" type="video/mp4" />
+            <source src="/herovideo1.mp4" type="video/mp4" />
           </video>
         </div>
       </div>

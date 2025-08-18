@@ -76,9 +76,9 @@ export const services = [
     id: "4",
     title: "Branding",
     title2: "Branding & Logo Design Services in Kerala | Origa Networks",
-    image1: "/wedo/image1.png",
-    image2: "/wedo/image2.png",
-    image3: "/wedo/image3.png",
+    image1: "/wedo/brand1.png",
+    image2: "/wedo/brand2.png",
+    image3: "/wedo/brand3.png",
     content:
       "We help businesses across Kerala build powerful brands. From logo design to full visual identity systems, Origa Networks ensures your brand story is communicated clearly and creatively to connect with your audience",
     color: "#16F233",
