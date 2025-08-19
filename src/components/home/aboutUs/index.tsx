@@ -51,7 +51,7 @@ export const About = () => {
               width={1000}
               height={1000}
               alt="about image"
-              src="/about/about.png"
+              src="/about/about.webp"
               className="h-auto w-full object-cover"
             />
             

@@ -34,7 +34,7 @@ export const Services = () => {
   const projects = [
     {
       id: "app",
-      image: "/herolight/image1.jpg",
+      image: "/herolight/image1.webp",
       title: "App Development",
       p1: "User-Centric",
       p2: "Secure",
@@ -44,7 +44,7 @@ export const Services = () => {
     },
     {
       id: "web",
-      image: "/herolight/image2.jpg",
+      image: "/herolight/image2.webp",
       title: "Web Development",
       p1: "User-Centric",
       p2: "Secure",
@@ -54,7 +54,7 @@ export const Services = () => {
     },
     {
       id: "ecommerce",
-      image: "/herolight/image3.jpg",
+      image: "/herolight/image3.webp",
       title: "Ecommerce Development",
       p1: "SSL encryption",
       p2: "Payment integrations",
@@ -64,7 +64,7 @@ export const Services = () => {
     },
     {
       id: "amc",
-      image: "/herolight/image1.jpg",
+      image: "/herolight/image1.webp",
       title: "AMC",
       p1: "User-Centric",
       p2: "Secure",
@@ -74,7 +74,7 @@ export const Services = () => {
     },
     {
       id: "erp",
-      image: "/herolight/image2.jpg",
+      image: "/herolight/image2.webp",
       title: "ERP Development",
       p1: "User-Centric",
       p2: "Secure",
@@ -84,7 +84,7 @@ export const Services = () => {
     },
     {
       id: "marketing",
-      image: "/herolight/image3.jpg",
+      image: "/herolight/image3.webp",
       title: "Digital Marketing",
       p1: "User-Centric",
       p2: "Secure",
